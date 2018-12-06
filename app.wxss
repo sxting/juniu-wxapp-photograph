@@ -1,0 +1,10 @@
+@import 'style/weui.wxss';
+@import 'style/common.wxss';
+
+.jn-color {
+  color: #336964;
+}
+
+.jn-bgc {
+  background-color: #336964;
+}

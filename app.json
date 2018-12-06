@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/sample/index/index",
+    "pages/reserve/index/index",
+    "pages/personal/index/index",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#336964",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "asset/images/home-icon.png",
+        "selectedIconPath": "asset/images/home-icon-select.png"
+      },
+      {
+        "pagePath": "pages/sample/index/index",
+        "text": "样片",
+        "iconPath": "asset/images/sample-icon.png",
+        "selectedIconPath": "asset/images/sample-icon-select.png"
+      },
+      {
+        "pagePath": "pages/reserve/index/index",
+        "text": "预约",
+        "iconPath": "asset/images/reserve-icon.png",
+        "selectedIconPath": "asset/images/reserve-icon-select.png"
+      },
+      {
+        "pagePath": "pages/personal/index/index",
+        "text": "我的",
+        "iconPath": "asset/images/personal-icon.png",
+        "selectedIconPath": "asset/images/personal-icon-select.png"
+      }
+    ]
+  }
+}

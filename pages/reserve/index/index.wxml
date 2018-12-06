@@ -1,0 +1,68 @@
+<view class="page">
+    <view class="select-box" wx:if="{{reserveType != 'TIME'}}">
+       
+        <view class="product-select" bindtap="onProductClick" wx:if="{{reserveType ==='PRODUCT'}}">
+            <text>商品</text>
+            <icon class="jn-icon icon-rightblue"></icon>
+            <text class="product-name" wx:if="{{!productId}}">请先选择商品</text>
+            <text class="product-name" wx:else>{{productName}}</text>
+        </view>
+    </view>
+    <!--选择到店时间-->
+    <view class="select-time-box">
+        <view class="sub-title">选择到店时间</view>
+        <view class="today-date"><text>{{month}}</text>{{year}}</view>
+
+        <view class="date-table">
+          <view class="week-box">
+            <!--当前点击的日期 加day-active类名, 当前日期不可点 加prevent-click类名 -->
+            <view wx:for="{{dateList}}" bindtap="onDateClick" data-date="{{item.dateData}}"
+            class="per-day {{showPreventBox ? 'prevent-click' : ''}}" >
+              <view>{{item.week}}</view>
+            </view>
+          </view>
+          <view class="date-box">
+            <view wx:for="{{dateList}}" bindtap="onDateClick" data-date="{{item.dateData}}"
+            class="per-day {{showPreventBox ? 'prevent-click' : ''}} {{item.dateData == date ? 'day-active' : ''}}" >
+              <view>{{item.day}}</view>
+            </view>
+          </view>
+
+          <view class="time-box">
+            <!--当前点击的时间 加time-active类名, 当前时间不可点 加prevent-click类名-->
+            <view wx:for="{{timeList.timeShow}}" wx:for-index="i" 
+            bindtap="onTimeClick" data-index="{{i}}" data-time="{{item.time}}" data-reserve="{{item.reserve}}"
+            class="time {{time == item.time ? 'time-active' : ''}} {{(showPreventBox || item.reserve || (timeList.time[i] < nowTime && isToday)) ? 'prevent-click' : ''}}"> 
+            {{item.time}} </view>
+            <view class="no-work" wx:if="{{timeList.timeShow.length == 0}}">请选择其他日期</view>
+          </view>
+        </view>
+
+    </view>
+    <!--用户填写信息-->
+    <view class="user-msg-box">
+        <view class="tel-box">
+            <text>手机号</text>
+             <!-- bindinput="onTelChange" -->
+            <input type="number" value="{{tel}}" bindinput="onTelChange" placeholder-class="placeholder" placeholder="请输入手机号"/>
+            <button class="tel-btn" open-type="getPhoneNumber" catchgetphonenumber="getUserPhoneNumber">授权手机号</button>
+        </view>
+        <view class="note">
+            <text>备注</text>
+            <input bindinput="onNoteChange" placeholder-class="placeholder" placeholder="请填写备注信息（选填）"/>
+        </view>
+    </view>
+    <!--确认预约-->
+    <view class="sure-btn" bindtap="onCommitBtnClick">确认预约</view>
+</view>
+
+<view class="alert-bg" wx:if="{{success}}">
+  <view class="alert-box">
+    <view class="alert-title">预约成功</view>
+    <view class="alert-tip">可在个人中心-我的预约中查看</view>
+    <view class="alert-btn">
+      <view class="alert-btnl" bindtap="successNBtnClick">返回</view>
+      <view class="alert-btnr" bindtap="successYBtnClick">确定</view>
+    </view>
+  </view>
+</view>
