@@ -8,3 +8,136 @@
 .jn-bgc {
   background-color: #336964;
 }
+
+.mt-10 {
+  margin-top: 20rpx;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.placeholder {
+  font-family: "PingFangSC-Regular";
+  font-size: 28rpx;
+  color: #999999;
+}
+
+/*优惠券样式 start  */
+.ticket-block {
+  padding-left: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.tickte-item {
+  position: relative;
+  width: 690rpx;
+  height: 184rpx;
+  background: #fff;
+  border: 1rpx solid #336964;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  font-size: 22rpx;
+  color: #0f2b27;
+}
+
+/* .yuan1 {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  background-color: #fff;
+  left: 180rpx;
+  top: -20rpx;
+}
+
+.yuan2 {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  background-color: #fff;
+  left: 180rpx;
+  bottom: -20rpx;
+} */
+
+.ticket-top {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  height: 180rpx;
+}
+
+.ticket-price-box {
+  width: 200rpx;
+  padding-top: 40rpx; 
+  border-right: 1rpx dashed #336964;
+  font-size: 30rpx;
+}
+
+.ticket-title-box {
+  width: 300rpx;
+  text-align: left;
+  line-height: 40rpx;
+}
+
+.ticket-btn-box {
+  width: 120rpx;
+  height: 100%;
+  text-align: center;
+}
+.ticket-btn {
+  font-size: 30rpx;
+  color: #FFFFFF;
+  text-align: center;
+  background: #336964;
+  height: 100%;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  border-left: 1rpx dotted #fff;
+}
+.ticket-btn2 {
+  color: #999;
+  background-color: #dedede;
+}
+
+.ticket-price text {
+  font-size: 52rpx;
+}
+
+.ticket-type {
+  font-size: 24rpx; 
+}
+.ticket-type-gift {
+  padding-top: 46rpx;
+}
+
+.ticket-price-box>view {
+  line-height: 48rpx;
+}
+.ticket-title {
+  padding-top: 30rpx;
+  margin-bottom: 14rpx;
+  width: 100%;
+  max-width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+}
+/*优惠券样式 end  */

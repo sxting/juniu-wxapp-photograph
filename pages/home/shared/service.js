@@ -38,6 +38,12 @@ homeService.getSysConfig = (data) => {
   return http.get(apiUrl, data);
 }
 
+// 样片展示  
+homeService.getProduction = (data) => {
+  let apiUrl = constant.apiUrl2 + '/account/production/pagelist.json';
+  return http.get(apiUrl, data);
+}
+
 module.exports = {
   homeService: homeService
 }

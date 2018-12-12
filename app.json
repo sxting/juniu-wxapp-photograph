@@ -3,8 +3,8 @@
     "pages/home/home",
     "pages/sample/index/index",
     "pages/reserve/index/index",
-    "pages/personal/index/index",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/personal/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
