@@ -8,3 +8,16 @@
 .jn-bgc {
   background-color: #336964;
 }
+/*底部桔牛logo样式  */
+.juniu-bottom {
+  background: #fff;
+  text-align: center;
+  height: 40rpx;
+  position: absolute;
+  bottom: 40rpx;
+  width: 100vw;
+}
+.juniu-bottom image {
+  width: 80rpx;
+  height: 40rpx;
+}
