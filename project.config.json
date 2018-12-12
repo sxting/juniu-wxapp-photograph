@@ -39,9 +39,10 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "band",
-					"pathName": "pages/reserve/index/index"
+					"pathName": "pages/index/index",
+					"query": ""
 				}
 			]
 		}

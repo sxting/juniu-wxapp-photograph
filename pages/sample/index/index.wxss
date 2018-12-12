@@ -1,1 +1,27 @@
-/* pages/sample/index/index.wxss */
+.works-item{
+  position: relative;
+}
+.video-icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: -50rpx;
+  margin-top: -50rpx;
+}
+
+.work-name{
+  position: absolute;
+  margin: 0 auto;
+  bottom: 50rpx;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+.works-item-box{
+  font-size: 0;
+}
+.work-name{
+  font-size: 38rpx;
+}
