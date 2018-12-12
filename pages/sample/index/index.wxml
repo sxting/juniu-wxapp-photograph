@@ -1,2 +1,9 @@
-<!--pages/sample/index/index.wxml-->
-<text>pages/sample/index/index.wxml</text>
+<view class='works-box mt-10' wx:if="{{worksList.length > 0}}">
+  <view class='works-item-box'>
+    <view class='works-item' wx:for="{{worksList}}" bindtap='goWorkDetail' data-type='{{item.sourceType}}' data-list='{{item.merchantMediaDTOS}}' data-id='{{item.productionId}}'>
+      <image wx:if="{{item.sourceType === 'VIDEO'}}" class='video-icon' src='/asset/images/video.png'></image>
+      <image class='work-img' src='{{item.url}}' style='height: {{item.height*2}}rpx'></image>
+      <view class='work-name'>{{item.name}} <text wx:if="{{item.sourceType !== 'VIDEO'}}"> / {{item.merchantMediaDTOS.length}}张</text></view>
+    </view>
+  </view>
+</view>

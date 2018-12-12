@@ -63,6 +63,27 @@ function checkMobile(sMobile) {
   }
 }
 
+function workDataFun(data, imgW) {
+  let resData = [];
+  data.forEach(function (item) {
+    resData.push({
+      productionId: item.productionId,
+      name: item.title,
+      sourceType: item.sourceType,
+      picId: item.sourceType === 'VIDEO' ? item.merchantMediaDTOS[0].sourceId.split(',')[0] : item.merchantMediaDTOS[0].sourceId
+    })
+  })
+
+  resData.forEach(function (item) {
+    let index = item.picId.lastIndexOf('_');
+    // let picId = item.picId.slice(0, index);
+    let scale = item.picId.slice(index + 1, item.picId.length);
+    item.height = Math.floor(imgW / scale);
+    item.url = constant.OSS_IMAGE_URL + `${item.picId}/resize_${imgW}_${item.height}/mode_fill`
+  })
+
+  return resData;
+}
 function checkPhone(str) {
   var re = /^0\d{2,3}-?\d{7,8}$/;
   if (re.test(str)) {

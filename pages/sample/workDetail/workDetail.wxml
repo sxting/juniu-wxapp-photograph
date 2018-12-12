@@ -1,0 +1,16 @@
+ <view class='videoBox' wx:if="{{src}}">
+  <video class="myVideo" src="{{src}}" controls autoplay="false" catchtap='stopEvent'></video>
+  <button class='sharedBox' open-type="share">
+    <image class='sharedimg'  src="/asset/images/shared.png"></image>
+  </button>
+ </view>
+ <view class='works-box mt-10' wx:if="{{imgsrc.length>0}}">
+  <view class='works-item-box'>
+    <view class='works-item' wx:for="{{imgsrc}}" bindtap='goWorkDetail' data-type='{{item.sourceType}}' data-list='{{item.merchantMediaDTOS}}' data-id='{{item.productionId}}'>
+      <image class='work-img' src='{{item.url}}' style='height: {{item.height*2}}rpx'></image>
+    </view>
+  </view>
+  <button class='sharedBox sharedBox2' open-type="share">
+    <image class='sharedimg'  src="/asset/images/shared.png"></image>
+  </button>
+</view>

@@ -1,0 +1,37 @@
+.videoBox{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size:0;
+}
+.myVideo{
+  width: 100%;
+  height: 100%;
+}
+.sharedBox{
+  position:absolute;
+  right:40rpx;
+  bottom:100rpx;
+  z-index:999999;
+  color:#fff;
+  width: 150rpx;
+  height: 150rpx;
+  font-size: 28rpx;
+  background-color:rgba(0,0,0,0);
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.sharedimg{
+  width: 100%;
+  height: 100%;
+}
+.sharedBox2{
+  position: fixed !important;
+}
+.works-item-box{
+  font-size: 0;
+}

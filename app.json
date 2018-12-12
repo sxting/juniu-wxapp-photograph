@@ -4,7 +4,8 @@
     "pages/sample/index/index",
     "pages/reserve/index/index",
     "pages/index/index",
-    "pages/personal/index/index"
+    "pages/personal/index/index",
+    "pages/sample/workDetail/workDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
