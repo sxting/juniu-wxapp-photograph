@@ -5,7 +5,7 @@
     <view class="personal">
       <image class="personal-image fl" src="{{userInfo.avatarUrl}}"></image>
       <view class="personal-message fl">
-        <view class="nickname">{{userInfo.nickName}}</view>
+        <view class="nickname">{{userInfo.nickname}}</view>
         <view class="tel" wx:if="{{userIsBind}}">{{phone}}</view>
         <view class="tel" wx:else bindtap="onBandPhoneClick">点击绑定手机号</view>
       </view>

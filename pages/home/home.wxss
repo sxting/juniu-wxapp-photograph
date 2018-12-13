@@ -1,21 +1,354 @@
-/**index.wxss**/
-.userinfo {
+page {
+  background: #f5f5f5;
+}
+.container {
+  position: relative;
+}
+
+.banner-box {
+  position: relative;
+  height: 773rpx;
+  text-align: center;
+  background-color: #fff;
+}
+
+.img-box {
+  width: 100%;
+  height: 540rpx;
+  background: #ccc;
+  z-index: -1;
+}
+
+.img-box image {
+  width: 100%;
+  height: 540rpx;
+}
+
+.store-btn-box {
+  color: #333;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  margin-top: 34rpx;
+}
+
+.address {
+  color: #666;
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+}
+.icon-address {
+  font-size: 26rpx;
+  color: #336964;
+}
+
+.tel-box {
+  font-size: 24rpx;
+  color: #336964;
+}
+
+.new-order-tip-box {
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.new-order-tip-box text {
+  font-size: 26rpx;
+  padding-left: 10rpx;
+}
+
+.more-right {
+  position: absolute;
+  right: 24rpx;
+}
+
+.sub-title ,.title-collage{
+  width: 100vw;
+  height: 90rpx;
+  line-height: 90rpx;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.sub-title-left, .sub-title-right {
+  padding: 0 30rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.sub-title-right {
+  color: #999;
+  font-size: 28rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.sub-title-text {
+  font-size: 24rpx;
+  color: #333;
 }
+/* 拼团start */
+.collage-box {
+  background-color: #FFF;
+  margin-top: 20rpx;
+}
+.collage-content-box {
+  padding: 0 30rpx 20rpx;
+}
+.collage-box .collage-content-box .collage-content .list-collage{
+  height: 245rpx;
+  width: 100%;
+  position: relative;
+  padding-bottom: 20rpx
+}
+.collage-box .collage-content-box .collage-content .list-collage .left-img{
+  width: 328rpx;
+  height: 245rpx;
+  margin-right: 40rpx
+}
+.collage-box .collage-content-box .collage-content .list-collage .left-img image{
+  width: 100%;
+  height: 100%;
+}
+.collage-box .collage-content-box .collage-content .list-collage .right-infor{
+  font-size: 24rpx;
+  color: #666;
+}
+.name-collage{
+  font-size: 28rpx;
+  color: #333;
+}
+.price-box {
+  line-height: 62rpx;
+  height: 62rpx
+}
+.price-box .price-precent {
+  font-size: 26rpx;
+  color: #d43737;
+}
+.price-box .price-origin {
+  margin-left: 12rpx;
+  text-decoration: line-through;
+}
+.go-btn {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color:#333;
+  border: 1rpx solid #333;
+  margin-top: 29rpx;
+}
+/* 拼团end */
+
+/*商品start  */
+.product-list {
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.product-list-box {
+  display: flex;
+  overflow-x: auto;
+  padding-left: 30rpx;
+} 
+
+.product-box {
+  height: 352rpx;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  margin-bottom:30rpx;
+}
+
+.product-img {
+  width: 328rpx;
+  height: 245rpx;
+  margin-right: 20rpx;
+}
+
+.product-bottom {
+  padding: 0 20rpx;
+}
+
+.product-name {
+  font-size: 24rpx;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.current-price {
+  color: #f60;
+  font-size: 32rpx;
+}
+
+.product-item-tab {
+  font-size: 22rpx;
+  color: #FF6600;
+  opacity: 0.8;
+  border: 2rpx solid #FF6600;
+  border-radius: 30rpx;
+  padding: 0 8rpx;
+}
+/*商品end  */
+
+/* 优惠券 start */
+.coupon-box {
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+/* 优惠券 end */
+
+.container2 {
+    background-color: #fff;
+    min-height: 100vh;
+    padding-top: 20rpx;
+}
+.search-box-bg {
+  background: #fff;
+  height: 80rpx;
+  position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+}
+.search-box {
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 0 auto 20rpx;
+    background-color: #F2F2F2;
+    border: 0 solid #f3f3f3;
+    border-radius: 200rpx;
+    display: flex;
+    box-sizing: border-box;
+}
+.search-box picker {
+    width: 140rpx;
+    padding-left: 22rpx;
+    box-sizing: border-box;
+}
+.city-name {
+  font-size:26rpx;
+  width: 92rpx;
+    float: left;
+    display:block;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+}
+.icon-xl {
+    font-size: 14rpx;
+    float: left;
+     position: relative;
+    top: -10rpx; 
+    padding-left: 10rpx;
+    /* position: absolute; */
+    height:60rpx;
+    line-height: 60rpx;
+}
+.icon-xl::before, .icon-search::before{
+    vertical-align: middle;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 40rpx;
+    margin: 10rpx 20rpx;
+    background-color: #f3f3f3;
+}
+.search-box input {
+    text-align: left;
+    width: 420rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-top: 5rpx;
+    /*border: 1px solid #ccc;*/
+    float: left;
+}
+.input-box {
+    position: relative;
+}
+.icon-search {
+    position:absolute;
+    color:#999;
+    font-size:32rpx;
+    right:-74rpx;
+    top:-6rpx;
+    width:70rpx;
+    text-align:center;
+}
+scroll-view {
+  margin-top: 80rpx;
+}
+.address-list {
+    padding: 0 30rpx;
+}
+.address-box {
+    padding: 12rpx 0;
+    border-bottom: 1px solid #f3f3f3;
+    line-height: 40rpx;
+}
+.address-box-active {
+    background-color: #f5f5f5;
+}
+.address-detail {
+   font-size: 26rpx;
+   color: #999999;
+}
+.space-box {
+    border-top: 1px solid #f3f3f3;
+    text-align: center;
+    padding-top: 320rpx;
+}
+.space-bg {
+    width: 180rpx;
+    height: 160rpx;
+    margin: 0 auto;    
+}
+.space-bg image {
+  width: 100%;
+  height: 100%;
+}
+.space-text {
+   font-size: 36rpx;
+    color: #999999;
+    padding-top: 20rpx;
+}
+
+
+.icon-morentupianccccccpx {
+  color: #a01df7;
+  font-size: 38rpx;
+}
+.collage-icon {
+  width: 36rpx;
+  height: 34rpx;
+  vertical-align: middle;
+  margin-top:24rpx;
+}
+
+/* 作品start */
+.production-box {
+  padding-bottom: 20rpx;
+}
+.production-item {
+  margin-bottom: 20rpx;
+}
+
+/* 作品 end */

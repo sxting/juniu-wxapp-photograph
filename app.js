@@ -11,9 +11,15 @@ App({
 
     let self = this;
 
+    let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
+    let appId = 'wx3bb038494cd68262';
+
+    self.globalData.appId = extConfig.theAppid ? extConfig.theAppid : appId;
+
     // 登录
     wx.login({
       success: result => {
+        self.globalData.loginCode = result.code;
         // 获取用户信息
         wx.getSetting({
           success: res => {
@@ -22,9 +28,7 @@ App({
                 success: res => {
                   self.globalData.hasUserInfo = true;
                   self.globalData.userInfo = res.userInfo;
-                  
-                  let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-                  let appId = 'wx3bb038494cd68262';
+                  self.globalData.rawData = res.rawData;
 
                   if (result.code) {
                     let reqData = { 
@@ -78,6 +82,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    hasUserInfo: true
+    hasUserInfo: false,
+    loginCode: '',
+    rawData: '',
+    appId: ''
   }
 })

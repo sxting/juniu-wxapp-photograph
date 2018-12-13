@@ -1,0 +1,197 @@
+<view class='jn-content page'>
+  <!--未支付的时候  提示的小tip-->
+  <view class='head-tips clearfix' wx:if="{{orderDetailArr.orderStatus === 'PRE_PAYMENT'}}">
+    <text class='fl jn-icon icon-clock'></text>
+    <view class="fl text-tips">
+      <text>待支付</text>
+      <text>请在下单后5分钟内付款，超时订单将自动关闭</text>
+    </view>
+  </view>
+  <!--已超时的时候  提示的小tip-->
+  <view class="head-tips out-time clearfix" wx:if="{{orderDetailArr.orderStatus === 'PAYMENT_TIMEOUT'}}">
+    <text class="fl jn-icon icon-clock"></text>
+    <view class="fl text-tips">
+      <text>已关闭</text>
+      <text>超时未支付</text>
+    </view>
+  </view>
+   <!--头部-->
+  <view class="head-collage">
+    <view class="title-collage-detail-box">
+      <view class="title-collage-detail clearfix">
+        <view class="left-box fl">        
+          <image src="{{ activityCover? activityCover : pictureUrl }}"></image>
+        </view>
+        <view class="right-box fl">
+          <view class="top-items-name">
+            <text class="items-name">{{ activityName }}</text>
+            <text class="price">{{ orderDetailArr.activityPrice? orderDetailArr.activityPrice / 100 : 0 }}元</text>
+          </view>
+          <view>
+            <text class="collage-number">{{ collageNumber }}人团·</text>
+            <text>已成{{ orderDetailArr.finishedGroupCount }}件</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="real-payment clearfix">
+    <text class="fl">实付款</text>
+    <view class="fr detail-pay-for">{{ orderDetailArr.activityPrice? orderDetailArr.activityPrice / 100 : 0 }}<text class="unit">元</text></view>
+  </view>
+  <view class='tt' wx:if="{{collageStatus === 'JOINING'||collageStatus === 'CLOSE'}}"></view>
+  <!-- 中间部分 -->
+  <view class='center-content' wx:if="{{collageStatus === 'JOINING'||collageStatus === 'CLOSE'}}">
+    <!--多人拼团的时候  头部-->
+    <view class="collage-person clearfix" wx:if="{{collageNumber > 4 && collageStatus === 'JOINING'}}">
+      <view class="fl">
+        <text>{{ collageNumber }}人拼团</text>
+        <text class="notes">(已有{{ hadCollageNumber }}人参团,还差{{ remainingNumber }}人)</text>
+      </view>
+      <collage-portrait class="fr" fleg='more' collageNumber="{{ collageNumber }}" arrCollageImage="{{ arrCollageImageShow }}"></collage-portrait> 
+    </view>
+    <!--四人及四人以下拼团的时候  头部-->
+    <view class="collage-person clearfix" wx:if="{{collageNumber <= 4 && collageStatus === 'JOINING'}}">
+      <view class="fl">
+        <text>{{ collageNumber }}人拼团</text>
+        <text class="notes">(已有{{ hadCollageNumber }}人参团,还差{{ remainingNumber }}人)</text>
+      </view>
+    </view>
+    <!--拼团失败的时候 头部-->
+    <view class="collage-person clearfix" wx:if="{{collageStatus === 'CLOSE'}}">
+      <view class="fl">
+        <text>{{ collageNumber }}人拼团</text>
+      </view>
+    </view>
+    <!--拼团活动行进中-->
+    <view class="images-box">
+      <view class="details-img">
+        <view wx:if="{{collageStatus === 'JOINING'}}">
+          <view class="title-images">距结束时间仅剩</view>
+          <view class="times">
+            <text>{{restHour}}</text>:<text>{{restMinute}}</text>:<text>{{restSecond}}</text>
+          </view>
+        </view>
+        <!--大于四人拼团-->
+        <view class="images-boxes-collages clearfix" wx:if="{{collageNumber > 4 && collageStatus !== 'FINISH'}}">
+          <view class='images-detail fl' wx:for="{{arrCollageImageShow}}" wx:for-index="index">
+            <image src="{{item}}"></image>
+            <text class="head {{collageStatus === 'CLOSE'? 'bg' : ''}}" wx:if="{{index === 0}}">团长</text>
+          </view>
+          <view class="special-symbol fl" wx:for="{{remainingCollages}}">
+            <view class="jn-icon icon-qm"></view>
+          </view>
+          <collage-portrait class="fl" fleg='' collageNumber="{{ collageNumber }}" arrCollageImage="{{ arrCollageImageShow }}"></collage-portrait> 
+        </view>
+        <!--四人拼团-->
+        <view class="images-boxes-collages clearfix" wx:if="{{collageNumber === 4 && collageStatus !== 'FINISH'}}">
+           <view class='images-detail fl' wx:for="{{arrCollageImageShow}}" wx:for-index="index">
+            <image src="{{ item }}"></image>
+            <text class="head {{collageStatus === 'CLOSE'? 'bg' : ''}}" wx:if="{{index === 0}}">团长</text>
+          </view>
+          <view class="special-symbol fl" wx:for="{{remainingCollages}}">
+            <view class="jn-icon icon-qm"></view>
+          </view>
+        </view>
+        <!--三人拼团-->
+        <view class="images-boxes-collages three-people clearfix" wx:if="{{collageNumber === 3 && collageStatus !== 'FINISH'}}">
+           <view class='images-detail three' wx:for="{{arrCollageImageShow}}" wx:for-index="index">
+            <image src="{{item}}"></image>
+            <text class="head {{collageStatus === 'CLOSE'? 'bg' : ''}}" wx:if="{{index === 0}}">团长</text>
+          </view>
+          <view class="special-symbol three" wx:for="{{remainingCollages}}">
+            <view class="jn-icon icon-qm"></view>
+          </view>
+        </view>
+        <!--两人拼团-->
+        <view class="images-boxes-collages two-people clearfix" wx:if="{{collageNumber === 2 && collageStatus != 'FINISH'}}">
+          <view class='images-detail fl two mr50' wx:for="{{arrCollageImageShow}}" wx:for-index="index">
+            <image src="{{item}}"></image>
+            <text class="head {{collageStatus === 'CLOSE'? 'bg' : ''}}" wx:if="{{index === 0}}">团长</text>
+          </view>
+          <view class="special-symbol two" wx:for="{{remainingCollages}}">
+            <view class="jn-icon icon-qm"></view>
+          </view>
+        </view>
+        <!--拼团中-->
+        <view class="btns_add" wx:if="{{collageStatus === 'JOINING'}}" bindtap='onShareAppMessage'>
+           <button class="invite-btns" open-type="share">邀请好友参团</button>
+        </view>
+        <!--拼团失败-->
+        <view class='failed-collage' wx:if="{{collageStatus === 'CLOSE'}}">
+          <text class="failed-collage-text">拼团失败，支付款项将原路返回</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='tt' wx:if="{{collageStatus === 'FINISH'}}"></view>
+  <!--中间部分拼团成功-->
+  <view wx:if="{{collageStatus === 'FINISH'}}">
+    <view class="collage-success-box">
+      <view class="collage-success">
+        <view class='title-name'>{{ activityName }}</view>
+        <view class="detail-infor">
+          <view>{{ voucherStatus }}</view>
+          <view wx:if="{{orderDetailArr.voucher.settleStatus !== 'SETTLE'}}">剩余有效期：{{ orderDetailArr.voucher.leftDays }}天</view>
+        </view>
+        <view class="qrcode-box">
+          <view class="qrcode">
+            <canvas class="jn-qrcode"  canvas-id="barcode" />
+            <view class="coupon-code">
+              <text class="coupon">券码</text>
+              <text class="code-number">{{ settleCode }}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--拼团成功的申请退款按钮-->
+    <view class="application-refund-text">
+      <text class="jn-icon icon-error"></text>如需退款,请自主联系商家申请
+    </view>
+  </view>
+  <view class="jn-payment-bottom"  wx:if="{{collageStatus === 'FINISH'}}"><image src="/asset/images/logo.png"></image></view> 
+
+  <!-- 立即付款 -->
+  <view class="application-refund-btn" wx:if="{{orderDetailArr.orderStatus === 'PRE_PAYMENT'}}" bindtap='orderPaymentClick'>
+    <text>立即付款</text>
+  </view>
+ <view class='tt'></view>
+  <!-- 公用底部 -->
+  <view class="footer">
+    <view class="store-detail" wx:if="{{collageStatus != 'FINISH'}}">
+      <view class="clearfix store-list-btn" bindtap='storeListClick'>
+        <text class="fl">适用门店</text>
+        <view class="jn-icon icon-rightblue fr"></view>
+      </view>
+      <view class="store-name-box">
+        <view class="store-name">
+          <text>{{ orderDetailArr.applyStores[0].storeName}}</text>
+          <view class="popularity">人气好店</view>
+        </view>
+      </view>
+      <view class="address-and-tel" bindtap="onAddressClick">
+        <view class="jn-icon icon-address"></view>
+        <text class='address-text'>{{ orderDetailArr.applyStores[0].storeAddress }}</text>
+        <view class="fr tel-box" catchtap="onTelClick">
+          <view class="jn-icon icon-tel"></view>
+        </view>
+      </view>
+    </view>
+    <view class='tt' wx:if="{{collageStatus != 'FINISH'}}"></view>
+    <view class='order-detail-box'>
+      <view class="order-detail">
+        <view wx:if="{{orderDetailArr.orderStatus != 'PRE_PAYMENT' && orderDetailArr.orderStatus != 'PAYMENT_TIMEOUT'}}">
+          <text>团单编号：</text>{{orderDetailArr.groupNo}}
+          <text class='copy-btn' data-copydata="{{ orderDetailArr.orderNo }}"  bindtap='copyTextBtn'>复制</text>
+        </view>
+        <view>
+          <text>订单编号：</text>{{orderDetailArr.orderNo}}
+          <text class='copy-btn' data-copydata="{{ orderDetailArr.orderNo }}" bindtap='copyTextBtn'>复制</text>
+        </view>
+        <view><text>下单时间：</text>{{orderDetailArr.orderTime}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{showBtn}}' class='comeBackHome' bindtap='comeBackHome'>去首页</view>
+</view>

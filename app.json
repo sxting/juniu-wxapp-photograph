@@ -3,9 +3,12 @@
     "pages/home/home",
     "pages/sample/index/index",
     "pages/reserve/index/index",
-    "pages/personal/index/index",
     "pages/index/index",
-    "pages/sample/workDetail/workDetail"
+    "pages/personal/index/index",
+    "pages/sample/workDetail/workDetail",
+    "pages/personal/member-card/band/band",
+    "pages/personal/ticket/ticket",
+    "pages/personal/collage-order/order/order-list"
   ],
   "window": {
     "backgroundTextStyle": "light",

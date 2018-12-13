@@ -1,0 +1,29 @@
+<view class="alert-collage-bg" wx:if="{{showAlert}}">
+  <view class="alert-collage-box">
+    <view class="collage-title-alert">
+      <text class="hotting-collage">正在拼团</text>
+      <text class="jn-icon icon-sc" bindtap='closeBtn'></text>
+    </view>
+    <view class="detail-person-content">
+      <view class="detail-person-images">
+        <view class='img-url portrait' wx:for="{{ arrCollageImage }}">
+          <image src='{{item}}'></image>
+        </view>
+        <view class="special-symbol portrait" wx:for="{{remainingCollages}}" >
+          <text class="jn-icon icon-qm"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="check-all" wx:if="{{fleg=='more'}}" bindtap='moreBtnClick'>
+  <text class='jn-bg'>查看全部</text>
+  <view class="jn-icon icon-rightblue"></view>
+</view>
+
+<view class="special-symbol diandian" wx:else bindtap='moreBtnClick'>
+  <view class="jn-icon icon-diandian"></view>
+</view>
+
+

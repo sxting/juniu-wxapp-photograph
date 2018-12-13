@@ -56,7 +56,7 @@ function errDialog(content) {
   });
 }
 function checkMobile(sMobile) {
-  if (!(/^1[3|4|5|8|7][0-9]\d{4,8}$/.test(sMobile))) {
+  if (!(/^1[3|4|5|8|7|6|9][0-9]\d{4,8}$/.test(sMobile))) {
     return false;
   } else {
     return true;
@@ -120,6 +120,28 @@ function convert_length(length) {
   return Math.round(wx.getSystemInfoSync().windowWidth * length / 750);
 }
 
+function workDataFun(data, imgW) {
+  let resData = [];
+  data.forEach(function (item) {
+    resData.push({
+      productionId: item.productionId,
+      name: item.title,
+      sourceType: item.sourceType,
+      picId: item.sourceType === 'VIDEO' ? item.merchantMediaDTOS[0].sourceId.split(',')[0] : item.merchantMediaDTOS[0].sourceId
+    })
+  })
+
+  resData.forEach(function (item) {
+    let index = item.picId.lastIndexOf('_');
+    // let picId = item.picId.slice(0, index);
+    let scale = item.picId.slice(index + 1, item.picId.length);
+    item.height = Math.floor(imgW / scale);
+    item.url = constant.OSS_IMAGE_URL + `${item.picId}/resize_${imgW}_${item.height}/mode_fill`
+  })
+
+  return resData;
+}
+
 module.exports = {
   formatTime: formatTime,
   errCheck: errCheck,
@@ -129,5 +151,6 @@ module.exports = {
   checkPhone: checkPhone,
   getUserInfo: getUserInfo,
   changeDate: changeDate,
-  loading: loading
+  loading: loading,
+  workDataFun: workDataFun
 }

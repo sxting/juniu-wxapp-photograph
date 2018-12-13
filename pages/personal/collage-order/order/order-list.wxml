@@ -1,0 +1,52 @@
+<!--pages/personal/collage-order/order/order-list.wxml-->
+<view class="page">
+  <view class="tab">
+    <view wx:for="{{tabList}}" wx:for-index="index"  wx:key="item" bindtap="onTabClick" data-index="{{index}}" data-status="{{item.status}}"
+    class="tab-item {{index == tabIndex ? 'active' : ''}}">{{item.typeText}}</view>
+  </view>
+  <!-- 列表内容 -->
+  <view class='list-content-box' wx:if="{{ collageListInfor.length > 0 }}">
+    <view class='list-content' wx:for="{{ collageListInfor }}" wx:key="item" data-orderno='{{ item.orderNo }}' bindtap='checkOrderDetailInfor'>
+      <view class='list-infor'>
+        <view class='list-title clearfix'>
+          <text class='fl'>拼团</text>
+          <text class='fr'>{{ item.orderStatusText }}</text>
+        </view>
+        <view class='detail-infor clearfix'>
+          <view class='img-box fl'>
+            <image src='{{ item.picUrl? item.picUrl : productImg }}'></image>
+          </view>
+          <view class='right-infor fl'>
+            <view>{{item.activityName? item.activityName : '暂无拼团名称'}}</view>
+            <view>下单时间：{{ item.orderTime }}</view>
+            <view>¥<text>{{ item.orderAmount / 100 }}</text></view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='remaining-time'>剩余时间:
+        <text>00:00:04</text>
+      </view> -->
+      <view class='remaining-time' wx:if="{{ item.tabStatus === 'JOINING_GROUP' || item.tabStatus === 'FINISHED_GROUP' }}">实付款
+        <text>{{ item.orderAmount / 100 }}元</text>
+      </view>
+      <!-- 按钮盒子 -->
+      <view class='btn-box' wx:if="{{ item.orderStatus === 'PRE_PAYMENT' }}">
+        <text class='cancel-btn' data-orderno="{{ item.orderNo }}" catchtap='cancelClick'>取  消</text>
+        <text class='pay-btn' data-orderno="{{ item.orderNo }}" catchtap='payImmediate'>立即支付</text>
+      </view>
+      <view class='btn-box' wx:if="{{ item.orderStatus === 'PAID'&& item.groupStatus === 'JOINING' }}" >
+        <view class="invent-btn">邀请好友参团</view>
+      </view>
+      <view class='btn-box' wx:if="{{ item.tabStatus === 'FINISHED' && item.settleStatus === 'SETTLE' }}"> 
+        <text class='pay-btn' wx:if="{{item.commentCount === 0}}" catchtap='evaluationImmediate' data-orderno="{{ item.orderNo }}" data-activityid="{{item.activityId}}">立即评价</text>
+        <text class='pay-btn' wx:else>已评价</text>
+      </view>
+    </view>
+  </view>
+  <view class="space-box" wx:else>
+    <view class="space-bg"><image src="/asset/images/nofind.png"></image></view>
+    <view class="space-text">暂无订单</view>
+  </view>
+  <!-- logo底部 -->
+  <view class="juniu-bottom"><image src="/asset/images/logo.png"></image></view>
+</view>

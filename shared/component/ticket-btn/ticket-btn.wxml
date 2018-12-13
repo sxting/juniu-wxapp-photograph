@@ -1,0 +1,24 @@
+<button 
+      wx:if="{{ticketItem.isGet === 'get' && ticketItem.isBind === 'bind'}}" 
+      style='margin-top: 24rpx;background-color: #FF6600 !important;' 
+      class="weui-btn mini-btn" 
+      type="primary" size="mini" 
+      bindtap='reciveTicket' 
+      data-marketingid="{{ticketItem.marketingId}}">
+      领取
+</button>
+            
+<button 
+  wx:elif="{{ticketItem.isGet !== 'get'&& ticketItem.isBind === 'bind'}}" 
+  style='margin-top: 24rpx;background-color: #999999 !important;' 
+  class="weui-btn mini-btn" type="primary" size="mini">
+  已领取
+</button>
+
+<button wx:else 
+  style='margin-top: 24rpx;background-color: #FF6600 !important;' 
+  class="weui-btn mini-btn" type="primary" size="mini" 
+  bindtap='reciveTicketAndBind' data-marketingid="{{ticketItem.marketingId}}">
+  领取
+  </button>
+

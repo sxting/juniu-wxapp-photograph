@@ -28,7 +28,6 @@
     margin-top:26rpx;
     position:absolute;
     top:-108rpx;
-    background:red;
 }
 .personal-message {
     display:inline-block;

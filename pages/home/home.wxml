@@ -1,10 +1,189 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class="container" wx:if="{{home}}">
+  <!--轮播图部分-->
+  <view class="banner-box">
+    <swiper class="img-box" autoplay="true" interval="3000" duration="500">
+      <swiper-item wx:for="{{productImages}}"  bindtap='saveImageToPhotos' data-imageid='{{item.picUrl}}'>
+         <image binderror="imgError" src="{{item.picUrl}}"></image> 
+      </swiper-item>
+    </swiper>
+    
+    <view class="store-btn-box" bindtap="goStoreIndex">{{storeName}}</view>
+
+    <view class='address' bindtap="onAddressClick">
+      <icon class='jn-icon icon-address'></icon> {{storeAddress}}
+    </view>
+
+    <view class="tel-box" catchtap="onTelClick">{{tel}}</view>
+  </view>
+
+  <!-- 样片展示 -->
+  <view class='mt-10' wx:if="{{productionList.length > 0}}">
+    <view class="sub-title">
+      <view class="sub-title-left">
+        <view class="sub-title-text">样片展示</view>
+      </view>
+      <view class="sub-title-right">
+        <view>more</view>
+      </view>
+    </view>
+    <view class='production-box'>
+      <view class='production-item' wx:for="{{productionList}}">
+        <image class='video-icon' src=''></image>
+        <image class='img' src='{{item.url}}'></image>
+        <view>#{{iitem.name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!--精选套餐-->
+  <view class="product-list" wx:if="{{storeInfo.productList && storeInfo.productList.length > 0}}"> 
+    <view class="sub-title">
+      <view class="sub-title-left">
+        <view class="sub-title-text">{{productTagName}}</view>
+      </view>
+      <view class="sub-title-right" bindtap="goProductPage">
+        <view>more</view>
+      </view>
+    </view>
+    <!--循环的项目-->
+    <view class="product-list-box">
+      <view class="product-box"
+          data-productid="{{item.productId}}" bindtap="goProductDetail" wx:for="{{storeInfo.productList}}">
+        <image src="{{item.picUrl ? item.picUrl : juniuImg}}" class="product-img"></image>
+        <view class="product-bottom">
+          <view class="product-name">{{item.productName}}</view>
+          <view>
+            <text class="current-price">￥{{item.currentPrice / 100}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+   <!-- 拼团 -->
+  <view class='collage-box' wx:if="{{ collageProductList.length > 0 }}">
+    <view class='title-collage'>
+      <view class="sub-title-left"><view class="sub-title-text">拼团</view></view>
+      <view class="sub-title-right" bindtap="goCollagePageClick">more</view>
+    </view>
+    <view class='collage-content-box'>
+      <view class='collage-content'>
+        <view class='list-collage' wx:for="{{collageProductList}}" wx:key="item"  data-activityid="{{ item.activityId }}" bindtap='goToCollageBtn'>
+          <view class='left-img fl'>
+            <image src='{{ item.cover?  item.cover : juniuImg }}'></image>
+          </view>
+          <view class='right-infor fl'>
+            <view class='name-collage'>{{item.activityName}}</view>
+            <view class='price-box'>
+              <text class='price-precent'>￥{{ item.activityPrice / 100 }}</text>
+              <text class='price-origin'>￥{{ item.originalPrice / 100 }}</text>
+            </view>
+            <view><text>{{ item.peopleCount }}人团 | </text>已团{{ item.openedGroupCount }}件</view>
+            <view class='go-btn'>去开团</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--优惠券  -->
+  <view class="coupon-box" wx:if="{{ticketList.length > 0}}">
+    <view class="sub-title">
+      <view class="sub-title-left">
+        <view class="sub-title-text">优惠券</view>
+      </view>
+    </view>
+    <view class='ticket-block'>
+      <!--循环的项目-->
+      <view class="tickte-item" wx:for="{{ticketList}}">
+        <view class="yuan1"></view>
+        <view class="yuan2"></view>
+
+        <view class="ticket-top">
+          <view class='ticket-price-box' bindtap='goTicketDetail' data-marketingid="{{item.marketingId}}">
+              <view class='ticket-price' wx:if="{{item.couponDefType === 'MONEY'}}">￥<text>{{item.couponDefAmount/100}}</text></view>
+              <view class='ticket-price' wx:elif="{{item.couponDefType === 'DISCOUNT'}}"><text>{{item.couponDefDiscount}}</text>折</view>
+              <view class="ticket-type" wx:if="{{item.couponDefType === 'MONEY'}}">代金券</view>
+              <view class="ticket-type" wx:elif="{{item.couponDefType === 'DISCOUNT'}}">折扣券</view>
+              <view class="ticket-type-gift" wx:else="{{item.couponDefType === 'GIFT'}}">礼品券</view>        
+          </view>
+          <view class='ticket-title-box' bindtap='goTicketDetail' data-marketingid="{{item.marketingId}}">
+            <view class="ticket-title">{{item.marketingName}}</view>
+            <view class="use-limit-box" wx:if="{{item.couponDefType === 'MONEY' || item.couponDefType === 'DISCOUNT'}}">
+              <view class="use-limit" wx:if="{{item.useLimitMoney > 0}}">消费满<text>{{item.useLimitMoney/100}}</text>元可使用</view>
+              <view class="use-limit" wx:else>无使用门槛</view>
+            </view>
+            <view class="gift-name" wx:else>{{item.couponDefProductName}}</view> 
+            <view>有效期：领取后{{item.validDateCount}}天内有效</view>          
+          </view>
+          
+          <view class='ticket-btn-box'>
+                <view wx:if="{{item.isGet === 'get' && item.isBind === 'bind'}}"
+                  class="ticket-btn"
+                  bindtap='reciveTicket'  data-marketingid="{{item.marketingId}}">
+                  <view>领</view>
+                  <view>取</view>
+                </view>
+                <view
+                  wx:elif="{{item.isGet !== 'get'}}"
+                  class="ticket-btn ticket-btn2">
+                  已领取
+                </view>
+                <view wx:else class="ticket-btn"
+                  bindtap='reciveTicketAndBind' data-marketingid="{{item.marketingId}}">
+                  <view>领</view>
+                  <view>取</view>
+                </view> 
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class="container2" wx:else>
+  <!--搜索框-->
+  <view class="search-box-bg">
+    <view class="search-box w-inner">
+      <picker mode="region" value="{{region}}" range="" bindchange="bindRegionChange">
+        <view class="city-name">{{provinceName}}</view>
+        <icon class="jn-icon icon-xl"></icon>
+      </picker>
+      <view class="vertical-line"></view>
+      <view class="input-box">
+        <input bindinput="searchAddr" placeholder="输入搜索地址" placeholder-class="placeholder" />
+        <icon class="jn-icon icon-search"></icon>
+      </view>
+    </view>
+  </view>  
+  <!--搜索地址列表-->
+  <block wx:if="{{storeList.length > 0}}">
+    <scroll-view scroll-y style="height: {{windowHeight}}px;">
+      <view class="address-list" wx:for="{{storeList}}"
+       data-storeid="{{item.storeId}}" data-storename="{{item.storeName}}" bindtap="routerToStoreIndex">
+        <view class="address-box" hover-class="address-box-active">
+          <view>{{item.storeName}}</view>
+          <view class="address-detail">{{item.address}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </block>
+
+  <!--未找到门店-->
+  <view class="space-box" wx:else>
+    <view class="space-bg">
+      <image src="/asset/images/nofind.png"></image>
+    </view>
+    <view class="space-text">未找到门店</view>
+  </view>
+</view>
+
+<!--授权弹框  -->
+<view class="alert-bg" wx:if="{{!getUserInfo}}">
+  <view class="alert-box">
+    <view class="alert-title">温馨提示</view>
+    <view class="alert-tip">您需要先授权才能正常访问</view>
+    <button class="alert-btn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">确定</button>
   </view>
 </view>
