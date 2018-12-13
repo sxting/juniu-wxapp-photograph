@@ -36,6 +36,43 @@
   zoom: 1;
 }
 
+page {
+  background-color: #fff;
+  font-size: 34rpx;
+  color: #222;
+}
+
+.container {
+  font-size: 30rpx;
+  font-family: "PingFangSC-Regular";
+  background-color: #f5f5f5;
+}
+
+.jn-bg {
+  height: 20rpx;
+  background: #F8F8F8;
+  width: 100vw;
+}
+
+.mb-100 {
+  margin-bottom: 100rpx;
+}
+
+.jn-btn {
+  background: #336964;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: .2rpx;
+} 
+
 .placeholder {
   font-family: "PingFangSC-Regular";
   font-size: 28rpx;
@@ -155,8 +192,64 @@
 }
 /*优惠券样式 end  */
 
-/* 弹框样式 start */
+/*底部桔牛logo样式  */
+.juniu-bottom {
+  background: #fff;
+  text-align: center;
+  height: 40rpx;
+  position: absolute;
+  bottom: 40rpx;
+  width: 100vw;
+}
+.juniu-bottom image {
+  width: 80rpx;
+  height: 40rpx;
+}
 
+/* 作品 */
+.works-item-box {
+  margin-top: 20rpx;  
+  padding-right: 30rpx;
+  padding-bottom: 100rpx;
+  column-count: 2;
+  column-gap: 18rpx;
+  column-fill: balance;
+  -o-column-fill: balance;
+  -ms-column-fill: balance;
+  -moz-column-fill: balance;
+  -webkit-column-fill: balance;
+}
+.works-item-box .works-item {
+  background-color: #fff;
+  width: 336rpx;
+  border: 2rpx solid #f3f3f3;
+  border-radius: 8rpx;
+  display: inline-block;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.works-item-box .works-item .work-img {
+  width: 100%;
+  border-radius: 8rpx 8rpx 0 0;
+  display: block;
+}
+.works-item-box .work-name {
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+}
+.works-item-box .video-icon {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+/* 作品 */
+
+
+/* 弹框样式 start */
 .alert-bg {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100vw;
@@ -242,4 +335,205 @@
   color: #fff;
   background-color: #1AAD19;
 }
-/* 授权 end */
+
+/* 拼团center部分start */
+  .center-content {
+  padding: 0 30rpx;
+  background-color: #FFF;
+}
+.center-content .collage-person {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 88rpx;
+  border-bottom: 2rpx solid #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+}
+.center-content .collage-person .notes{
+  font-size: 24rpx;
+  color: #888;
+  display: inline-block;
+  margin-left: 12rpx
+}
+.center-content .collage-person .check-all {
+  color: #999999;
+  font-size: 28rpx;
+}
+.center-content .collage-person .check-all .icon-rightblue {
+  font-size: 32rpx;
+  margin-left: 10rpx
+}
+
+.images-box {
+  padding: 30rpx 0;
+}
+.center-content .images-box .details-img {
+  width: 100%;
+  height: 100%;
+}
+.center-content .images-box .details-img .title-images {
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #FF5822;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.center-content .images-box .details-img .times {
+  width: 100%;
+  text-align: center;
+  font-family: AppleSystemUIFont;
+  font-size: 26rpx;
+  margin: 10rpx 0 34rpx;
+  color: #FF5822;
+}
+.center-content .images-box .details-img .times text {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  color: #FFF;
+  background-color: #FF5822;
+  border-radius: 4rpx;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: .2rpx;
+  margin: 0 10rpx;
+}
+.center-content .images-box .details-img .images-boxes-collages{
+  padding: 0 20rpx;
+  display:flex;
+}
+.center-content .images-box .details-img .images-boxes-collages .images-detail {
+  width: 144rpx;
+  height: 144rpx;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: .2rpx;
+  border-radius: 50%;
+  margin-right: 26rpx;
+}
+.center-content .images-box .details-img .images-boxes-collages .special-symbol{
+  margin-right: 26rpx;
+}
+.center-content .images-box .details-img .images-boxes-collages .special-symbol:last-of-type{
+  margin-right: 0;
+}
+.center-content .images-box .details-img .images-boxes-collages .images-detail image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.center-content .images-box .details-img .images-boxes-collages .images-detail .head {
+  position: absolute;
+  bottom: -15rpx;
+  left: 50%;
+  margin-left: -32rpx;
+  display: inline-block;
+  font-family: PingFangSC-Medium;
+  font-size: 20rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  background: #FF5822;
+  border-radius: 15rpx;
+  width: 64rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+.center-content .images-box .details-img .images-boxes-collages .images-detail .bg{
+  background-color: #ccc!important;
+}
+.center-content .images-box .details-img .images-boxes-collages .special-symbol:last-of-type {
+  margin-right: 0;
+}
+.center-content .images-box .details-img .images-boxes-collages .special-symbol {
+  border: 2rpx dashed rgba(136, 136, 136, 0.5);
+  text-align: center;
+  line-height: 140rpx;
+  font-size: 0;
+  color: #C3C3C3;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%
+}
+.center-content .images-box .details-img .images-boxes-collages .special-symbol .icon-diandian {
+  font-size: 60rpx;
+}
+.center-content .images-box .details-img .images-boxes-collages .special-symbol .icon-qm {
+  font-size: 60rpx;
+}
+.center-content .images-box .details-img .three-people {
+  padding: 0 26rpx;
+}
+.center-content .images-box .details-img .three-people .three {
+  margin-right: 104rpx;
+  float: left
+}
+.center-content .images-box .details-img .three-people .three:last-of-type {
+  margin-right: 0;
+}
+.center-content .images-box .details-img .two-people {
+  padding: 0 154rpx;
+}
+.center-content .images-box .details-img .images-boxes-collages .mr100{
+  margin-right: 100rpx
+}
+.center-content .images-box .details-img .images-boxes-collages .mr50 {
+  margin-right: 50rpx
+}
+.center-content .images-box .details-img .two-people .two:last-of-type{
+  float: right;
+}
+.center-content .images-box .details-img .failed-collage{
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #888888;
+  letter-spacing: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 40rpx;
+  margin-top: 30rpx;
+}
+.center-content .images-box .details-img .failed-collage-text {
+  width: 100%;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  color: #888888;
+  letter-spacing: 0;
+}
+.center-content .images-box .details-img .btns_add {
+  text-align: center;
+  font-size: 0;
+}
+.center-content .images-box .details-img .btns_add .invite-btns {
+  display: inline-block;
+  width: 300rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  letter-spacing: 0;
+  border-radius: 35rpx;
+  margin-top: 44rpx;
+  color: #FFFFFF;
+  background-color: #FF5822;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: .2rpx;
+}
+/* 拼团center部分end */
+.comeBackHome{
+  font-size:28rpx;
+  padding:0 30rpx;
+  height:56rpx;
+  background-color:#336964;
+  border-radius:0 28rpx 28rpx 0;
+  color:#FFF;
+  line-height:56rpx;
+  position:fixed;
+  bottom:10%;
+  z-index:10000
+}

@@ -1,1 +1,145 @@
-/* pages/personal/index/index.wxss */
+.top-bg {
+    width: 100vw;
+    height: 520rpx;
+}
+.top-bg>.banner {
+  width: 100vw;
+  height: 280rpx;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.personal {
+  width:700rpx;
+  height:396rpx;
+  position:absolute;
+  top:200rpx;
+  left:25rpx;
+  z-index:100;
+  background:#FFFFFF;
+  box-shadow:0 1px 3px 0 #D8D8D8;
+  border-radius:5px;
+
+}
+.personal-image {
+    width:240rpx;
+    height:280rpx;
+    margin-left:30rpx;
+    margin-top:26rpx;
+    position:absolute;
+    top:-108rpx;
+}
+.personal-message {
+    display:inline-block;
+    color:#111111;
+    position:absolute;
+    left:300rpx;
+    top:80rpx;
+
+}
+.nickname {
+    font-size: 34rpx;
+    padding-bottom: 10rpx;
+}
+.tel {
+  font-size: 28rpx;
+}
+
+.my-order {
+  height: 160rpx;
+  width: 700rpx;
+  margin: 100rpx auto 30rpx;
+  padding-top: 100rpx;
+}
+.my-order image {
+  width: 56rpx;
+  height: 56rpx;
+}
+.subtitle {
+  height:70rpx;
+  line-height:88rpx;
+  padding-left:40rpx;
+  font-size:30rpx;
+  color:#111111;
+}
+.order-list {
+  display: flex;
+}
+.order-item {
+  width: 20%;
+  font-size: 26rpx;
+  color: #666666;
+  text-align: center;
+}
+
+.list-box {
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top:100rpx;
+  border-radius: 5rpx;
+  box-shadow:0 1px 3px 0 #D8D8D8;
+}
+.my-comment, .my-appoint {
+    height: 96rpx;
+    line-height: 96rpx;
+    background-color: #fff;
+    padding-right: 30rpx;
+    padding-left: 130rpx;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    color: #111111;
+    position: relative;
+}
+.my-comment image, .my-appoint image {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 16rpx;
+  left: 30rpx;
+}
+.icon-opentime, .icon-Evaluation {
+    display: inline-block;
+    font-size: 34rpx;
+    color: #D9D9D9;
+    padding-right: 10rpx;
+}
+.icon-Evaluation {
+    color: #e5e5e5;
+}
+.icon-more {
+    font-size: 26rpx;
+    color: #c7c7c7;
+    text-align: right;
+    float: right;
+}
+.icon-wodeyuyuex,.icon-youhuiquanx{
+  position:absolute;
+  left:60rpx;
+  font-size:40rpx;
+}
+.go-back-btn {
+    width: 690rpx;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+    border: 1px solid #ff6600;
+    border-radius: 4px;
+    color: #ff6600;
+    font-size: 32rpx;
+    margin: 100rpx auto;
+}
+
+.version {
+  text-align:center;
+  color:#e5e5e5;
+  background-color:#fff;
+  font-size:24rpx;
+  opacity:0.8;
+  position:absolute;
+  width:100vw;
+  bottom:90rpx;
+}
+.icon-pintuanx,.icon-shangpinx{
+  font-size:50rpx;
+  color:#336964;
+}

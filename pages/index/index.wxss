@@ -1,8 +1,8 @@
 .top-bg {
     width: 100vw;
-    height: 280rpx;
+    height: 520rpx;
 }
-.top-bg>image {
+.top-bg>.banner {
   width: 100vw;
   height: 280rpx;
   position: relative;
@@ -28,7 +28,6 @@
     margin-top:26rpx;
     position:absolute;
     top:-108rpx;
-    background:red;
 }
 .personal-message {
     display:inline-block;
@@ -47,21 +46,21 @@
 }
 
 .my-order {
-  height: 260rpx;
+  height: 160rpx;
   width: 700rpx;
   margin: 100rpx auto 30rpx;
+  padding-top: 100rpx;
 }
 .my-order image {
   width: 56rpx;
   height: 56rpx;
 }
 .subtitle {
-  height: 88rpx;
-  line-height: 88rpx;
-  padding-left: 30rpx;
-  font-size: 30rpx;
-  color: #111111;
-  border-bottom: 2rpx solid #F3F3F3;
+  height:70rpx;
+  line-height:88rpx;
+  padding-left:40rpx;
+  font-size:30rpx;
+  color:#111111;
 }
 .order-list {
   display: flex;
@@ -71,7 +70,6 @@
   font-size: 26rpx;
   color: #666666;
   text-align: center;
-  padding-top: 34rpx;
 }
 
 .list-box {
@@ -114,6 +112,11 @@
     text-align: right;
     float: right;
 }
+.icon-wodeyuyuex,.icon-youhuiquanx{
+  position:absolute;
+  left:60rpx;
+  font-size:40rpx;
+}
 .go-back-btn {
     width: 690rpx;
     height: 80rpx;
@@ -135,4 +138,8 @@
   position:absolute;
   width:100vw;
   bottom:90rpx;
+}
+.icon-pintuanx,.icon-shangpinx{
+  font-size:50rpx;
+  color:#336964;
 }

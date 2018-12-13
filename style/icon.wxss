@@ -64,3 +64,26 @@
 .icon-more::before{
  content: '\e6a7'
 }
+.icon-wodeyuyuex::before{
+ content: '\e721'
+}
+.icon-youhuiquanx::before{
+ content: '\e722'
+}
+
+.icon-pintuanx::before{
+ content: '\e717'
+}
+.icon-shangpinx::before{
+ content: '\e719'
+}
+.icon-Fillx::before{
+ content: '\e71e'
+}
+.icon-Groupx::before{
+ content: '\e723'
+}
+.icon-miaoshax::before{
+ content: '\e716'
+}
+

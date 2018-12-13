@@ -1,0 +1,103 @@
+.page {
+  border-top: 2rpx solid #f3f3f3;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.not-select {
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 28rpx;
+  color: #666666;
+  padding-left: 30rpx;
+  background-color: #fff;
+  width: 690rpx;
+  margin: 30rpx auto 0;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  box-shadow:0rpx 2rpx 6rpx 0rpx #D8D8D8;
+  margin-bottom: 30rpx;
+}
+.icon-select-box, .icon-select-box-selected {
+  float:right;
+  margin-right:30rpx;
+  margin-top: 26rpx;
+  width: 36rpx;
+  height: 36rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 50%;
+  position: relative;
+}
+.icon-select-box-selected {
+  border: 2rpx solid #336964;
+}
+.icon-duihao {
+  font-size: 30rpx;
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  top: 0;
+  left: 0;
+  color: #336964;
+  text-align: center;
+}
+.icon-right-1 {
+  font-size: 32rpx;
+  color: #336964;
+  position: absolute;
+  right: 10rpx;
+  top: 0;
+}
+
+
+.weui-tab__content{
+    padding-top: 20px;
+    width: 690rpx;
+    margin: auto;
+}
+.weui-navbar {
+  background-color: #fff;
+  border-bottom: 2rpx solid #f3f3f3;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+color:#336964;
+}
+.disabled-img {
+  padding: 30rpx 20rpx 0;
+}
+.disabled-img image {
+  width: 120rpx;
+  height: 120rpx;
+}
+.disabled {
+  background: #EFEFEF;
+  border:1rpx solid #EFEFEF;
+
+}
+/* .disabled .ticket-bottom {
+  background: #f0f0f0;
+} */
+.disabled .ticket-price-box {
+  color: #666;
+  border-right:1rpx dashed #B9C4C3;
+}
+
+.weui-navbar__slider {
+  height: 4rpx
+}
+.ticket-title-box{
+  width: 400rpx !important;
+}
+.ticket-top{
+  position: relative;
+  overflow:hidden;
+}
+.closeimg{
+  width:130rpx;
+  height:130rpx;
+  position:absolute;
+  right:-30rpx;
+  top:-19rpx;
+}

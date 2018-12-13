@@ -1,0 +1,84 @@
+.page {
+  border-top: 2rpx solid #f3f3f3;
+}
+
+.placeholder {
+  font-size: 30rpx;
+  color: #d3d3d3;
+}
+
+.input-card {
+  margin-top: 30rpx;
+}
+
+.input-box {
+  height: 88rpx;
+  line-height: 88rpx;
+  position: relative;
+}
+
+.input-box:last-child {
+  border-top: 2rpx solid #f3f3f3;
+}
+
+.input-box input {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 20rpx;
+  width: 450rpx;
+}
+
+.input-box button {
+  background: #336964;
+  width: 100%;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+  padding: 0;
+  position: absolute;
+  top: 14rpx;
+}
+
+.code-btn {
+  position: absolute;
+  width: 240rpx;
+  top: 0;
+  right: 0;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-left: 2rpx solid #f3f3f3;
+  color: #336964;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.btn-active {
+  background: #336964 !important;
+  border-radius: 4px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #fff !important;
+  border: none;
+}
+
+
+
+.btn-bd {
+  margin-top: 40rpx;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.btn-normal {
+  background: #c4c4c4 !important;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #fff !important;
+  border: none;
+}
+
+.btn-send-active {
+  background: #336964 !important;
+  font-family: PingFangSC-Regular;
+  color: #fff !important;
+}

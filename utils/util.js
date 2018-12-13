@@ -56,7 +56,7 @@ function errDialog(content) {
   });
 }
 function checkMobile(sMobile) {
-  if (!(/^1[3|4|5|8|7][0-9]\d{4,8}$/.test(sMobile))) {
+  if (!(/^1[3|4|5|8|7|6|9][0-9]\d{4,8}$/.test(sMobile))) {
     return false;
   } else {
     return true;

@@ -1,0 +1,66 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);background-color:#336964;"></view>
+      </view>
+
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" style='padding-top:20rpx !important;'>
+          <view class='not-select' wx:if="{{productId && activeIndex === 0}}" bindtap="onTicketItemClick" data-couponid="no" data-canuse="true">暂不使用优惠券
+            <text class='icon-select-box-selected' wx:if="{{selectedTicketId === 'no'}}">
+              <text class='icon-duihao jn-icon'></text>
+            </text>
+            <text class='icon-select-box' wx:else></text>
+          </view>
+          <!--循环的项目-->
+          <view class="tickte-item {{activeIndex == 2 || (item.productNoUse && productId) || (item.useLimitMoney > price && productId) ? 'disabled' : ''}}" wx:for="{{ticketList}}" bindtap="onTicketItemClick" data-couponid="{{item.couponId}}" data-canuse="{{!item.productNoUse}}"
+            data-item='{{item}}'>
+
+            <view class='jn-icon icon-right-1' wx:if="{{productId && selectedTicketId === item.couponId}}"></view>
+
+            <view class="yuan1"></view>
+            <view class="yuan2"></view>
+
+            <view class="ticket-top">
+              <view class='ticket-price-box'>
+                <view class='ticket-price' wx:if="{{item.couponDefType === 'MONEY'}}">
+                  <text>{{item.couponDefAmount/100}}</text>元</view>
+                <view class='ticket-price' wx:elif="{{item.couponDefType === 'DISCOUNT'}}">
+                  <text>{{item.couponDefDiscount}}</text>折</view>
+                <view class="ticket-type" wx:if="{{item.couponDefType === 'MONEY'}}">代金券</view>
+                <view class="ticket-type" wx:elif="{{item.couponDefType === 'DISCOUNT'}}">折扣券</view>
+                <view class="ticket-type-gift" wx:else="{{item.couponDefType === 'GIFT'}}">礼品券</view>
+              </view>
+              <view class='ticket-title-box'>
+                <view class="ticket-title">{{item.couponName}}</view>
+                <view class="use-limit-box" wx:if="{{item.couponDefType === 'MONEY' || item.couponDefType === 'DISCOUNT'}}">
+                  <view class="use-limit" wx:if="{{item.useLimitMoney > 0}}">消费满
+                    <text>{{item.useLimitMoney/100}}</text>元可使用</view>
+                  <view class="use-limit" wx:else>无使用门槛</view>
+                </view>
+                <view class="gift-name" wx:else>{{item.couponDefProductName}}</view>
+                <view class="ticket-bottom {{item.ticketSwitch === 'CLOSE' ? 'ticket-bottom-close' : ''}}">
+                  <view>有效期：至{{item.validDateEnd}}</view>
+                  <image class='closeimg' wx:if="{{activeIndex === '2'}}" src="/asset/images/coupon-dateunuse.png"></image>
+                  <image class='closeimg' wx:else src="/asset/images/coupon-unuse.png"></image>
+                </view>
+              </view>
+      
+            </view>
+
+
+          </view>
+
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

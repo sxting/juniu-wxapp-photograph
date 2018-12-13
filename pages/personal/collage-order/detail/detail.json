@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "collage-portrait": "../../../../shared/component/collage-portrait/collage-portrait"
+  }
+}

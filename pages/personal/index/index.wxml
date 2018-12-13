@@ -1,2 +1,53 @@
-<!--pages/personal/index/index.wxml-->
-<text>pages/personal/index/index.wxml</text>
+<view class="">
+  <!--背景图-->
+  <view class="top-bg">
+    <image class='banner' src="/asset/images/background.png"></image>
+    <view class="personal">
+      <image class="personal-image fl" src="{{userInfo.avatarUrl}}"></image>
+      <view class="personal-message fl">
+        <view class="nickname">{{userInfo.nickName}}</view>
+        <view class="tel" wx:if="{{userIsBind}}">{{phone}}</view>
+        <view class="tel" wx:else bindtap="onBandPhoneClick">点击绑定手机号</view>
+      </view>
+      <!-- 我的订单 -->
+      <view class='my-order bd'>
+        <view class='subtitle'>我的订单</view>
+        <view class='order-list'>
+          <view class='order-item' bindtap='goMyCollageOrder'>
+            <icon class="jn-icon icon-pintuanx"></icon>
+            <view>拼团</view>
+          </view>
+          <view class='order-item' bindtap="goMyOrderForm">
+            <icon class="jn-icon icon-shangpinx"></icon>
+            <view>商品</view>
+          </view>
+        </view>
+      </view>
+      </view>
+
+  </view>
+  
+
+      <!--我的预约-->
+      <view class='bd list-box'>
+        <view class="my-appoint" bindtap="goMyAppointment">
+          <icon class="jn-icon icon-wodeyuyuex"></icon>
+          <text>预约</text>
+          <icon class="jn-icon icon-more"></icon>
+        </view>
+        <view class='my-comment' bindtap='goMyTicket'>
+          <icon class="jn-icon icon-youhuiquanx"></icon>
+          <text>优惠券</text>
+          <icon class="jn-icon icon-more"></icon>
+        </view>
+  
+
+      
+      <view class="version">{{TPLID}}</view>
+    </view>
+
+      <view class="juniu-bottom">
+        <image  src="/asset/images/logo.png"></image>
+      </view>
+
+</view>
