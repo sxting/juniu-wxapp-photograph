@@ -10,7 +10,7 @@
     <view class="store-btn-box" bindtap="goStoreIndex">{{storeName}}</view>
 
     <view class='address' bindtap="onAddressClick">
-      <icon class='jn-icon icon-address'></icon> {{storeAddress}}
+      <icon class='jn-icon icon-weizhix'></icon> {{storeAddress}}
     </view>
 
     <view class="tel-box" catchtap="onTelClick">{{tel}}</view>
@@ -27,10 +27,12 @@
       </view>
     </view>
     <view class='production-box'>
-      <view class='production-item' wx:for="{{productionList}}">
-        <image class='video-icon' src=''></image>
-        <image class='img' src='{{item.url}}'></image>
-        <view>#{{iitem.name}}</view>
+      <view class='production-item' wx:for="{{productionList}}" style='height: {{item.height*2}}rpx'>
+        <image class='video-icon' wx:if="{{item.sourceType === 'VIDEO'}}" src='/asset/images/video.png'></image>
+        <image class='img' src='{{item.url}}' style='height: {{item.height*2}}rpx'></image>
+        <view class="{{item.sourceType === 'VIDEO' ? 'production-title1' : 'production-title2'}}">
+          #{{item.name}}<text wx:if="{{item.sourceType === 'IMAGE'}}"> / {{item.length}}张</text>
+        </view>
       </view>
     </view>
   </view>
@@ -54,6 +56,7 @@
           <view class="product-name">{{item.productName}}</view>
           <view>
             <text class="current-price">￥{{item.currentPrice / 100}}</text>
+            <text class="original-price" wx:if="{{item.originalPrice}}">￥{{item.originalPrice / 100}}</text>
           </view>
         </view>
       </view>
@@ -95,7 +98,7 @@
     </view>
     <view class='ticket-block'>
       <!--循环的项目-->
-      <view class="tickte-item" wx:for="{{ticketList}}">
+      <view wx:for="{{ticketList}}" class="tickte-item {{item.isGet !== 'get' && item.isBind === 'bind' ? 'tickte-item2' : ''}}">
         <view class="yuan1"></view>
         <view class="yuan2"></view>
 
@@ -127,7 +130,9 @@
                 <view
                   wx:elif="{{item.isGet !== 'get'}}"
                   class="ticket-btn ticket-btn2">
-                  已领取
+                  <view>已</view>
+                  <view>领</view>
+                  <view>取</view>
                 </view>
                 <view wx:else class="ticket-btn"
                   bindtap='reciveTicketAndBind' data-marketingid="{{item.marketingId}}">
@@ -148,12 +153,12 @@
     <view class="search-box w-inner">
       <picker mode="region" value="{{region}}" range="" bindchange="bindRegionChange">
         <view class="city-name">{{provinceName}}</view>
-        <icon class="jn-icon icon-xl"></icon>
+        <icon class="jn-icon icon-xialax"></icon>
       </picker>
       <view class="vertical-line"></view>
       <view class="input-box">
         <input bindinput="searchAddr" placeholder="输入搜索地址" placeholder-class="placeholder" />
-        <icon class="jn-icon icon-search"></icon>
+        <icon class="jn-icon icon-sousuox"></icon>
       </view>
     </view>
   </view>  
@@ -164,7 +169,7 @@
        data-storeid="{{item.storeId}}" data-storename="{{item.storeName}}" bindtap="routerToStoreIndex">
         <view class="address-box" hover-class="address-box-active">
           <view>{{item.storeName}}</view>
-          <view class="address-detail">{{item.address}}</view>
+          <view class="address-detail"> <icon class='jn-icon icon-weizhix'></icon> {{item.address}}</view>
         </view>
       </view>
     </scroll-view>
@@ -180,10 +185,9 @@
 </view>
 
 <!--授权弹框  -->
-<view class="alert-bg" wx:if="{{!getUserInfo}}">
-  <view class="alert-box">
-    <view class="alert-title">温馨提示</view>
-    <view class="alert-tip">您需要先授权才能正常访问</view>
-    <button class="alert-btn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">确定</button>
-  </view>
+<view class="shouquan-box" wx:if="{{!getUserInfo}}">
+  <image src='/asset/images/shouquan-icon.png'></image>
+  <view class="shouquan-title">微信授权登录，享受更多服务</view>
+  <view class="shouquan-tip">登录获取您的公开信息(昵称、头像等)，以便为您提供专属的定制服务，不会涉及您的个人隐私</view>
+  <button class="shouquan-btn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">微信授权登录</button>
 </view>

@@ -41,183 +41,23 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-.icon-add::before {
-  content: '\e67f'
-}
-.icon-zanwuneirong::before {
-  content: '\e613';
-}
-.icon-search::before {
-  content: '\e653'
-}
-.icon-xl::before {
-  content: '\e654'
-}
-.icon-location::before{
-  content: '\e642';
-}
-.icon-tel::before{
-  content: '\e64a';
-}
-.icon-time::before{
-  content: '\e647';
-}
-.icon-success::before{
-  content: '\e652';
+
+.icon-weizhix::before {
+  content: '\e71b'
 }
 
-.icon-VIPcard::before{
-  content: '\e651';
+.icon-xialax::before {
+  content: '\e71d'
 }
 
-.icon-starblue::before {
-  content: '\e650'
+.icon-sousuox::before {
+  content: '\e71a'
 }
 
-.icon-starempty::before {
-  content: '\e64e'
+.icon-more::before {
+  content: '\e6a7'
 }
 
-.icon-stars::before {
-  content: '\e64c'
-}
-
-.icon-Shop::before {
-  content: '\e64b'
-}
-
-.icon-phone::before {
-  content: '\e64a'
-}
-
-.icon-remind::before {
-  content: '\e649'
-}
-
-.icon-commodity::before {
-  content: '\e648'
-}
-
-.icon-opentime::before {
-  content: '\e647'
-}
-
-.icon-Evaluation::before {
-  content: '\e646'
-}
-
-.icon-goldmedal::before {
-  content: '\e645'
-}
-
-.icon-man::before {
-  content: '\e644'
-}
-
-.icon-camera::before {
-  content: '\e643'
-}
-
-.icon-address::before {
-  content: '\e642'
-}
-
-.icon-rightwhite::before {
-  content: '\e64f'
-}
-
-.icon-rightblue::before {
-  content: '\e64d'
-}
-.icon-member-card::before {
-  content: '\e600'
-}
-.erweima::before {
-  content: '\e60e'
-}
-
-.ticket::before {
-  content: '\e621'
-}
-.icon-tel::before {
-  content: '\e655'
-}
-.icon-xia::before {
-  content: '\e634'
-}
-.icon-shang::before {
-  content: '\e61f'
-}
-.icon-stars-copy::before {
-  content: '\e7cf'
-}
-.icon-starempty-copy::before {
-  content: '\e7ce'
-}
-.icon-share::before {
-  content: '\e62a'
-}
-.icon-close::before {
-  content: '\e62b'
-}
-.icon-select::before {
-  content: '\e656'
-}
-.icon-shijian::before {
-  content: '\e60f'
-}
-.icon-fenxiang::before {
-  content: '\e66c'
-}
-.icon-morentupianccccccpx::before {
-  content: '\e612'
-}
-.icon-dingwei::before {
-  content: '\e610'
-}
-.icon-diandian::before {
-  content: '\e658'
-}
-.icon-qm::before {
-  content: '\e657'
-}
-.icon-clock::before {
-  content: '\e62d'
-}
-.icon-sc::before {
-  content: '\e681'
-}
-.icon-error::before {
-  content: '\e605'
-}
-.icon-right-1::before {
-  content: '\e611'
-}
-.icon-duihao::before {
-  content: '\e6bf'
-} 
-.icon-close1::before {
-  content: '\e700'
-}
-.icon-biaoqian::before {
-  content: '\e6f2'
-}
-
-.icon-works::before {
-  content: '\e6f4'
-}
-.icon-service::before {
-  content: '\e6f5'
-}
-.icon-shijian1::before {
-  content: '\e702'
-}
-.icon-thumb::before {
-  content: '\e6fd'
-}
-.icon-transmit::before {
-  content: '\e6fe'
-}
 .icon-fenxiang::before{
  content: '\e63e'
 }
@@ -260,4 +100,22 @@
 
 .icon-rightblue::before {
   content: '\e64d'
+}
+
+
+/* 未找到start */
+.space-box {
+    /* border-top: 1px solid #E5E5E5; */
+    text-align: center;
+     padding-top: 320rpx; 
+
+}
+.space-bg {
+    width: 180rpx;
+    height: 160rpx;
+    margin: 0 auto;    
+}
+.space-bg image {
+  width: 100%;
+  height: 100%;
 }

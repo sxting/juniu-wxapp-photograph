@@ -46,7 +46,7 @@ page {
   -webkit-box-orient:vertical;
   -webkit-line-clamp:1;
 }
-.icon-address {
+.icon-weizhix {
   font-size: 26rpx;
   color: #336964;
 }
@@ -193,17 +193,14 @@ page {
 }
 
 .current-price {
-  color: #f60;
+  color: #D43737;
   font-size: 32rpx;
 }
-
-.product-item-tab {
-  font-size: 22rpx;
-  color: #FF6600;
-  opacity: 0.8;
-  border: 2rpx solid #FF6600;
-  border-radius: 30rpx;
-  padding: 0 8rpx;
+.original-price {
+  font-size: 24rpx;
+  color: #666666;
+  text-decoration: line-through;
+  padding-left: 10rpx;
 }
 /*商品end  */
 
@@ -218,6 +215,9 @@ page {
     background-color: #fff;
     min-height: 100vh;
     padding-top: 20rpx;
+}
+.container2 .icon-weizhix {
+  display: inline;
 }
 .search-box-bg {
   background: #fff;
@@ -237,6 +237,7 @@ page {
     border-radius: 200rpx;
     display: flex;
     box-sizing: border-box;
+    color: #666;
 }
 .search-box picker {
     width: 140rpx;
@@ -252,7 +253,7 @@ page {
     overflow:hidden; 
     text-overflow:ellipsis;
 }
-.icon-xl {
+.icon-xialax {
     font-size: 14rpx;
     float: left;
      position: relative;
@@ -262,7 +263,7 @@ page {
     height:60rpx;
     line-height: 60rpx;
 }
-.icon-xl::before, .icon-search::before{
+.icon-xialax::before, .icon-sousuox::before{
     vertical-align: middle;
 }
 
@@ -278,13 +279,13 @@ page {
     height: 40rpx;
     line-height: 40rpx;
     margin-top: 5rpx;
-    /*border: 1px solid #ccc;*/
+    color: #333;
     float: left;
 }
 .input-box {
     position: relative;
 }
-.icon-search {
+.icon-sousuox {
     position:absolute;
     color:#999;
     font-size:32rpx;
@@ -300,6 +301,8 @@ scroll-view {
     padding: 0 30rpx;
 }
 .address-box {
+  font-size: 30rpx;
+  color: #333333;
     padding: 12rpx 0;
     border-bottom: 1px solid #f3f3f3;
     line-height: 40rpx;
@@ -346,9 +349,41 @@ scroll-view {
 /* 作品start */
 .production-box {
   padding-bottom: 20rpx;
+  background-color: #fff;
 }
 .production-item {
   margin-bottom: 20rpx;
+  position: relative;
+  width: 690rpx;
+  margin: 0 auto 20rpx;
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+}
+.production-item .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 690rpx;
+}
+.video-icon {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 50%;
+  margin: -40rpx auto 0;
+  z-index: 20;
+}
+.production-title1 {
+  position: absolute;
+  bottom: 50rpx;
+  width: 690rpx;
+}
+.production-title2 {
+  position: absolute;
+  top: 50%;
+  margin: -20rpx auto 0;
+  width: 690rpx;
 }
 
 /* 作品 end */

@@ -5,21 +5,13 @@
   color: #336964;
 }
 
+.w-inner {
+  width: 690rpx;
+  margin: 0 auto;
+}
+
 .jn-bgc {
   background-color: #336964;
-}
-/*底部桔牛logo样式  */
-.juniu-bottom {
-  background: #fff;
-  text-align: center;
-  height: 40rpx;
-  position: absolute;
-  bottom: 40rpx;
-  width: 100vw;
-}
-.juniu-bottom image {
-  width: 80rpx;
-  height: 40rpx;
 }
 
 .mt-10 {
@@ -44,6 +36,43 @@
   zoom: 1;
 }
 
+page {
+  background-color: #fff;
+  font-size: 34rpx;
+  color: #222;
+}
+
+.container {
+  font-size: 30rpx;
+  font-family: "PingFangSC-Regular";
+  background-color: #f5f5f5;
+}
+
+.jn-bg {
+  height: 20rpx;
+  background: #F8F8F8;
+  width: 100vw;
+}
+
+.mb-100 {
+  margin-bottom: 100rpx;
+}
+
+.jn-btn {
+  background: #336964;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: .2rpx;
+} 
+
 .placeholder {
   font-family: "PingFangSC-Regular";
   font-size: 28rpx;
@@ -66,6 +95,13 @@
   box-sizing: border-box;
   font-size: 22rpx;
   color: #0f2b27;
+}
+.tickte-item2 {
+  color: #999999;
+  border: 1rpx solid #999;
+}
+.tickte-item2 .ticket-price-box {
+  border-right: 1rpx dashed #999;
 }
 
 /* .yuan1 {
@@ -126,6 +162,7 @@
 .ticket-btn2 {
   color: #999;
   background-color: #dedede;
+  padding-top: 16rpx;
 }
 
 .ticket-price text {
@@ -155,253 +192,6 @@
 }
 /*优惠券样式 end  */
 
-
-@import 'style/weui.wxss';
-@import 'style/common.wxss';
-
-page {
-  background-color: #fff;
-  font-size: 34rpx;
-  color: #222;
-}
-
-.container {
-  font-size: 30rpx;
-  font-family: "PingFangSC-Regular";
-  background-color: #f5f5f5;
-}
-
-.jn-bg {
-  height: 20rpx;
-  background: #F8F8F8;
-  width: 100vw;
-}
-
-.mt-10 {
-  margin-top: 20rpx;
-}
-
-.mb-100 {
-  margin-bottom: 100rpx;
-}
-
- .jn-btn {
-  background: #336964;
-  height: 100rpx;
-  line-height: 100rpx;
-  text-align: center;
-  font-size: 32rpx;
-  color: #FFFFFF;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: .2rpx;
-} 
-
-.w-inner {
-  width: 690rpx;
-  margin: 0 auto;
-}
-
-.fl {
-  float: left;
-}
-
-.fr {
-  float: right;
-}
-
-.clearfix:after {
-  content: '\20';
-  display: block;
-  height: 0;
-  clear: both;
-}
-.clearfix {
-  zoom: 1;
-}
-
-
-.bd {
-  box-shadow: 0 2rpx 6rpx 0 #D8D8D8;
-  border-radius: 8rpx;
-}
-
-.save {
-  margin-top: 60rpx;
-  background-color: #336964;
-  color: #fff;
-  margin-bottom: 80px;
-}
-
-.cancel {
-  margin-top: 60rpx;
-  margin-bottom: 30rpx;
-  font-size: 36rpx;
-  color: #336964;
-  border: 1px solid #336964;
-}
-
-.placeholder {
-  font-family: "PingFangSC-Regular";
-  font-size: 28rpx;
-  color: #999999;
-}
-
-.icon-rightblue {
-    font-size: 26rpx;
-    color: #c7c7c7;
-}
-
-.tel-btn {
-  background: #FFFFFF;
-  border-radius:8rpx; 
-  width: 140rpx;
-  height: 48rpx;
-  text-align: center;
-  line-height: 48rpx;
-  font-size: 20rpx;
-  color: #BCBCBC;
-  padding: 0;
-}
-
-.address-and-tel {
-  background-color: #fff;
-  font-size: 28rpx;
-  color: #999;
-  padding: 0 30rpx;
-  border-top: 2rpx solid #f3f3f3;
-  display: flex;
-  justify-content: space-between
-}
-.address-and-tel>.icon-address {
-  font-size: 30rpx;
-  padding-right: 6rpx;
-  height: 88rpx;
-  line-height: 88rpx;
-  width: 40rpx;
-}
-
-.address-text {
-  display:inline-block;
-  height:88rpx;
-  line-height: 88rpx;
-  width:580rpx;
-  max-width:580rpx;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  display:-webkit-box;
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp:1;
-}
-
-.address-and-tel>.tel-box>.icon-tel {
-  font-size: 34rpx;
-}
-.address-and-tel>.tel-box {
-  height: 36rpx;
-  border-left: 2rpx solid #e1e1e1;
-  padding-left: 30rpx;
-  margin-top: 26rpx;
-  line-height: 36rpx;
-  text-align: right;
-  width: 60rpx;
-  box-sizing: border-box;
-}
-
-/* 作品 */
-.works-item-box {
-  margin-top: 20rpx;  
-  padding-right: 30rpx;
-  padding-bottom: 100rpx;
-  column-count: 2;
-  column-gap: 18rpx;
-  column-fill: balance;
-  -o-column-fill: balance;
-  -ms-column-fill: balance;
-  -moz-column-fill: balance;
-  -webkit-column-fill: balance;
-}
-.works-item-box .works-item {
-  background-color: #fff;
-  width: 336rpx;
-  border: 2rpx solid #f3f3f3;
-  border-radius: 8rpx;
-  display: inline-block;
-  margin-bottom: 20rpx;
-  position: relative;
-}
-.works-item-box .works-item .work-img {
-  width: 100%;
-  border-radius: 8rpx 8rpx 0 0;
-  display: block;
-}
-.works-item-box .work-name {
-  font-size: 28rpx;
-  color: #333333;
-  line-height: 80rpx;
-  padding-left: 20rpx;
-}
-.works-item-box .video-icon {
-  position: absolute;
-  top: 10rpx;
-  right: 10rpx;
-  width: 40rpx;
-  height: 40rpx;
-}
-/* 作品 */
-
-
-/*弹框  */
-.alert-bg {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
-.alert-box {
-  width: 600rpx;
-  height: 292rpx;
-  background-color: #fff;
-  position: fixed;
-  top: 300rpx;
-  left: 50%;
-  margin-left: -300rpx;
-  border-radius: 28rpx;
-  text-align: center;
-}
-.alert-title {
-  font-size: 36rpx;
-  padding: 50rpx 0 30rpx;
-}
-.alert-tip {
-  font-size: 28rpx;
-  color: #999999;
-  padding-bottom: 20rpx;
-}
-.alert-btn {
-  font-size: 36rpx;
-  color: #336964;
-  height: 92rpx;
-  line-height: 92rpx;
-  border-top: 2rpx solid #F3F3F3;
-}
-.alert-btnl, .alert-btnr {
-  width: 50%;
-  box-sizing: border-box;
-  float: left;
-}
-.alert-btnr {
-  color: #666666;
-  border-left: 2rpx solid #F3F3F3; 
-  height: 90rpx;
-}
-
 /*底部桔牛logo样式  */
 .juniu-bottom {
   background: #fff;
@@ -416,260 +206,94 @@ page {
   height: 40rpx;
 }
 
-/*评论的样式start*/
-.comment-box {
-    margin-top:20rpx;
-    background-color: #fff;
-    padding-bottom:100rpx;
-}
-.comment-box .sub-title {
-    height: 90rpx;
-    line-height: 90rpx;
-    padding-left: 30rpx;
-    border-bottom: 1px solid #f8f8f8;
-}
-.comment-list {
-  /* box-shadow: 0 2rpx 6rpx 0 rgba(216,216,216,0.50); */
-  border-radius: 8rpx; 
-  margin: 0 20rpx 20rpx;
-   position: relative;
-}
-.comment-item-box {
-    padding-bottom: 30rpx;
-    border-bottom: 1px solid #F3F3F3;
-}
-.comment-item-box:last-child {
-    border-bottom: none;
-}
-.comment-top {
-    display: flex;
-}
-.comment-top image {
-    width: 100rpx;
-    min-width: 100rpx;
-    height: 100rpx;
-    margin-top: 30rpx;
-    border-radius: 50%;
-    border: 1px solid #e5e5e5;
-}
-.comment-top-center {
-    width: 100%;
-    padding-top: 40rpx;
-    padding-left: 16rpx;
-}
-.comment-top-center {
-  font-size: 30rpx;
-}
-.icon-starempty, .icon-stars  {
-    font-size: 24rpx;
-    color: #336964;
-    padding-right: 8rpx;
-}
-.comment-time-box {
-    font-family: "PingFangSC-Regular";
-    font-size: 22rpx;
-    color: #999999;
-    text-align: right;
-    padding-top: 44rpx;
-    min-width: 222rpx;
-}
-.comment-content {
-    font-size: 28rpx;
-    color: #666;
-    padding-top: 20rpx;
-    margin-bottom: 20rpx;
 
-    overflow: hidden; 
-    text-overflow: ellipsis;
-    display: -webkit-box; 
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-}
-.start-box {
-    position: relative;
-    top: -20rpx;
-}
-.space-start-box, .starts-box {
-    position: absolute
-}
-.starts-box {
-    z-index: 10;
-}
-.comment-images image {
-    width: 140rpx;
-    height: 140rpx;
-    margin-right: 20rpx;
-    border-radius: 8rpx;
-    display: inline-block;
-}
-.comment-images image:last-child {
-    margin-right: 0;
-}
-.comment-jn-bottom {
-  left:-20rpx;
-  bottom:-50rpx;
-}
 
-/*评论的样式end*/
-
-/* 未找到start */
-.space-box {
-    /* border-top: 1px solid #E5E5E5; */
-    text-align: center;
-     padding-top: 320rpx; 
-
+/* 弹框样式 start */
+.alert-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
-.space-bg {
-    width: 180rpx;
-    height: 160rpx;
-    margin: 0 auto;    
-}
-.space-bg image {
-  width: 100%;
-  height: 100%;
-}
-.space-text {
-   font-size: 36rpx;
-    color: #999999;
-    padding-top: 20rpx;
-}
-/* 未找到end */
-
-/*优惠券样式 start  */
-.ticket-color {
-  color: #336964;
-}
-
-.tickte-item {
-  position: relative;
-  width: 690rpx;
-  background: #fff;
-  margin-bottom: 20rpx;
-  border-radius: 8rpx;
-  box-sizing: border-box;
-  box-shadow: 0rpx 2rpx 6rpx 0rpx #D8D8D8; 
-}
-
-.ticket-block {
-  padding-left: 30rpx;
-  padding-top: 34rpx;
-  padding-bottom: 20rpx;
-}
-
-.yuan1 {
-  position: absolute;
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 40rpx;
+.alert-box {
+  width: 540rpx;
+  /* height: 292rpx; */
   background-color: #fff;
-  left: -20rpx;
-  top: 160rpx;
-}
-
-.yuan2 {
-  position: absolute;
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 40rpx;
-  background-color: #fff;
-  right: -20rpx;
-  top: 160rpx;
-}
-
-.ticket-top {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  height: 180rpx;
-}
-
-.ticket-price-box {
-  width: 200rpx;
-  color: #FF3232; 
-  padding-top: 10rpx; 
-}
-
-.ticket-title-box {
-  width: 400rpx;
-  text-align: left;
-}
-
-.ticket-btn-box {
-  width: 140rpx;
+  position: fixed;
+  top: 300rpx;
+  left: 50%;
+  margin-left: -270rpx;
+  border-radius: 20rpx;
   text-align: center;
 }
-.ticket-btn {
-  font-size: 13px;
-  color: #FFFFFF;
-  background-color: #336964;
-  border-radius: 30rpx;
-  height: 48rpx;
-  width: 112rpx;
-  text-align: center;
-  line-height: 48rpx;
-  margin-top: 40rpx;
+.alert-top {
+  height: 80rpx;
+  background-color: #f2f2f2;
+  border-radius: 20rpx 20rpx 0 0;
 }
-.ticket-btn2 {
-  color: #999;
-  background-color: #f3f3f3;
+.alert-title {
+  font-size: 28rpx;
+  padding: 40rpx 0 20rpx;
+  color: #333;
 }
-
-.ticket-price text {
-  font-size: 70rpx;
-}
-
-.ticket-type {
-  font-size: 22rpx; 
-}
-.ticket-type-gift {
-  font-size: 36rpx;
-  padding-top: 46rpx;
-}
-
-.ticket-title {
-  font-size: 30rpx;
-  color: #111111;
-  padding: 20rpx 0 14rpx;
-}
-.use-limit-box, .gift-name {
-  font-size: 26rpx;
-  color: #001414;
-}
-.use-limit text {
-  color: #FF3232;
-}
-.get-ticket-count {
-  font-size: 22rpx;
-  color: #666666;
-  width:112rpx;
-}
-
-.ticket-bottom {
-  color: #999;
+.alert-tip {
   font-size: 24rpx;
-  padding: 20rpx;
-  background: #FAFAFA;
-  height: 140rpx;
+  color: #999999;
+  padding-bottom: 35rpx;
+}
+.alert-btn {
+  font-size: 28rpx;
+  color: #999;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 1rpx solid #eee;
+}
+.alert-btnl, .alert-btnr {
+  width: 50%;
   box-sizing: border-box;
-  line-height: 50rpx;
+  float: left;
 }
-.ticket-bottom-close {
-  height: 90rpx;
-  padding: 0 20rpx;
-  line-height: 90rpx;
+.alert-btnr {
+  color: #336964;
+  height: 80rpx;
 }
-.ticket-bottom .icon-xia {
-  float: right;
-  font-size: 28rpx;
-  color: #AAA;
+/* 弹框样式 end */
+
+/* 授权 start */
+.shouquan-box {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 30rpx;
+  color: #888888;
+  padding: 0 50rpx;
+  z-index: 9999;
 }
-.icon-shang {
-  float: right;
-  font-size: 28rpx;
-  color: #AAA;
-  padding-top:20rpx;
+.shouquan-box image {
+  width: 170rpx;
+  height: 140rpx;
+  margin: 240rpx auto 190rpx;
 }
-/*优惠券样式 end  */
+.shouquan-title {
+  font-size: 40rpx;
+  color: #000000;
+  padding-bottom: 30rpx;
+}
+.shouquan-btn {
+  width: 670rpx;
+  height: 94rpx;
+  margin: 60rpx auto;
+  line-height: 94rpx;
+  color: #fff;
+  background-color: #1AAD19;
+}
 
 /* 拼团center部分start */
   .center-content {

@@ -127,6 +127,7 @@ function workDataFun(data, imgW) {
       productionId: item.productionId,
       name: item.title,
       sourceType: item.sourceType,
+      length: item.merchantMediaDTOS.length,
       picId: item.sourceType === 'VIDEO' ? item.merchantMediaDTOS[0].sourceId.split(',')[0] : item.merchantMediaDTOS[0].sourceId
     })
   })

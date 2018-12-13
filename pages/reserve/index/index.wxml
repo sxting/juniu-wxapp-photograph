@@ -1,18 +1,18 @@
 <view class="page">
+  <view class='reserve-top'>
+    <view>选择预约信息</view>
+    <view class="today-date">{{year}}年{{month}}月</view>
+  </view>
     <view class="select-box" wx:if="{{reserveType != 'TIME'}}">
-       
+        <view class='sub-title'>商品</view>
         <view class="product-select" bindtap="onProductClick" wx:if="{{reserveType ==='PRODUCT'}}">
-            <text>商品</text>
-            <icon class="jn-icon icon-rightblue"></icon>
             <text class="product-name" wx:if="{{!productId}}">请先选择商品</text>
             <text class="product-name" wx:else>{{productName}}</text>
+            <icon class="jn-icon icon-more fr"></icon>
         </view>
     </view>
     <!--选择到店时间-->
     <view class="select-time-box">
-        <view class="sub-title">选择到店时间</view>
-        <view class="today-date"><text>{{month}}</text>{{year}}</view>
-
         <view class="date-table">
           <view class="week-box">
             <!--当前点击的日期 加day-active类名, 当前日期不可点 加prevent-click类名 -->
@@ -42,14 +42,14 @@
     <!--用户填写信息-->
     <view class="user-msg-box">
         <view class="tel-box">
-            <text>手机号</text>
+            <view class='sub-tile'>填写手机号</view>
              <!-- bindinput="onTelChange" -->
             <input type="number" value="{{tel}}" bindinput="onTelChange" placeholder-class="placeholder" placeholder="请输入手机号"/>
-            <button class="tel-btn" open-type="getPhoneNumber" catchgetphonenumber="getUserPhoneNumber">授权手机号</button>
+            <button class="tel-btn fr" open-type="getPhoneNumber" catchgetphonenumber="getUserPhoneNumber">授权手机号</button>
         </view>
         <view class="note">
-            <text>备注</text>
-            <input bindinput="onNoteChange" placeholder-class="placeholder" placeholder="请填写备注信息（选填）"/>
+            <view class='sub-tile'>备注</view>
+            <textarea bindinput="onNoteChange" placeholder-class="placeholder" placeholder="请输入备注内容"></textarea>
         </view>
     </view>
     <!--确认预约-->
@@ -58,7 +58,8 @@
 
 <view class="alert-bg" wx:if="{{success}}">
   <view class="alert-box">
-    <view class="alert-title">预约成功</view>
+    <view class='alert-top'></view>
+    <view class="alert-title">预约成功!</view>
     <view class="alert-tip">可在个人中心-我的预约中查看</view>
     <view class="alert-btn">
       <view class="alert-btnl" bindtap="successNBtnClick">返回</view>
