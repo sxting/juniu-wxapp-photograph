@@ -711,7 +711,7 @@ page {
   text-align: center;
   font-family: PingFangSC-Regular;
   font-size: 24rpx;
-  color: #FF5822;
+  color: #336964;
   letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
 }
@@ -721,7 +721,7 @@ page {
   font-family: AppleSystemUIFont;
   font-size: 26rpx;
   margin: 10rpx 0 34rpx;
-  color: #FF5822;
+  color: #336964;
 }
 .center-content .images-box .details-img .times text {
   display: inline-block;
@@ -730,7 +730,7 @@ page {
   text-align: center;
   line-height: 36rpx;
   color: #FFF;
-  background-color: #FF5822;
+  background-color: #336964;
   border-radius: 4rpx;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: .2rpx;
@@ -770,7 +770,7 @@ page {
   font-size: 20rpx;
   color: #FFFFFF;
   letter-spacing: 0;
-  background: #FF5822;
+  background: #336964;
   border-radius: 15rpx;
   width: 64rpx;
   height: 30rpx;
@@ -855,7 +855,7 @@ page {
   border-radius: 35rpx;
   margin-top: 44rpx;
   color: #FFFFFF;
-  background-color: #FF5822;
+  background-color: #336964;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: .2rpx;
 }
