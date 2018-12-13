@@ -5,6 +5,11 @@
   color: #336964;
 }
 
+.w-inner {
+  width: 690rpx;
+  margin: 0 auto;
+}
+
 .jn-bgc {
   background-color: #336964;
 }
@@ -53,6 +58,13 @@
   box-sizing: border-box;
   font-size: 22rpx;
   color: #0f2b27;
+}
+.tickte-item2 {
+  color: #999999;
+  border: 1rpx solid #999;
+}
+.tickte-item2 .ticket-price-box {
+  border-right: 1rpx dashed #999;
 }
 
 /* .yuan1 {
@@ -113,6 +125,7 @@
 .ticket-btn2 {
   color: #999;
   background-color: #dedede;
+  padding-top: 16rpx;
 }
 
 .ticket-price text {
@@ -141,3 +154,92 @@
   -webkit-line-clamp:1;
 }
 /*优惠券样式 end  */
+
+/* 弹框样式 start */
+
+.alert-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.alert-box {
+  width: 540rpx;
+  /* height: 292rpx; */
+  background-color: #fff;
+  position: fixed;
+  top: 300rpx;
+  left: 50%;
+  margin-left: -270rpx;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.alert-top {
+  height: 80rpx;
+  background-color: #f2f2f2;
+  border-radius: 20rpx 20rpx 0 0;
+}
+.alert-title {
+  font-size: 28rpx;
+  padding: 40rpx 0 20rpx;
+  color: #333;
+}
+.alert-tip {
+  font-size: 24rpx;
+  color: #999999;
+  padding-bottom: 35rpx;
+}
+.alert-btn {
+  font-size: 28rpx;
+  color: #999;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 1rpx solid #eee;
+}
+.alert-btnl, .alert-btnr {
+  width: 50%;
+  box-sizing: border-box;
+  float: left;
+}
+.alert-btnr {
+  color: #336964;
+  height: 80rpx;
+}
+/* 弹框样式 end */
+
+/* 授权 start */
+.shouquan-box {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 30rpx;
+  color: #888888;
+  padding: 0 50rpx;
+  z-index: 9999;
+}
+.shouquan-box image {
+  width: 170rpx;
+  height: 140rpx;
+  margin: 240rpx auto 190rpx;
+}
+.shouquan-title {
+  font-size: 40rpx;
+  color: #000000;
+  padding-bottom: 30rpx;
+}
+.shouquan-btn {
+  width: 670rpx;
+  height: 94rpx;
+  margin: 60rpx auto;
+  line-height: 94rpx;
+  color: #fff;
+  background-color: #1AAD19;
+}
+/* 授权 end */

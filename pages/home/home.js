@@ -25,7 +25,7 @@ Page({
     longitude: '',
     home: true,
     isOnLoad: false,
-    getUserInfo: true,
+    getUserInfo: false,
     collageProductList: [],//拼团列表
     productTagName: '精选套餐',
     productionList: [], //展示作品
@@ -34,35 +34,14 @@ Page({
   onShow() {
     if (this.data.isOnLoad) {
       getCollageListInfor.call(this)
-      let self = this;
-      homeService.ticketList({
-        storeId: wx.getStorageSync(constant.STORE_INFO)
-      }).subscribe({
-        next: res => {
-          res.forEach((item) => {
-            item.ticketSwitch = 'CLOSE';
-            if (item.disabledWeekDate) {
-              let disabledWeekDateArr = item.disabledWeekDate.split(',');
-              item.selectedWeek1 = weekText.call(self, disabledWeekDateArr[0]);
-              item.selectedWeek2 = weekText.call(self, disabledWeekDateArr[disabledWeekDateArr.length - 1]);
-              item.unUseStartTime = (new Date(item.disabledTimeStart).getHours().toString().length < 2 ? ('0' + new Date(item.disabledTimeStart).getHours()) : new Date(item.disabledTimeStart).getHours()) + ':' +
-                (new Date(item.disabledTimeStart).getMinutes().toString().length < 2 ? ('0' + new Date(item.disabledTimeStart).getMinutes()) : new Date(item.disabledTimeStart).getMinutes());
-              item.unUseEndTime = (new Date(item.disabledTimeEnd).getHours().toString().length < 2 ? ('0' + new Date(item.disabledTimeEnd).getHours()) : new Date(item.disabledTimeEnd).getHours()) + ':' +
-                (new Date(item.disabledTimeEnd).getMinutes().toString().length < 2 ? ('0' + new Date(item.disabledTimeEnd).getMinutes()) : new Date(item.disabledTimeEnd).getMinutes());
-            }
-          });
-          self.setData({
-            ticketList: res
-          })
-        },
-        complete: () => wx.hideToast()
-      });
+      getAllTicket.call(this, this.data.storeId);
     }
   },
 
   onLoad: function () {
     let self = this;
-    app.userInfoReadyCallback = () => {
+    console.log('onload');
+    app.userInfoReadyCallback = (res) => {
       this.setData({
         getUserInfo: app.globalData.hasUserInfo
       })
@@ -81,7 +60,8 @@ Page({
           })
         }
       })
-    }
+    };
+    console.log(app.userInfoReadyCallback);
   },
 
   // 跳转到查看更多拼团列表页
@@ -120,7 +100,6 @@ Page({
           })
           let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
           let appId = 'wx3bb038494cd68262';
-          console.log(result.code);
           if (result.code) {
             logIn.call(self, result.code, extConfig.theAppid ? extConfig.theAppid : appId, e.detail.rawData);
           } else {
@@ -220,9 +199,10 @@ Page({
       storeId: storeId
     });
     getStoreIndexInfo.call(self, storeId, wx.getStorageSync(constant.MERCHANTID));
-    getTicketInfo.call(self, storeId);
+    getAllTicket.call(self, storeId);
     getStoreInfo.call(self, storeId);
     getCollageListInfor.call(self);
+    getProduction.call(self);
   },
 
   // 唤起地图
@@ -240,7 +220,6 @@ Page({
           address: self.data.address,
           scale: 14
         })
-
       }
     })
   },
@@ -389,7 +368,7 @@ function closestStore() {
       self.setData({
         storeInfo: res,
       });
-      getTicketInfo.call(self, res.storeId);
+      getAllTicket.call(self, res.storeId);
       getStoreInfo.call(self, res.storeId);
       getCollageListInfor.call(self);
       getProduction.call(self);
@@ -660,7 +639,6 @@ function getStoreListInfo() {
       this.setData({
         storeList: res.content
       })
-      console.log(res)
     },
     error: err => errDialog(err),
     complete: () => wx.hideToast()

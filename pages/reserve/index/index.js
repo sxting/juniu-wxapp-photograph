@@ -59,9 +59,137 @@ Page({
     reserveConfig.call(this);
   },
 
-  onLoad: function (options) {
+  //授权手机号 
+  getUserPhoneNumber: function (e) {
+    console.log(e);
+    let encryptedData = e.detail.encryptedData;
+    let iv = e.detail.iv;
+    let data = {
+      encryptData: encryptedData,
+      iv: iv
+    }
+    service.decodeUserPhone(data).subscribe({
+      next: res => {
+        this.setData({
+          tel: res.phoneNumber
+        })
+        wx.setStorageSync(constant.phoneNumber, res.phoneNumber)
+      },
+      error: err => errDialog(err),
+      complete: () => wx.hideToast()
+    })
+  },
+
+  // 选择手艺人
+  onCraftsmanClick: function () {
+    wx.navigateTo({
+      url: '/pages/craftsman/select/select?label=order&storeId=' + this.data.storeId,
+    })
+  },
+
+  // 选择商品
+  onProductClick: function (e) {
+    if (this.data.reserveType === 'MAN' && !this.data.craftsmanId) {
+      errDialog('请选择手艺人');
+      return;
+    }
+    if (this.data.reserveType === 'MAN') {
+      wx.navigateTo({
+        url: `/pages/product/select/select?craftsmanId=${this.data.craftsmanId}&craftsmanName=${this.data.craftsmanName}&storeId=${this.data.storeId}&from=order`,
+      })
+    } else if (this.data.reserveType === 'PRODUCT') {
+      wx.navigateTo({
+        url: `/pages/product/select/select?productIds=${this.data.productIds}&storeId=${this.data.storeId}&from=order`,
+      })
+    }
+  },
+
+  // 选择日期
+  onDateClick: function (e) {
+    console.log(e)
+    if (this.data.showPreventBox) { return; }
+    this.setData({
+      date: e.currentTarget.dataset.date
+    })
+
+    let today = new Date();
+    let date = new Date(e.currentTarget.dataset.date + ' ' + '00:00:00')
+    // tslint:disable-next-line:max-line-length
+    if (date.getFullYear() === today.getFullYear() && date.getMonth() === today.getMonth() && date.getDate() === today.getDate()) {
+      this.setData({
+        isToday: true
+      })
+    } else {
+      this.setData({
+        isToday: false
+      })
+    }
+
+    if (this.data.reserveType === 'MAN') {
+      getStaffReserve.call(this);
+    }
 
   },
+
+  // 选择时间
+  onTimeClick: function (e) {
+    if (this.data.showPreventBox) { return; }
+    let index = e.currentTarget.dataset.index;
+    let reserve = e.currentTarget.dataset.reserve;
+    if (this.data.timeList.time[index] < this.data.nowTime && this.data.isToday || reserve) {
+      this.setData({
+        time: ''
+      });
+      return;
+    }
+    this.setData({
+      time: e.currentTarget.dataset.time
+    })
+  },
+
+  // 填写手机号
+  onTelChange: function (e) {
+    this.setData({
+      tel: e.detail.value
+    })
+  },
+
+  // 填写备注
+  onNoteChange: function (e) {
+    this.setData({
+      note: e.detail.value
+    })
+  },
+
+  // 确认预约
+  onCommitBtnClick: function () {
+    if (!this.data.time) {
+      errDialog('请选择时间'); return;
+    }
+    if (!this.data.tel) {
+      errDialog('请填写手机号'); return;
+    }
+    if ((this.data.tel + '').length !== 11) {
+      errDialog('请填写正确的手机号'); return;
+    }
+
+    saveReserve.call(this)
+  },
+
+  successYBtnClick() {
+    this.setData({
+      success: false,
+    })
+    wx.navigateTo({
+      url: '/pages/personal/appointment/appointment',
+    })
+  },
+  successNBtnClick() {
+    this.setData({
+      success: false,
+    })
+    reserveConfig.call(this);
+  }
 
 })
 

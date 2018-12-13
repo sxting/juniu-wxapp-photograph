@@ -4,13 +4,7 @@ import { constant } from 'utils/constant'
 
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
     let self = this;
-
     let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
     let appId = 'wx3bb038494cd68262';
 
@@ -23,13 +17,13 @@ App({
         // 获取用户信息
         wx.getSetting({
           success: res => {
+            console.log(res)
             if (res.authSetting['scope.userInfo']) {
               wx.getUserInfo({
                 success: res => {
                   self.globalData.hasUserInfo = true;
                   self.globalData.userInfo = res.userInfo;
                   self.globalData.rawData = res.rawData;
-
                   if (result.code) {
                     let reqData = { 
                       code: result.code, 
@@ -53,9 +47,11 @@ App({
                         wx.setStorage({
                           key: constant.TOKEN,
                           data: res.juniuToken,
-                          success: function (res) {
+                          success: function (res1) {
+                            console.log(res1);
                             if (self.userInfoReadyCallback) {
-                              self.userInfoReadyCallback(res)
+                              console.log(res1);
+                              self.userInfoReadyCallback(res1)
                             }
                           }
                         })
@@ -69,11 +65,11 @@ App({
                   }
                 },
                 fail: () => {
-                  this.globalData.hasUserInfo = false;
+                  // this.globalData.hasUserInfo = false;
                 }
               })
             } else {
-              this.globalData.hasUserInfo = false;
+              // this.globalData.hasUserInfo = false;
             }
           }
         })

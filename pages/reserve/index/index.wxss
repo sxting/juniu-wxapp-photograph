@@ -1,83 +1,76 @@
 .page {
   border-top: 2rpx solid #F3F3F3;
 }
+.reserve-top {
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999999;
+  background: #F6F6F6;
+  padding: 0 30rpx;
+}
+.today-date {
+  color: #336964;
+}
+
 .select-box {
-    margin-bottom: 20rpx;
     background: #fff;
-    padding: 0 30rpx;
+    font-size: 28rpx;
+    color: #999;
     width: 690rpx;
-    margin: 30rpx auto 10rpx;
-    box-shadow: 0 2rpx 6rpx 0 #D8D8D8;
-    border-radius: 8rpx;
-    box-sizing: border-box;
-    font-size: 32rpx;
-    color: #333333;
+    margin: 40rpx auto 0;
 }
-.craftsman-select, .product-select {
-    height: 90rpx;
-    line-height: 90rpx;
+.select-box .sub-title {
+  font-size: 30rpx;
+  color: #333333;
+  margin-bottom: 30rpx;
 }
-.craftsman-select {
-    border-bottom: 1px solid #F3F3F3;
+.product-select {
+    height: 88rpx;
+    line-height: 88rpx;
+    background-color: #f6f6f6;
+    border-radius: 10rpx;
 }
-.craftsman-name, .product-name {
-    color: #ff6600;
-    float: right;
-    padding-right: 10rpx;
-    font-size: 26rpx;
+.product-name {
+  padding-left: 30rpx;
 }
-.icon-rightblue {
-    float: right;
-    color: #ff6600;    
+.icon-more {
+  color: #999;
+  font-size: 34rpx;
+  padding-right: 20rpx;
 }
+
 /*选择到店时间*/
 .select-time-box {
     background: #fff;
-    margin-bottom: 20rpx;
     position: relative;
+    margin-top: 40rpx;
 }
-.sub-title {
-    padding-left: 30rpx;
-    height: 80rpx;
-    line-height: 80rpx;
-    font-family: "PingFangSC-Medium";
-    font-size: 32rpx;
-    color: #111111;
-}
-.today-date {
-  font-size: 24rpx;
-  color: #4F4E4E;
-  padding-left: 30rpx;
-  padding-bottom: 20rpx;
-}
-.today-date text {
-  font-size: 32rpx;
-  color: #FE6700;
-  padding-right: 10rpx;
-}
-
 .date-table {
-  box-shadow: 0 2rpx 6rpx 0 #D8D8D8;
-  border-radius: 8rpx;
+  border-radius: 10rpx;
   width: 690rpx;
   margin: 0 auto;
+  font-size: 30rpx;
+  border: 1rpx solid #eee;
 }
 .week-box, .date-box {
     height: 110rpx;
-    border-bottom: 1px solid #e5e5e5; 
+    border-bottom: 1rpx solid #eee; 
     display: flex;
     background-color: #fff;
 }
 .week-box {
   height: 72rpx;
   line-height: 72rpx;
-  font-size: 24rpx;
   color: #666666;
+  background-color: #f6f6f6;
 }
 .date-box {
   height: 94rpx;
   line-height: 94rpx;
-  font-size: 36rpx;
+  font-size: 30rpx;
   color: #333333;
 }
 .per-day {
@@ -92,7 +85,7 @@
 }
 
 .day-active {
-    background: #ff6600;
+    background: #336964;
     color: #fff;
 }
 .time-box {
@@ -108,8 +101,8 @@
   height: 80rpx;
   line-height: 80rpx;
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  border-right: 1px solid #e5e5e5;
+  border-bottom: 1rpx solid #eee;
+  border-right: 1rpx solid #eee;
   box-sizing: border-box;
 }
 .time:nth-child(6n) {
@@ -127,20 +120,18 @@
 /*当前选中时间样式*/
 .time-active {
   color: #fff;
-  background-color: #ff6600;
+  background-color: #336964;
 }
 /*禁止点击*/
 .prevent-click {
-  background-color: #f2f2f2;
-  color: #ABABAB;
+  background-color: #f6f6f6;
+  color: #999999;
 }
 
 .prevent-click-tip {
   position: absolute;
-  /* width: 100vw; */
   text-align: center;
-   top: 50%; 
-  /* color: #ff6600; */
+  top: 50%; 
   font-size: 30rpx;
   width: 450rpx;
   left: 150rpx;
@@ -152,56 +143,62 @@
 
 .user-msg-box {
   width: 690rpx;
-  margin: 30rpx auto;
-  box-shadow: 0 2rpx 6rpx 0 #D8D8D8;
-  border-radius: 8rpx;
+  margin: 0 auto 30rpx;
   font-size: 30rpx;
   color: #333333;
-  padding: 0 20rpx;
-  box-sizing: border-box;
 }
-.tel-box, .note {
-  height: 88rpx;
-  line-height: 88rpx;
-  position: relative;
+.user-msg-box .sub-tile {
+  margin-bottom: 20rpx;
+  margin-top: 40rpx;
 }
-.note {
-  border-top: 2rpx solid #F3F3F3;
-}
-.tel-box input, .note input {
-    height: 88rpx;
-    line-height: 88rpx;
-    position: absolute;
-    left: 110rpx;
-    top: 0;
+.tel-box {
+  overflow: hidden;
 }
 .tel-box input {
-    width: 220rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 480rpx;
+  background: #F6F6F6;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+.note textarea {
+  box-sizing: border-box; 
+  padding-left: 30rpx;
+  width: 690rpx;
+  background: #F6F6F6;
+  height: 220rpx;
+  padding-top: 24rpx;
 }
 .placeholder {
-    font-size: 26rpx;
+    font-size: 28rpx;
     color: #999999;
 }
+.tel-btn {
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 190rpx;
+  text-align: center;
+  border: 2rpx solid #336964;
+  font-size: 28rpx;
+  color: #336964;
+  background-color: #fff;
+  border-radius:0;
+  display: inline-block;
+  padding: 0;
+}
+.tel-btn::after {
+  border: none;
+}
+
 .sure-btn {
-    height: 80rpx;
-    line-height: 80rpx;
+    height: 88rpx;
+    line-height: 88rpx;
     text-align: center;
-    background: #FE6700;
-    border-radius: 52rpx;
+    background: #336964;
     color: #fff;
     width: 690rpx;
     font-size: 36rpx;
-    margin: 30rpx auto;
-}
-
-.juniu-bottom {
-  position: relative;
-  bottom: 0;
-  margin-bottom: 30rpx;
-}
-
-.tel-btn {
-  position: absolute;
-  right: 0;
-  top: 20rpx;
+    margin: 40rpx auto;
 }
