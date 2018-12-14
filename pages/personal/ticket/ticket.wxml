@@ -48,8 +48,9 @@
                 <view class="gift-name" wx:else>{{item.couponDefProductName}}</view>
                 <view class="ticket-bottom {{item.ticketSwitch === 'CLOSE' ? 'ticket-bottom-close' : ''}}">
                   <view>有效期：至{{item.validDateEnd}}</view>
-                  <image class='closeimg' wx:if="{{activeIndex === '2'}}" src="/asset/images/coupon-dateunuse.png"></image>
-                  <image class='closeimg' wx:else src="/asset/images/coupon-unuse.png"></image>
+                  <image class='closeimg' wx:if="{{activeIndex === '2' || (item.productNoUse && productId)}}" src="/asset/images/coupon-dateunuse.png"></image>
+                  <image class='closeimg' wx:if="{{activeIndex !== '2' || (item.productNoUse && productId)}}" src="/asset/images/coupon-unuse.png"></image>
+                  
                 </view>
               </view>
       

@@ -3,12 +3,13 @@ import { errDialog, loading } from 'utils/util'
 import { constant } from 'utils/constant'
 
 App({
-  onLaunch: function (options) {
+  onLaunch: function () {
     let self = this;
     let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
     let appId = 'wx3bb038494cd68262';
 
     self.globalData.appId = extConfig.theAppid ? extConfig.theAppid : appId;
+
     // 登录
     wx.login({
       success: result => {
@@ -45,10 +46,11 @@ App({
                         wx.setStorage({
                           key: constant.TOKEN,
                           data: res.juniuToken,
-                          success: function (res) {
-                            console.log(self.userInfoReadyCallback);
+                          success: function (res1) {
+                            console.log(res1);
                             if (self.userInfoReadyCallback) {
-                              self.userInfoReadyCallback(res)
+                              console.log(res1);
+                              self.userInfoReadyCallback(res1)
                             }
                           }
                         })
@@ -62,10 +64,11 @@ App({
                   }
                 },
                 fail: () => {
-                  this.globalData.hasUserInfo = false;
+                  // this.globalData.hasUserInfo = false;
                 }
               })
             } else {
+
               this.globalData.hasUserInfo = false;
               console.log(options);
               wx.reLaunch({

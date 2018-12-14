@@ -1,41 +1,37 @@
 .top-bg {
     width: 100vw;
-    height: 520rpx;
+    height: 144rpx;
 }
-.top-bg>.banner {
+.top-bg>image {
   width: 100vw;
-  height: 280rpx;
-  position: relative;
+  height: 144rpx;
+  position: absolute;
   top: 0;
   left: 0;
 }
 .personal {
-  width:700rpx;
-  height:396rpx;
-  position:absolute;
-  top:200rpx;
-  left:25rpx;
-  z-index:100;
-  background:#FFFFFF;
-  box-shadow:0 1px 3px 0 #D8D8D8;
-  border-radius:5px;
-
+  width: 700rpx;
+  height: 188rpx;
+  position: absolute;
+  top: 26rpx;
+  left: 25rpx;
+  z-index: 100;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px 0 #D8D8D8;
+  border-radius: 8px;
 }
 .personal-image {
-    width:240rpx;
-    height:280rpx;
-    margin-left:30rpx;
-    margin-top:26rpx;
-    position:absolute;
-    top:-108rpx;
+    width: 130rpx;
+    height: 130rpx;
+    margin-left: 30rpx;
+    border-radius: 50%;
+    margin-top: 26rpx; 
 }
 .personal-message {
-    display:inline-block;
-    color:#111111;
-    position:absolute;
-    left:300rpx;
-    top:80rpx;
-
+    display: inline-block;
+    color: #111111;    
+    margin-top: 40rpx;
+    margin-left: 20rpx; 
 }
 .nickname {
     font-size: 34rpx;
@@ -46,21 +42,21 @@
 }
 
 .my-order {
-  height: 160rpx;
+  height: 260rpx;
   width: 700rpx;
   margin: 100rpx auto 30rpx;
-  padding-top: 100rpx;
 }
 .my-order image {
   width: 56rpx;
   height: 56rpx;
 }
 .subtitle {
-  height:70rpx;
-  line-height:88rpx;
-  padding-left:40rpx;
-  font-size:30rpx;
-  color:#111111;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  color: #111111;
+  border-bottom: 2rpx solid #F3F3F3;
 }
 .order-list {
   display: flex;
@@ -70,14 +66,12 @@
   font-size: 26rpx;
   color: #666666;
   text-align: center;
+  padding-top: 34rpx;
 }
 
 .list-box {
   width: 690rpx;
   margin: 0 auto;
-  margin-top:100rpx;
-  border-radius: 5rpx;
-  box-shadow:0 1px 3px 0 #D8D8D8;
 }
 .my-comment, .my-appoint {
     height: 96rpx;
@@ -85,6 +79,7 @@
     background-color: #fff;
     padding-right: 30rpx;
     padding-left: 130rpx;
+    border-bottom: 2rpx solid #F3F3F3;
     box-sizing: border-box;
     font-size: 26rpx;
     color: #111111;
@@ -106,16 +101,11 @@
 .icon-Evaluation {
     color: #e5e5e5;
 }
-.icon-more {
+.icon-rightblue {
     font-size: 26rpx;
     color: #c7c7c7;
     text-align: right;
     float: right;
-}
-.icon-wodeyuyuex,.icon-youhuiquanx{
-  position:absolute;
-  left:60rpx;
-  font-size:40rpx;
 }
 .go-back-btn {
     width: 690rpx;
@@ -138,8 +128,4 @@
   position:absolute;
   width:100vw;
   bottom:90rpx;
-}
-.icon-pintuanx,.icon-shangpinx{
-  font-size:50rpx;
-  color:#336964;
 }

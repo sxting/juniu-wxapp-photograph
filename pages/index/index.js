@@ -20,7 +20,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '登录授权',
     })
-  }, 
+  },
 
   bindgetuserinfo(e) {
     let self = this;
@@ -38,7 +38,7 @@ Page({
             console.log('获取用户登录态失败！' + result.errMsg)
           }
         },
-        fail: function (res) {},
+        fail: function (res) { },
         complete: function (res) { },
       });
     }
@@ -75,12 +75,12 @@ function logIn(code, appId, rawData) {
             url: '/pages/home/home',
           })
 
-          setTimeout(function() {
+          setTimeout(function () {
             if (app.userInfoReadyCallback) {
               app.userInfoReadyCallback(res)
             }
           }, 200)
-          
+
           if (!self.data.options) {
             wx.reLaunch({
               url: '/pages/home/home',

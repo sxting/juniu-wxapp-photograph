@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/index/index",
     "pages/sample/index/index",
     "pages/reserve/index/index",
+    "pages/index/index",
     "pages/personal/index/index",
     "pages/product/select/select",
     "pages/sample/workDetail/workDetail",

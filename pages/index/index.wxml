@@ -1,6 +1,58 @@
-<view class="shouquan-box">
-  <image src='/asset/images/shouquan-icon.png'></image>
-  <view class="shouquan-title">微信授权登录，享受更多服务</view>
-  <view class="shouquan-tip">登录获取您的公开信息(昵称、头像等)，以便为您提供专属的定制服务，不会涉及您的个人隐私</view>
-  <button class="shouquan-btn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">微信授权登录</button>
+<view class="">
+  <!--背景图-->
+  <view class="top-bg">
+    <image src="/asset/images/personal-bg.png"></image>
+    <view class="personal">
+      <image class="personal-image fl" src="{{userInfo.avatarUrl}}"></image>
+      <view class="personal-message fl">
+        <view class="nickname">{{userInfo.nickName}}</view>
+        <view class="tel" wx:if="{{userIsBind}}">{{phone}}</view>
+        <view class="tel" wx:else bindtap="onBandPhoneClick">点击绑定手机号</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 我的订单 -->
+  <view class='my-order bd'>
+    <view class='subtitle'>我的订单</view>
+    <view class='order-list'>
+      <view class='order-item' bindtap='goMyCollageOrder'>
+        <image src='/asset/images/my-order-collage.png'></image>
+        <view>拼团</view>
+      </view>
+      <view class='order-item' bindtap="goMyOrderForm">
+        <image src='/asset/images/my-order-product.png'></image>
+        <view>商品</view>
+      </view>
+    </view>
+  </view>
+
+  <!--我的预约-->
+  <view class='bd list-box'>
+  <view class="my-appoint" bindtap="goMyAppointment">
+    <image src="/asset/images/my-appoint.png"></image>
+    <text>我的预约</text>
+    <icon class="jn-icon icon-rightblue"></icon>
+  </view>
+  <view class='my-comment' bindtap='goMyMemberCard'>
+    <image src="/asset/images/my-card.png"></image>
+    <text>我的会员卡</text>
+        <icon class="jn-icon icon-rightblue"></icon>
+  </view>
+   <view class='my-comment' bindtap='goMyTicket'>
+    <image src="/asset/images/my-coupon.png"></image>
+    <text>我的优惠券</text>
+        <icon class="jn-icon icon-rightblue"></icon>
+  </view>
+  <!--我的评价-->
+  <view class="my-comment" bindtap="goMyComment">
+    <image src="/asset/images/my-comment.png"></image>
+    <text>我的评价</text>
+    <icon class="jn-icon icon-rightblue"></icon>
+  </view>
+  </view>
+
+  <view class="juniu-bottom"><image src="/asset/images/logo.png"></image></view> 
+  <view class="version">{{TPLID}}</view> 
+
 </view>
