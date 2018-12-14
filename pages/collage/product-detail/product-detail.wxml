@@ -1,0 +1,242 @@
+<view  wx:if='{{showStore}}'>
+<view class="page">
+  <!--轮播图部分-->
+  <swiper class="product-img" autoplay="true" interval="3000" duration="500">
+    <swiper-item wx:for="{{imgs}}">
+      <image src="{{item.url}}"></image> 
+    </swiper-item>
+  </swiper>
+  <view class="product-box">
+    <view class="product-name">
+      {{data.activityName}}
+      <button class="share-btn" open-type="share"><text class="jn-icon icon-fenxiang"></text></button>
+    </view>
+    <view class="price-box">
+      <text>￥<text class="current">{{presentPrice ? presentPrice : 0}}</text> </text> 
+      <text class="yuanjia">{{originalPrice ? originalPrice : 0}}元</text> 
+    </view>
+    <view class="collage-num">{{data.peopleCount}}人团·已团{{data.openedGroupCount}}件</view>
+  </view>
+
+  <view class="jn-bg" wx:if="{{groupId}}"></view>
+
+  <!--通过别人的分享点进来 可以参团-->
+  <view class='center-content' wx:if="{{groupId}}">
+    <view class="collage-person clearfix">
+      <view class="fl">
+        <text>{{data.peopleCount}}人拼团</text>
+        <text wx:if="{{ (data.peopleCount > joinNumber && data.currentGroup.groupStatus === 'FINISH')}}"></text>
+        <text class="notes" wx:else>(已有{{joinNumber}}人参团,还差{{(data.peopleCount - joinNumber) ? (data.peopleCount - joinNumber) : 0}}人)</text>
+      </view>
+      <!--如果拼团人数大于四人才显示-->
+      <collage-portrait class="fr" fleg='more' collageNumber="{{data.peopleCount}}" arrCollageImage="{{data.currentGroup.picUrls}}" wx:if="{{data.peopleCount > 4}}" > </collage-portrait> 
+    </view>
+
+    <!--倒计时拼团人-->
+    <view class="images-box">
+      <view class="details-img">
+        <view wx:if="{{data.currentGroup.groupStatus === 'JOINING'}}">
+          <view class="title-images">距结束时间仅剩</view>
+          <view class="times">
+            <text>{{sharedHours}}</text>:<text>{{sharedMinites}}</text>:<text>{{sharedSeconds}}</text>
+          </view>
+        </view>
+        <!--大于四人拼团-->
+        <view class="images-boxes-collages clearfix" wx:if="{{data.peopleCount > 4}}">
+          <view class='images-detail fl' wx:for="{{data.currentGroup.picUrls}}" wx:for-index="i" wx:if="{{i<3}}">
+            <image src='{{item ? item : jnImg}}'></image>
+            <text class="head" wx:if="{{i === 0}}">团长</text>
+          </view>
+          <view class="special-symbol fl" wx:for="{{qmArr}}"
+              style="{{data.currentGroup.picUrls.length > 2 ? 'display: none' : ''}}">
+            <text class="jn-icon icon-qm"></text>
+          </view>
+
+          <collage-portrait class="fl" fleg='' collageNumber="{{ data.peopleCount }}"> </collage-portrait> 
+        </view>
+        <!--四人拼团-->
+        <view class="images-boxes-collages clearfix" wx:if="{{data.peopleCount == 4}}">
+          <view class='images-detail fl' wx:for="{{data.currentGroup.picUrls}}" wx:for-index="i">
+            <image src='{{item ? item : jnImg}}'></image>
+            <text class="head" wx:if="{{i === 0}}">团长</text>
+          </view>
+          <view class="special-symbol fl" wx:for="{{qmArr}}">
+            <text class="jn-icon icon-qm"></text>
+          </view>
+        </view>
+        <!--三人拼团-->
+        <view class="images-boxes-collages three-people clearfix" wx:if="{{data.peopleCount == 3}}">
+          <view class='images-detail three' wx:for="{{data.currentGroup.picUrls}}" wx:for-index="i">
+            <image src='{{item ? item : jnImg}}'></image>
+            <text class="head" wx:if="{{i === 0}}">团长</text>
+          </view>
+          <view class="special-symbol three" wx:for="{{qmArr}}">
+            <text class="jn-icon icon-qm"></text>
+          </view>
+        </view>
+        <!--两人拼团-->
+        <view class="images-boxes-collages two-people clearfix" wx:if="{{data.peopleCount == 2}}">
+          <view class='images-detail fl two mr50' wx:for="{{data.currentGroup.picUrls}}" wx:for-index="i">
+            <image src='{{item ? item : jnImg}}'></image>
+            <text class="head" wx:if="{{i === 0}}">团长</text>
+          </view>
+          <view class="special-symbol two" wx:for="{{qmArr}}">
+            <text class="jn-icon icon-qm"></text>
+          </view>
+        </view>
+
+        <view class="collage-successed-tip">
+          <!--正在拼团-->
+          <text wx:if="{{data.currentGroup.groupStatus === 'JOINING'}}">还差<text class="jn-color">{{data.peopleCount - joinNumber}}</text>人拼团成功</text>
+          <!--拼团成功-->
+          <text wx:if="{{data.currentGroup.groupStatus === 'FINISH'}}">该团已成功，可选择开团或参与其它团</text>
+          <!--拼团失败-->
+          <text wx:if="{{data.currentGroup.groupStatus === 'CLOSE'}}">该团已失败，款项已原路返回</text>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+  <view class="jn-bg" wx:if="{{length > 0}}"></view>
+
+  <!--从店铺页点进来显示正在开团项目-->
+  <view class="collage-list" wx:if="{{length > 0}}">
+    <view class="sub-title">小伙伴正在开团，可直接参与</view>
+    <view class='detail-imgs-box'>
+      <view class='detail-imgs li' wx:for="{{collageList}}">
+        <image src="{{item.picUrl ? item.picUrl : jnImg}}"></image>
+        <view class="collage-product">
+          <view class="collage-product-name">{{item.captain}}</view>
+          <view class="collage-product-num">还差{{(item.totalPeopleCount - item.groupPeopleCount) ? (item.totalPeopleCount - item.groupPeopleCount) : 0}}人拼团成功 剩余{{item.time}}</view>
+        </view>
+        <view class="collage-btn" wx:if="{{item.totalPeopleCount > item.groupPeopleCount}}" bindtap="onGoJoinCollageClick" data-groupid="{{item.groupId}}">去参团</view>
+        <view class="collage-btn" wx:if="{{item.totalPeopleCount === item.groupPeopleCount}}">已成功</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="jn-bg"></view>
+
+  <!--适用门店  -->
+  <view class="store-box">
+    <view class="sub-title" bindtap="onStoreClick">
+      适用门店 <text class="jn-icon icon-more fr"></text>
+    </view>
+    <view class="store">
+      <view class="store-name">{{storeName}}</view>
+      <view class="address-and-tel">
+        <icon class="jn-icon icon-address"></icon>
+        <text class='address-text'>{{address}}</text>
+        <view class="fr tel-box" catchtap="onTelClick">
+          <view class="jn-icon icon-tel"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="jn-bg"></view>
+
+  <view class='margin-b130'>
+    <view class="product-detail bd" wx:if="{{productImgs && productImgs.length > 0}}">
+      <view class="product-detail-text">商品详情</view>
+      <image wx:for="{{productImgs}}" src="{{item.url ? item.url : jnImg}}"></image>
+    </view>
+
+    <view class="activity-notice bd" wx:if="{{data.activityNotes && data.activityNotes.length > 0}}">
+      <view class="activity-notice-text activity-notice-text-title1">活动须知</view>
+      <view class="notice-item" wx:for="{{data.activityNotes}}">
+        <view class="activity-notice-text activity-notice-text-title">{{item.title}}</view>
+        <view class='notice' wx:for="{{item.details}}" wx:for-item="notice">{{index+1}}. {{notice}}</view>
+      </view>
+    </view>  
+
+    <!--顾客评价-->
+  <view class="comment-box" wx:if="{{commentList && commentList.length > 0}}">  
+    <view class="sub-title"><icon class="jn-icon icon-Evaluation"></icon> 评价</view>
+    <scroll-view scroll-y="true" bindscrolltolower="onScrollTolower">
+    <!--循环的评价-->
+    <view class="comment-list">
+      <view wx:for="{{commentList}}" wx:for-item="comment" class="comment-item-box w-inner">
+        <view class="comment-top">
+          <image src="{{comment.headImageUrl}}"></image>
+          <view class="comment-top-center">
+            <view>{{comment.nick}}</view>
+            <!--星级-->
+            <view class="start-box">
+              <view class="space-start-box">
+                 <icon wx:for="{{starArr}}" class="jn-icon icon-starempty"></icon>
+              </view>
+              <view class="starts-box">
+                 <icon wx:for="{{starArr}}" wx:for-item="star" wx:if="{{comment.score > star}}" class="jn-icon icon-stars"></icon>
+              </view>
+            </view>
+          </view>
+          <view class="comment-time-box">
+            <text>{{comment.date}} </text>   
+            <text>{{comment.time}}</text>
+          </view>
+        </view>
+        <view class="comment-content"> {{comment.content}} </view>
+        <view class="comment-images">
+          <image wx:for="{{comment.imagesUrl}}" src="{{item}}" bindtap="onImgItemClick" data-url="{{item}}"></image>
+        </view>
+      </view>
+    </view>
+    </scroll-view>
+  </view>
+  </view>
+
+  <view wx:if="{{!groupId}}">
+    <view class="jn-btn" wx:if="{{data.product.inventory > 0}}" bindtap="onOpenGroupBtnClick">一键开团{{presentPrice}}元</view>
+    <view class="jn-btn disabled" wx:else>库存不足，可选择参团</view>
+  </view>
+
+  <!--通过分享进来的按钮  -->
+  <view wx:else class="jn-btn">
+    <view class="shared-one" wx:if="{{data.currentGroup.groupStatus === 'JOINING'}}">
+      <text class="fl" bindtap='onOpenGroupBtnClick'>我要开团</text>
+      <text bindtap='onGoJoinCollageClick'>一键参团</text>
+    </view>
+    <view class="shared-two" wx:elif="{{data.currentGroup.groupStatus === 'FINISH'}}">
+      <text class="fl">该拼团已成功</text>
+      <text bindtap='onOpenGroupBtnClick'>我来开这个团</text>
+    </view>
+    <view class="shared-three" wx:elif="{{data.currentGroup.groupStatus === 'CLOSE'}}">
+      <text class="fl">该拼团已失败</text>
+      <text bindtap='onOpenGroupBtnClick'>我来开这个团</text>
+    </view>
+  </view>
+</view>
+
+<!--授权弹框  -->
+<view class="alert-bg" wx:if="{{!getUserInfo}}">
+  <view class="alert-box">
+    <view class="alert-title">温馨提示</view>
+    <view class="alert-tip">您需要先授权才能正常访问</view>
+    <button class="alert-btn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">确定</button>
+  </view>
+</view>
+
+<view wx:if='{{showBtn}}' class='comeBackHome' bindtap='comeBackHome'>去首页</view>
+</view>
+
+
+
+
+<view class="container2" wx:if='{{!showStore}}'>
+  <!--搜索地址列表-->
+  <block wx:if="{{applyStores.length > 0}}">
+    <scroll-view scroll-y style="height: {{windowHeight}}px;">
+      <view class="address-list" wx:for="{{applyStores}}"
+       data-storeid="{{item.storeId}}" data-storename="{{item.storeName}}">
+        <view class="address-box" hover-class="address-box-active">
+          <view>{{item.storeName}}</view>
+          <view class="address-detail"> <icon class='jn-icon icon-weizhix'></icon> {{item.storeAddress}}</view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class='buttons'  bindtap="routerToStoreIndex">返回</view>
+  </block>
+</view>

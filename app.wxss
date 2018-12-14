@@ -32,6 +32,7 @@
   height: 0;
   clear: both;
 }
+
 .clearfix {
   zoom: 1;
 }
@@ -50,7 +51,7 @@ page {
 
 .jn-bg {
   height: 20rpx;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 100vw;
 }
 
@@ -64,22 +65,23 @@ page {
   line-height: 100rpx;
   text-align: center;
   font-size: 32rpx;
-  color: #FFFFFF;
+  color: #fff;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100vw;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: .2rpx;
-} 
+  -webkit-text-stroke-width: 0.2rpx;
+}
 
 .placeholder {
   font-family: "PingFangSC-Regular";
   font-size: 28rpx;
-  color: #999999;
+  color: #999;
 }
 
 /*优惠券样式 start  */
+
 .ticket-block {
   padding-left: 30rpx;
   padding-bottom: 20rpx;
@@ -96,10 +98,12 @@ page {
   font-size: 22rpx;
   color: #0f2b27;
 }
+
 .tickte-item2 {
-  color: #999999;
+  color: #999;
   border: 1rpx solid #999;
 }
+
 .tickte-item2 .ticket-price-box {
   border-right: 1rpx dashed #999;
 }
@@ -133,7 +137,7 @@ page {
 
 .ticket-price-box {
   width: 200rpx;
-  padding-top: 40rpx; 
+  padding-top: 40rpx;
   border-right: 1rpx dashed #336964;
   font-size: 30rpx;
 }
@@ -149,9 +153,10 @@ page {
   height: 100%;
   text-align: center;
 }
+
 .ticket-btn {
   font-size: 30rpx;
-  color: #FFFFFF;
+  color: #fff;
   text-align: center;
   background: #336964;
   height: 100%;
@@ -159,6 +164,7 @@ page {
   box-sizing: border-box;
   border-left: 1rpx dotted #fff;
 }
+
 .ticket-btn2 {
   color: #999;
   background-color: #dedede;
@@ -170,8 +176,9 @@ page {
 }
 
 .ticket-type {
-  font-size: 24rpx; 
+  font-size: 24rpx;
 }
+
 .ticket-type-gift {
   padding-top: 46rpx;
 }
@@ -179,20 +186,23 @@ page {
 .ticket-price-box>view {
   line-height: 48rpx;
 }
+
 .ticket-title {
   padding-top: 30rpx;
   margin-bottom: 14rpx;
   width: 100%;
-  max-width:100%;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  display:-webkit-box;
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp:1;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
+
 /*优惠券样式 end  */
 
 /*底部桔牛logo样式  */
+
 .juniu-bottom {
   background: #fff;
   text-align: center;
@@ -201,14 +211,14 @@ page {
   bottom: 40rpx;
   width: 100vw;
 }
+
 .juniu-bottom image {
   width: 80rpx;
   height: 40rpx;
 }
 
-
-
 /* 弹框样式 start */
+
 .alert-bg {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100vw;
@@ -218,6 +228,7 @@ page {
   left: 0;
   z-index: 999;
 }
+
 .alert-box {
   width: 540rpx;
   /* height: 292rpx; */
@@ -229,21 +240,25 @@ page {
   border-radius: 20rpx;
   text-align: center;
 }
+
 .alert-top {
   height: 80rpx;
   background-color: #f2f2f2;
   border-radius: 20rpx 20rpx 0 0;
 }
+
 .alert-title {
   font-size: 28rpx;
   padding: 40rpx 0 20rpx;
   color: #333;
 }
+
 .alert-tip {
   font-size: 24rpx;
-  color: #999999;
+  color: #999;
   padding-bottom: 35rpx;
 }
+
 .alert-btn {
   font-size: 28rpx;
   color: #999;
@@ -251,18 +266,22 @@ page {
   line-height: 80rpx;
   border-top: 1rpx solid #eee;
 }
+
 .alert-btnl, .alert-btnr {
   width: 50%;
   box-sizing: border-box;
   float: left;
 }
+
 .alert-btnr {
   color: #336964;
   height: 80rpx;
 }
+
 /* 弹框样式 end */
 
 /* 授权 start */
+
 .shouquan-box {
   background-color: #fff;
   position: fixed;
@@ -272,65 +291,75 @@ page {
   right: 0;
   text-align: center;
   font-size: 30rpx;
-  color: #888888;
+  color: #888;
   padding: 0 50rpx;
   z-index: 9999;
 }
+
 .shouquan-box image {
   width: 170rpx;
   height: 140rpx;
   margin: 240rpx auto 190rpx;
 }
+
 .shouquan-title {
   font-size: 40rpx;
-  color: #000000;
+  color: #000;
   padding-bottom: 30rpx;
 }
+
 .shouquan-btn {
   width: 670rpx;
   height: 94rpx;
   margin: 60rpx auto;
   line-height: 94rpx;
   color: #fff;
-  background-color: #1AAD19;
+  background-color: #1aad19;
 }
 
 /* 拼团center部分start */
-  .center-content {
+
+.center-content {
   padding: 0 30rpx;
-  background-color: #FFF;
+  background-color: #fff;
 }
+
 .center-content .collage-person {
   font-family: PingFangSC-Regular;
   font-size: 28rpx;
-  color: #000000;
+  color: #000;
   letter-spacing: 0;
   line-height: 88rpx;
   border-bottom: 2rpx solid #f5f5f5;
   -webkit-font-smoothing: antialiased;
 }
-.center-content .collage-person .notes{
+
+.center-content .collage-person .notes {
   font-size: 24rpx;
   color: #888;
   display: inline-block;
-  margin-left: 12rpx
+  margin-left: 12rpx;
 }
+
 .center-content .collage-person .check-all {
-  color: #999999;
+  color: #999;
   font-size: 28rpx;
 }
+
 .center-content .collage-person .check-all .icon-rightblue {
   font-size: 32rpx;
-  margin-left: 10rpx
+  margin-left: 10rpx;
 }
 
 .images-box {
   padding: 30rpx 0;
 }
+
 .center-content .images-box .details-img {
   width: 100%;
   height: 100%;
 }
+
 .center-content .images-box .details-img .title-images {
   text-align: center;
   font-family: PingFangSC-Regular;
@@ -339,6 +368,7 @@ page {
   letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
 }
+
 .center-content .images-box .details-img .times {
   width: 100%;
   text-align: center;
@@ -347,43 +377,50 @@ page {
   margin: 10rpx 0 34rpx;
   color: #336964;
 }
+
 .center-content .images-box .details-img .times text {
   display: inline-block;
   width: 36rpx;
   height: 36rpx;
   text-align: center;
   line-height: 36rpx;
-  color: #FFF;
+  color: #fff;
   background-color: #336964;
   border-radius: 4rpx;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: .2rpx;
+  -webkit-text-stroke-width: 0.2rpx;
   margin: 0 10rpx;
 }
-.center-content .images-box .details-img .images-boxes-collages{
+
+.center-content .images-box .details-img .images-boxes-collages {
   padding: 0 20rpx;
-  display:flex;
+  display: flex;
 }
+
 .center-content .images-box .details-img .images-boxes-collages .images-detail {
   width: 144rpx;
   height: 144rpx;
   position: relative;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: .2rpx;
+  -webkit-text-stroke-width: 0.2rpx;
   border-radius: 50%;
   margin-right: 26rpx;
 }
-.center-content .images-box .details-img .images-boxes-collages .special-symbol{
+
+.center-content .images-box .details-img .images-boxes-collages .special-symbol {
   margin-right: 26rpx;
 }
-.center-content .images-box .details-img .images-boxes-collages .special-symbol:last-of-type{
+
+.center-content .images-box .details-img .images-boxes-collages .special-symbol:last-of-type {
   margin-right: 0;
 }
-.center-content .images-box .details-img .images-boxes-collages .images-detail image{
+
+.center-content .images-box .details-img .images-boxes-collages .images-detail image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
+
 .center-content .images-box .details-img .images-boxes-collages .images-detail .head {
   position: absolute;
   bottom: -15rpx;
@@ -392,7 +429,7 @@ page {
   display: inline-block;
   font-family: PingFangSC-Medium;
   font-size: 20rpx;
-  color: #FFFFFF;
+  color: #fff;
   letter-spacing: 0;
   background: #336964;
   border-radius: 15rpx;
@@ -402,71 +439,87 @@ page {
   text-align: center;
   -webkit-font-smoothing: antialiased;
 }
-.center-content .images-box .details-img .images-boxes-collages .images-detail .bg{
-  background-color: #ccc!important;
+
+.center-content .images-box .details-img .images-boxes-collages .images-detail .bg {
+  background-color: #ccc !important;
 }
+
 .center-content .images-box .details-img .images-boxes-collages .special-symbol:last-of-type {
   margin-right: 0;
 }
+
 .center-content .images-box .details-img .images-boxes-collages .special-symbol {
   border: 2rpx dashed rgba(136, 136, 136, 0.5);
   text-align: center;
   line-height: 140rpx;
   font-size: 0;
-  color: #C3C3C3;
+  color: #c3c3c3;
   width: 140rpx;
   height: 140rpx;
-  border-radius: 50%
+  border-radius: 50%;
 }
+
 .center-content .images-box .details-img .images-boxes-collages .special-symbol .icon-diandian {
   font-size: 60rpx;
 }
+
 .center-content .images-box .details-img .images-boxes-collages .special-symbol .icon-qm {
   font-size: 60rpx;
 }
+
 .center-content .images-box .details-img .three-people {
   padding: 0 26rpx;
 }
+
 .center-content .images-box .details-img .three-people .three {
   margin-right: 104rpx;
-  float: left
+  float: left;
 }
+
 .center-content .images-box .details-img .three-people .three:last-of-type {
   margin-right: 0;
 }
+
 .center-content .images-box .details-img .two-people {
   padding: 0 154rpx;
 }
-.center-content .images-box .details-img .images-boxes-collages .mr100{
-  margin-right: 100rpx
+
+.center-content .images-box .details-img .images-boxes-collages .mr100 {
+  margin-right: 100rpx;
 }
+
 .center-content .images-box .details-img .images-boxes-collages .mr50 {
-  margin-right: 50rpx
+  margin-right: 50rpx;
 }
-.center-content .images-box .details-img .two-people .two:last-of-type{
+
+.center-content .images-box .details-img .two-people .two:last-of-type {
   float: right;
 }
-.center-content .images-box .details-img .failed-collage{
+
+.center-content .images-box .details-img .failed-collage {
   font-family: PingFangSC-Regular;
   font-size: 24rpx;
-  color: #888888;
+  color: #888;
   letter-spacing: 0;
   width: 100%;
   text-align: center;
   line-height: 40rpx;
   margin-top: 30rpx;
 }
+
 .center-content .images-box .details-img .failed-collage-text {
   width: 100%;
   text-align: center;
   font-family: PingFangSC-Regular;
-  color: #888888;
+  color: #888;
   letter-spacing: 0;
 }
+
 .center-content .images-box .details-img .btns_add {
   text-align: center;
   font-size: 0;
 }
+
 .center-content .images-box .details-img .btns_add .invite-btns {
   display: inline-block;
   width: 300rpx;
@@ -478,21 +531,32 @@ page {
   letter-spacing: 0;
   border-radius: 35rpx;
   margin-top: 44rpx;
-  color: #FFFFFF;
+  color: #fff;
   background-color: #336964;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: .2rpx;
+  -webkit-text-stroke-width: 0.2rpx;
 }
+
 /* 拼团center部分end */
-.comeBackHome{
-  font-size:28rpx;
-  padding:0 30rpx;
-  height:56rpx;
-  background-color:#336964;
-  border-radius:0 28rpx 28rpx 0;
-  color:#FFF;
-  line-height:56rpx;
-  position:fixed;
-  bottom:10%;
-  z-index:10000
+
+.comeBackHome {
+  font-size: 28rpx;
+  padding: 0 30rpx;
+  height: 56rpx;
+  background-color: #336964;
+  border-radius: 0 28rpx 28rpx 0;
+  color: #fff;
+  line-height: 56rpx;
+  position: fixed;
+  bottom: 10%;
+  z-index: 10000;
+}
+
+.address-and-tel {
+  background-color: #fff;
+  font-size: 28rpx;
+  color: #999;
+  padding: 10rpx 30rpx;
+  border-top: 2rpx solid #f3f3f3;
+  justify-content: space-between;
 }

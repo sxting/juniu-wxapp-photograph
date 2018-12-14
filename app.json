@@ -11,7 +11,8 @@
     "pages/personal/ticket/ticket",
     "pages/personal/collage-order/order/order-list",
     "pages/personal/appointment/appointment",
-    "pages/personal/collage-order/detail/detail"
+    "pages/personal/collage-order/detail/detail",
+    "pages/collage/collage-submit/collage-submit"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -15,7 +15,7 @@ page{
   position: relative
 }
 .head-tips{
-  background-color: #FF8E42;
+  background-color: #629089;
   padding: 26rpx 30rpx;
 }
 .out-time{
@@ -71,7 +71,7 @@ page{
 }
 .jn-content .head-collage .title-collage-detail-box .title-collage-detail .right-box .collage-number {
   font-family: PingFangSC-Regular;
-  color: #FF9D5B;
+  color: #000000;
 }
 .jn-content .head-collage .title-collage-detail-box .title-collage-detail .right-box .top-items-name text {
   line-height: 72rpx;
@@ -174,7 +174,7 @@ page{
 }
 .application-refund-text .icon-error{
   font-size: 36rpx;
-  color: #FF6600;
+  color: #336964;
   margin-right: 10rpx
 }
 
@@ -207,7 +207,7 @@ page{
 .jn-content .footer .store-detail .store-name-box .store-name .popularity {
   font-family: PingFangSC-Regular;
   font-size: 26rpx;
-  color: #FF6600;
+  color: #336964;
   letter-spacing: 0;
 }
 .jn-content .footer .store-detail .store-name-box .store-name .popularity .icon-fire {
@@ -310,7 +310,7 @@ page{
   color: #FFFFFF;
   letter-spacing: 0;
   line-height: 98rpx;
-  background-color: #FF6600;
+  background-color: #336964;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: .2px;
   z-index: 100

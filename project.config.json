@@ -41,8 +41,8 @@
 				{
 					"id": 0,
 					"name": "band",
-					"pathName": "pages/personal/collage-order/detail/detail",
-					"query": "orderNo=154468969200519537364210"
+					"pathName": "pages/collage/collage-submit/collage-submit",
+					"query": "pic=https://fdfs.juniuo.com/juniuo-pic/picture/juniuo/kXJLNlZOadig/resize_750_520/mode_fill&pinTuanId=1544586030998191410709&activityName=拼团活动1&peopleNumber=2&dealGroupNumber=1&activityPrice=1&originalPrice=10000"
 				}
 			]
 		}

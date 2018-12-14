@@ -1,0 +1,52 @@
+<view class="">
+  <view class="order-detail">
+    <view class="img-box">
+      <image src="{{data.pic}}"></image>
+    </view>
+    <view class="detail-content">
+      <view class="collage-name">
+        <text class="product-name">{{data.activityName}}</text>
+        <view style='color:#D43737'>
+          ¥{{data.activityPrice ? data.activityPrice/100 : 0}}元
+        </view>
+      </view>
+
+      <view class='collage-num'>
+        <text>{{data.peopleNumber}}人团  |  </text>已团{{data.dealGroupNumber}}件
+      </view>
+    </view>
+  </view>
+
+  <view class='jn-bg'></view>
+
+  <view>
+  </view>
+
+  <view class="price-box bd">
+    <view class='li'>
+      <text>数量</text>
+      <text class="fr">1份</text>
+    </view>
+    <view class='li'>
+      <text>原价</text>
+      <text class="fr">{{data.originalPrice ? data.originalPrice/100 : 0}}元</text>
+    </view>
+    <view class='li'>
+      <text class="price-text">拼团价</text>
+      <text class="fr"><text class='price'>{{data.activityPrice ? data.activityPrice/100 : 0}}</text>元</text>
+    </view>
+
+  </view>
+
+  <view class="tel-box bd">
+    <text>手机号</text>
+    <input type="number" value="{{tel}}" bindinput="onTelChange" placeholder-class="placeholder" placeholder="请输入手机号" />
+    <button class="tel-btn" open-type="getPhoneNumber" catchgetphonenumber="getUserPhoneNumber">授权手机号</button>
+  </view>
+
+  <view class="order-submit" bindtap='onSubmitClick'>确认支付</view>
+</view>
+
+<view class="juniu-bottom">
+  <image src="/asset/images/logo.png"></image>
+</view>

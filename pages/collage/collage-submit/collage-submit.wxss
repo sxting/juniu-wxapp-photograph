@@ -1,0 +1,143 @@
+page {
+  border-top: 2rpx solid #f3f3f3;
+}
+
+.order-detail {
+  background-color:#fff;
+  padding:30rpx;
+  box-sizing:border-box;
+  height:270rpx;
+  position:relative;
+}
+
+.img-box {
+  width:280rpx;
+  height:200rpx;
+  float:left;
+  border-radius:1;
+}
+
+.img-box image {
+  width: 100%;
+  height: 100%;
+}
+
+.detail-content {
+  float: left;
+  margin-left: 10rpx;
+}
+
+.collage-name {
+  color: #333;
+  font-size: 32rpx;
+  margin-top: 16rpx;
+}
+
+.collage-name text:last-child {
+  font-size: 26rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 50rpx;
+}
+
+
+
+.collage-num {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 40rpx;
+
+}
+
+.price-box {
+  width: 690rpx;
+  margin: 30rpx auto;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.price-box .li {
+  height: 72rpx;
+  line-height: 72rpx;
+  padding: 0 20rpx;
+}
+
+.price-box .li:last-child {
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.price-box .li>text:first-child {
+  color: #666;
+}
+
+.price-box .li:last-child>text:first-child {
+  font-size: 30rpx;
+}
+
+.price-box .li:last-child>text:last-child {
+  color: #336964;
+}
+
+.price-box .li:last-child .price {
+  font-size: 32rpx;
+}
+
+.order-submit {
+  background-color: #336964;
+  color: #fff;
+  text-align: center;
+  margin: 50rpx auto;
+  height: 84rpx;
+  line-height: 84rpx;
+  width: 690rpx;
+  font-size: 36rpx;
+}
+
+.product-name {
+  display: inline-block;
+  width: 400rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size:28rpx;
+  color: #333;
+}
+
+.tel-box {
+  height: 88rpx;
+  line-height: 88rpx;
+  position: relative;
+  width: 690rpx;
+  margin: 30rpx auto;
+  font-size: 26rpx;
+  color: #333;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.tel-box input {
+  height: 88rpx;
+  line-height: 88rpx;
+  position: absolute;
+  left: 130rpx;
+  top: 0;
+  width: 220rpx;
+}
+
+.placeholder {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.tel-btn {
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  background: #fff;
+  color: #336964;
+  border: 1rpx solid #336964;
+  border-radius: 1rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
