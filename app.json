@@ -10,7 +10,8 @@
     "pages/personal/member-card/band/band",
     "pages/personal/ticket/ticket",
     "pages/personal/collage-order/order/order-list",
-    "pages/personal/appointment/appointment"
+    "pages/personal/appointment/appointment",
+    "pages/personal/collage-order/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,4 +1,4 @@
-<view class='jn-content page'>
+<view class='jn-content page' wx:if='{{showStore}}'>
   <!--未支付的时候  提示的小tip-->
   <view class='head-tips clearfix' wx:if="{{orderDetailArr.orderStatus === 'PRE_PAYMENT'}}">
     <text class='fl jn-icon icon-clock'></text>
@@ -194,4 +194,20 @@
     </view>
   </view>
   <view wx:if='{{showBtn}}' class='comeBackHome' bindtap='comeBackHome'>去首页</view>
+</view>
+
+<view class="container2" wx:else>
+  <!--搜索地址列表-->
+  <block wx:if="{{applyStores.length > 0}}">
+    <scroll-view scroll-y style="height: {{windowHeight}}px;">
+      <view class="address-list" wx:for="{{applyStores}}"
+       data-storeid="{{item.storeId}}" data-storename="{{item.storeName}}">
+        <view class="address-box" hover-class="address-box-active">
+          <view>{{item.storeName}}</view>
+          <view class="address-detail"> <icon class='jn-icon icon-weizhix'></icon> {{item.storeAddress}}</view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class='buttons'  bindtap="routerToStoreIndex">返回</view>
+  </block>
 </view>
