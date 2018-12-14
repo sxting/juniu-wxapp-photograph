@@ -1,4 +1,4 @@
-import { service } from '../../service';
+import { service } from '../../service.js';
 import { errDialog, loading } from '../../utils/util';
 import { constant } from '../../utils/constant';
 
@@ -15,17 +15,17 @@ Page({
   onLoad: function () {
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
-      backgroundColor: '#2d5e59',
+      backgroundColor: '#FF6400',
     })
     wx.setNavigationBarTitle({
       title: wx.getStorageSync('storeName'),
     })
     let self = this;
-    app.userInfoReadyCallback = () => {
+    setTimeout(function () {
       self.setData({
         userInfo: app.globalData.userInfo
       });
-    }
+    }, 200)
   },
 
   onShow() {
@@ -74,7 +74,12 @@ Page({
     })
   },
 
- 
+  // 跳转到我的评价页面
+  goMyComment: function () {
+    wx.navigateTo({
+      url: '/pages/personal/comment/comment',
+    })
+  },
 
   goMyMemberCard: function () {
     wx.navigateTo({
