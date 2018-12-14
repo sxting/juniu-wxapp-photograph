@@ -1,40 +1,40 @@
-/* pages/product/select/select.wxss */
+.prodoct-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 30rpx;
+}
+.prodoct-item {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #333333;
+  line-height: 40rpx;
+  padding-bottom: 10rpx;
+}
 
 .head-img {
-  width: 128rpx;
-  height: 96rpx;
-  margin-right: 20rpx;
-  border-radius: 8rpx;
-  margin-top:10rpx;
+  width: 330rpx;
+  height: 240rpx;
+  margin-bottom: 10rpx;
 }
 
 .product-name {
   margin-bottom: 32rpx;
-  font-size: 30rpx;
-}
-
-.title {
-  border-bottom: 1rpx solid #e5e5e5;
-  padding:20rpx 30rpx;
-}
-
-.drown {
-  transform: rotate(90deg);
 }
 
 .current-price {
-  font-family: PingFangSC-Medium;
-  font-size: 16px;
-  color: #f60;
+  font-size: 26rpx;
+  color: #D43737;
   margin-top: 10rpx;
 }
 
-.space-box {
-     padding-bottom:552rpx;
+.original-price {
+  color: #999;
+  text-decoration: line-through;
+  padding-left: 20rpx;
 }
 
-.sold-box {
-  padding-left: 20rpx;
-  font-size: 25rpx;
-  color: #999999;
+.space-box {
+  padding-bottom:552rpx;
 }
