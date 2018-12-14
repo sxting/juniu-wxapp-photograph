@@ -5,6 +5,7 @@
     "pages/sample/index/index",
     "pages/reserve/index/index",
     "pages/personal/index/index",
+    "pages/product/select/select",
     "pages/sample/workDetail/workDetail",
     "pages/personal/member-card/band/band",
     "pages/personal/ticket/ticket",

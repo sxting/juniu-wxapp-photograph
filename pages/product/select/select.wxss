@@ -1,0 +1,40 @@
+/* pages/product/select/select.wxss */
+
+.head-img {
+  width: 128rpx;
+  height: 96rpx;
+  margin-right: 20rpx;
+  border-radius: 8rpx;
+  margin-top:10rpx;
+}
+
+.product-name {
+  margin-bottom: 32rpx;
+  font-size: 30rpx;
+}
+
+.title {
+  border-bottom: 1rpx solid #e5e5e5;
+  padding:20rpx 30rpx;
+}
+
+.drown {
+  transform: rotate(90deg);
+}
+
+.current-price {
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  color: #f60;
+  margin-top: 10rpx;
+}
+
+.space-box {
+     padding-bottom:552rpx;
+}
+
+.sold-box {
+  padding-left: 20rpx;
+  font-size: 25rpx;
+  color: #999999;
+}
