@@ -11,7 +11,7 @@ Page({
   data: {
     storeId: wx.getStorageSync(constant.STORE_INFO) ||'1531800050458194516965',
     worksList: [],
-    imageWidth: 168,
+    imageWidth: 414,
   },
 
   /**

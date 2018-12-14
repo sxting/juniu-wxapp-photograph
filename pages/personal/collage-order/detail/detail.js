@@ -30,7 +30,8 @@ Page({
     isOnLoad: false,
     applyStores: [],
     timerAll: '',
-    showBtn: false
+    showBtn: false,
+    showStore: true,
   },
 
   /*** 生命周期函数--监听页面加载 */
@@ -108,11 +109,15 @@ Page({
 
   /**  适用门店  ***/ 
   storeListClick(){
-    wx.navigateTo({
-      url: '/pages/index/index?pinTuanId=' + this.data.activityId + '&stores=' + JSON.stringify(this.data.applyStores),
+    this.setData({
+      showStore: false,
     })
   },
-
+  routerToStoreIndex(){
+    this.setData({
+      showStore: true,
+    })
+  },
   /** 立即支付 */ 
   orderPaymentClick(){
     orderPayment.call(this);

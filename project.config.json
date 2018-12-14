@@ -41,8 +41,8 @@
 				{
 					"id": 0,
 					"name": "band",
-					"pathName": "pages/product/select/select",
-					"query": ""
+					"pathName": "pages/personal/collage-order/detail/detail",
+					"query": "orderNo=154468969200519537364210"
 				}
 			]
 		}
