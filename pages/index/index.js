@@ -38,11 +38,7 @@ Page({
             console.log('获取用户登录态失败！' + result.errMsg)
           }
         },
-        fail: function (res) {
-          self.setData({
-            getUserInfo: false
-          })
-        },
+        fail: function (res) {},
         complete: function (res) { },
       });
     }
@@ -74,8 +70,17 @@ function logIn(code, appId, rawData) {
         key: constant.TOKEN,
         data: res.juniuToken,
         success: function (res) {
-          console.log(self.data.options);
-          console.log(!self.data.options);
+          // console.log(self.data.options);
+          wx.reLaunch({
+            url: '/pages/home/home',
+          })
+
+          setTimeout(function() {
+            if (app.userInfoReadyCallback) {
+              app.userInfoReadyCallback(res)
+            }
+          }, 200)
+          
           if (!self.data.options) {
             wx.reLaunch({
               url: '/pages/home/home',

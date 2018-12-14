@@ -9,26 +9,25 @@ const app = getApp()
 
 Page({
   data: {
-    productImages: [
-    ],
-    storeId: '',
-    storeName: '',
-    scene: 0,
-    storeInfo: {},
-    fromNeighbourhood: false,
-    ticketList: [],
+    // productImages: [
+    // ],
+    // storeId: '',
+    // storeName: '',
+    // scene: 0,
+    // storeInfo: {},
+    // ticketList: [],
     juniuImg: '/asset/images/product.png',
-    showSearchMoreTicket: true,
-    storeAddress: '',
-    tel: '',
-    latitude: '',
-    longitude: '',
+    // showSearchMoreTicket: true,
+    // storeAddress: '',
+    // tel: '',
+    // latitude: '',
+    // longitude: '',
     home: true,
     isOnLoad: false,
-    getUserInfo: true,
-    collageProductList: [],//拼团列表
-    productTagName: '精选套餐',
-    productionList: [], //展示作品
+    // getUserInfo: true,
+    // collageProductList: [],//拼团列表
+    // productTagName: '精选套餐',
+    // productionList: [], //展示作品
   },
 
   onShow() {
@@ -40,11 +39,10 @@ Page({
 
   onLoad: function () {
     let self = this;
-    console.log('onload');
     app.userInfoReadyCallback = (res) => {
-      this.setData({
-        getUserInfo: app.globalData.hasUserInfo
-      })
+      // this.setData({
+      //   getUserInfo: app.globalData.hasUserInfo
+      // })
       getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
       wx.getLocation({
         success: function (result) {
@@ -61,7 +59,6 @@ Page({
         }
       })
     };
-    console.log(app.userInfoReadyCallback);
   },
 
   // 跳转到查看更多拼团列表页
@@ -88,32 +85,6 @@ Page({
       current: imgalist, // 当前显示图片的http链接 
       urls: imgalist // 需要预览的图片http链接列表 
     })
-  },
-
-  bindgetuserinfo(e) {
-    let self = this;
-    if (e.detail.errMsg == 'getUserInfo:ok') {
-      wx.login({
-        success: function (result) {
-          self.setData({
-            getUserInfo: true
-          })
-          let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-          let appId = 'wx3bb038494cd68262';
-          if (result.code) {
-            logIn.call(self, result.code, extConfig.theAppid ? extConfig.theAppid : appId, e.detail.rawData);
-          } else {
-            console.log('获取用户登录态失败！' + result.errMsg)
-          }
-        },
-        fail: function (res) {
-          self.setData({
-            getUserInfo: false
-          })
-        },
-        complete: function (res) { },
-      });
-    }
   },
 
   onHide() {
@@ -301,14 +272,6 @@ Page({
     wx.navigateTo({
       url: '/pages/personal/member-card/band/band?marketingid=' + e.currentTarget.dataset.marketingid,
     })
-  },
-
-  // 点击优惠券查看更多
-  onSearchMoreTicketClick() {
-    this.setData({
-      showSearchMoreTicket: false
-    })
-    getAllTicket.call(this, this.data.storeId);
   }
 })
 
@@ -463,7 +426,7 @@ function getSysConfig(configKey) {
     next: res => {
       if (configKey === `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`) {
         self.setData({
-          productTagName: res.configValue ? res.configValue : self.data.productTagName
+          productTagName: res.configValue ? res.configValue : '精选套餐'
         })
       }
     },
@@ -506,7 +469,6 @@ function getTicketInfo(storeId) {
 
 // 获取全部的优惠券
 function getAllTicket(storeId) {
-  console.log(storeId);
   let self = this;
   ticketService.allCouponlist({
     storeId: storeId
