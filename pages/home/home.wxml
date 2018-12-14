@@ -185,9 +185,9 @@
 </view>
 
 <!--授权弹框  -->
-<view class="shouquan-box" wx:if="{{!getUserInfo}}">
+<!-- <view class="shouquan-box" wx:if="{{!getUserInfo}}">
   <image src='/asset/images/shouquan-icon.png'></image>
   <view class="shouquan-title">微信授权登录，享受更多服务</view>
   <view class="shouquan-tip">登录获取您的公开信息(昵称、头像等)，以便为您提供专属的定制服务，不会涉及您的个人隐私</view>
   <button class="shouquan-btn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">微信授权登录</button>
-</view>
+</view> -->

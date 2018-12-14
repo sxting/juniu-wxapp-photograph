@@ -25,7 +25,7 @@ Page({
     longitude: '',
     home: true,
     isOnLoad: false,
-    getUserInfo: false,
+    getUserInfo: true,
     collageProductList: [],//拼团列表
     productTagName: '精选套餐',
     productionList: [], //展示作品
