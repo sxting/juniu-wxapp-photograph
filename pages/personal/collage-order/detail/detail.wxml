@@ -162,7 +162,7 @@
     <view class="store-detail" wx:if="{{collageStatus != 'FINISH'}}">
       <view class="clearfix store-list-btn" bindtap='storeListClick'>
         <text class="fl">适用门店</text>
-        <view class="jn-icon icon-rightblue fr"></view>
+        <view class="jn-icon icon-more fr"></view>
       </view>
       <view class="store-name-box">
         <view class="store-name">
