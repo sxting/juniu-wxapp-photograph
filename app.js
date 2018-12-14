@@ -17,7 +17,6 @@ App({
         // 获取用户信息
         wx.getSetting({
           success: res => {
-            console.log(res)
             if (res.authSetting['scope.userInfo']) {
               wx.getUserInfo({
                 success: res => {
@@ -69,7 +68,12 @@ App({
                 }
               })
             } else {
-              // this.globalData.hasUserInfo = false;
+
+              this.globalData.hasUserInfo = false;
+              console.log(options);
+              wx.reLaunch({
+                url: '/pages/index/index',
+              })
             }
           }
         })

@@ -1,0 +1,41 @@
+<!--pages/personal/appointment/appointment.wxml-->
+<view wx:if="{{appointmentInfo.length > 0}}">
+  <scroll-view scroll-y="true" lower-threshold="100" class="mainBox">
+  <view class="classname">
+    <view class="BOX" wx:for="{{appointmentInfo}}">
+      <view class="main">
+        <view class="mainTop">
+          <view class="topLeft">{{item.phone}}</view>
+          <view class="topRight">
+            <text class="color1" wx:if="{{item.status==='INIT'}}"> 待商家接单</text>
+            <text class="color2" wx:if="{{item.status==='SUCCESS'}}"> 商家已接单</text>
+            <text class="color3" wx:if="{{item.status==='CANCEL'}}"> 预约已取消</text>
+            <text class="color4" wx:if="{{item.status==='REFUSE'}}"> 商家已拒绝</text>
+          </view>
+        </view>
+        <view class="middle bottom">
+          <view class="middle1">预约时间</view>
+          <view class="middle3">{{item.reserveDate}}</view>
+        </view>
+        <view class="bottom">
+          <view class="bottomLeft">预约项目</view>
+          <view class="bottomRight">{{item.productName?item.productName: '无'}}</view>
+        </view>
+        <!-- <view class="bottom">
+          <view class="bottomLeft">预约手艺人</view>
+          <view class="bottomRight">{{item.staffName?item.staffName: '无'}}</view>
+        </view> -->
+        <view class="bottom">
+          <view class="bottomLeft">备注</view>
+          <view class="bottomRight">{{item.note?item.note: '无'}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </scroll-view>
+</view>
+
+<view class="space-box" wx:else>
+  <view class="space-bg"><image src="/asset/images/nofind.png"></image></view>
+  <view class="space-text">暂无预约</view>
+</view>

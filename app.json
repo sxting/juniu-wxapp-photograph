@@ -8,7 +8,8 @@
     "pages/sample/workDetail/workDetail",
     "pages/personal/member-card/band/band",
     "pages/personal/ticket/ticket",
-    "pages/personal/collage-order/order/order-list"
+    "pages/personal/collage-order/order/order-list",
+    "pages/personal/appointment/appointment"
   ],
   "window": {
     "backgroundTextStyle": "light",
