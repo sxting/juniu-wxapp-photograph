@@ -2,9 +2,7 @@
   <view class='works-item-box' style='width:vw'>
     <view class='works-item' wx:for="{{worksList}}" bindtap='goWorkDetail' data-type='{{item.sourceType}}' data-list='{{item.merchantMediaDTOS}}' data-id='{{item.productionId}}'>
       <image wx:if="{{item.sourceType === 'VIDEO'}}" style='width:88rpx;height:88rpx;' class='video-icon' src='/asset/images/video.png'></image>
-      <image  wx:if="{{item.sourceType === 'VIDEO'}}" class='work-img' src='{{item.url}}' style='height:{{item.height }} rpx;width:100%;'></image>
-      <image  wx:else class='work-img' src='{{item.url}}' style='height:{{item.height*2 }} rpx;width:100%;'></image>
-
+      <image   class='work-img' src='{{item.url}}' style='height:{{item.height}}rpx;width:100%;'></image>
       <view class='work-name'>{{item.name}} <text wx:if="{{item.sourceType !== 'VIDEO'}}"> / {{item.merchantMediaDTOS.length}}张</text></view>
     </view>
   </view>
