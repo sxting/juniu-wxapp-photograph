@@ -7,6 +7,7 @@
     "pages/personal/index/index",
     "pages/product/select/select",
     "pages/product/detail/detail",
+    "pages/pay/pay",
     "pages/sample/workDetail/workDetail",
     "pages/personal/member-card/band/band",
     "pages/personal/ticket/ticket",
