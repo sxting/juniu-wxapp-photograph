@@ -1,0 +1,122 @@
+.product-image{
+    width: 100vw;
+    height: 540rpx;
+    display: block;
+}
+.product {
+  position: relative;
+  width: 100vw;
+  height: 610rpx;
+  background-color: #fff;
+}
+.product-box {
+    background-color: #336964;
+    padding: 20rpx;
+    width: 690rpx;
+    height: 240rpx;
+    box-sizing: border-box;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -345rpx;
+}
+.product-box image {
+  height: 200rpx;
+  width: 280rpx;
+}
+.product-right {
+  padding-top: 26rpx;
+  padding-left: 30rpx;
+  width: 340rpx;
+}
+.product-name {
+  font-size: 28rpx;
+}
+.share-btn {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #336964;
+  border: none;
+  outline: none;
+  float: right;
+  text-align: center;
+  line-height: 40rpx;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 30rpx;
+  right: 30rpx;
+}
+.share-btn::after {
+  border: none;
+}
+ .icon-fenxiang {
+  font-size: 44rpx;
+  color: #fff;
+} 
+.price-box{
+    font-size: 34rpx;
+    padding-top: 30rpx;
+}
+
+
+.store-box {
+  background-color: #fff;
+  color: #333333;
+  font-size: 32rpx;
+  padding: 30rpx 30rpx 0;
+}
+.store-box .sub-title {
+  padding-bottom: 20rpx;
+}
+.store-name {
+  font-size: 28rpx;
+  padding-bottom: 30rpx;
+}
+
+
+.product-detail, .notice {
+  background-color: #fff;
+  margin-top: 20rpx;
+} 
+ .notice {
+  padding: 30rpx;
+ }
+.product-detail image {
+  width: 100vw;
+  height: 480rpx;
+  margin-top: 20rpx;
+}
+
+.notice-item {
+  font-size: 24rpx;
+  color: #999999;
+}
+.notice-item-title {
+  font-size: 26rpx;
+  color: #666;
+}
+.sub-title {
+  font-size: 32rpx;
+  color: #333333;
+}
+
+.go-pay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #FF6600;
+  color: #fff;
+  font-size: 36rpx;
+  width: 100vw;
+}
+
+
+
+
+
+
