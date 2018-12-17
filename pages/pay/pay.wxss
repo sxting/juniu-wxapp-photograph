@@ -1,0 +1,227 @@
+.product {
+  height: 200rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-top: 2rpx solid #f3f3f3;
+  display: flex;
+}
+.product image {
+  width: 190rpx;
+  height: 140rpx;
+  border-radius: 8rpx;
+}
+.product-right {
+  display: inline-block;
+  padding-left: 30rpx;
+}
+.product-name {
+  line-height: 70rpx;
+}
+.product-price {
+  color: #ff6600;
+}
+.product-price text {
+  font-size: 48rpx;
+}
+
+.item {
+  box-shadow: 0 2rpx 6rpx 0 #D8D8D8;
+  border-radius: 8rpx;
+  width: 690rpx;
+  margin: 30rpx auto;
+  font-size: 30rpx;
+  color: #333333;
+}
+.item>view {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 20rpx;
+}
+.count-box {
+  border-top: 2rpx solid #F3F3F3;
+  border-bottom: 2rpx solid #F3F3F3; 
+}
+.count-btn {
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  width: 128rpx;
+  border: 2rpx solid #999;
+  border-radius: 36rpx;
+  margin-top: 20rpx;
+}
+.count-btn>text {
+  width: 44rpx;
+  height: 44rpx;
+  display: inline-block;
+}
+.count-btn .count {
+  padding: 0 6rpx;
+  width: 40rpx;
+  box-sizing: border-box;
+}
+
+.member-right {
+  border-top: 2rpx solid #F3F3F3;
+  border-bottom: 2rpx solid #F3F3F3;
+}
+.rights .fr {
+  font-size: 24rpx;
+  color: #FF6600;
+}
+.pay-price>.fr {
+  font-size: 34rpx;
+}
+
+.tel>text, .note>text {
+  width: 80rpx;
+  display: inline-block;
+}
+.usermgs {
+  position: relative;
+}
+.usermgs input {
+  display: inline-block;
+  position: absolute;
+  height: 60rpx;
+  line-height: 60rpx;
+  vertical-align: middle;
+  top: 16rpx;
+  left: 100rpx;
+}
+.placeholder {
+  font-size: 13px;
+  color: #999999;
+}
+
+.pay-btn {
+  width: 690rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: #FF6600;
+  color: #fff;
+  font-size: 36rpx;
+  margin: 0 auto;
+  border-radius: 60rpx;
+}
+
+.bottom-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  color: #fff;
+  font-size: 36rpx;
+  background-color: #ff6600;
+}
+.bottom-btn>view {
+  width: 50%;
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.moreyh {
+  background: #23252B;
+}
+
+.bottom-btn .disabled {
+  background-color: #D8D8D8;
+}
+
+.pay-ju-bottom {
+  bottom: 140rpx;
+}
+
+/*会员权益弹框  */
+.member-rights-alert-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.member-rights-alert {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #FFFFFF;
+  box-shadow: 0 -2rpx 6rpx 0 #D8D8D8;
+  border-radius: 12rpx 12rpx 0 0;
+  height: 380rpx;
+}
+.rights-title {
+  font-size: 30rpx;
+  color: #333333;
+  padding: 20rpx 30rpx;
+}
+.card-list {
+  padding-left: 28rpx;
+  display: flex;
+  overflow-x: auto; 
+  margin-right: 28rpx;
+}
+.card {
+  height: 150rpx;
+  width: 210rpx;
+  min-width: 210rpx;
+  display: inline-block;
+  position: relative;
+  margin-right: 8rpx;
+}
+.card image, .cardprice {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cardprice {
+  font-size: 24rpx;
+  color: #A27248;
+  text-align: center;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.chuzhi {
+  color: #723C0D;
+}
+.chuzhi text {
+  font-size: 36rpx;
+}
+.icon-close {
+  position: absolute;
+  right: 30rpx;
+  top: 10rpx;
+  color: #999999;
+  font-size: 40rpx;
+}
+.card-selected {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 50%;
+  background-color: #fff; 
+  text-align: center;
+  color: #ff6600;
+  font-size: 20rpx;
+}
+
+.opencrad {
+  height: 100rpx;
+  width: 100vw;
+  background-color: #ff6600;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  position: absolute;
+  bottom: 0;
+}
+
