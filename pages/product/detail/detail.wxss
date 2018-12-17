@@ -60,6 +60,10 @@
     padding-top: 30rpx;
 }
 
+.sub-title {
+  font-size: 32rpx;
+  color: #333333;
+}
 
 .store-box {
   background-color: #fff;
@@ -76,19 +80,30 @@
 }
 
 
-.product-detail, .notice {
+.product-detail {
+  padding: 30rpx 0;
+}
+.product-detail .sub-title {
+  padding: 0 30rpx 20rpx;
+}
+.product-detail {
   background-color: #fff;
   margin-top: 20rpx;
 } 
- .notice {
-  padding: 30rpx;
- }
 .product-detail image {
   width: 100vw;
   height: 480rpx;
-  margin-top: 20rpx;
+  display: block;
 }
 
+.notice {
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+.notice .sub-title {
+  font-size: 28rpx;
+  color: #666;
+}
 .notice-item {
   font-size: 24rpx;
   color: #999999;
@@ -97,22 +112,20 @@
   font-size: 26rpx;
   color: #666;
 }
-.sub-title {
-  font-size: 32rpx;
-  color: #333333;
-}
 
+.go-pay-bg {
+  background-color: #fff;
+  padding: 30rpx;
+}
 .go-pay {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 100rpx;
-  line-height: 100rpx;
+  height: 88rpx;
+  line-height: 88rpx;
   text-align: center;
-  background-color: #FF6600;
+  background-color: #336964;
   color: #fff;
-  font-size: 36rpx;
-  width: 100vw;
+  font-size: 34rpx;
+  width: 690rpx;
+  margin: 0 auto;
 }
 
 
