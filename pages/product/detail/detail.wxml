@@ -1,0 +1,55 @@
+<view class="container">
+  <view class='product'>
+    <image class="product-image" src="{{productInfo.url ? productInfo.url : juniuImg}}"></image>
+    <view class="product-box">
+      <image class='fl' src='{{productInfo.url2 ? productInfo.url2 : juniuImg}}'></image>
+      <view class='fl product-right'>
+        <view class="product-name">{{productInfo.productName}}</view>
+        <view class="price-box">
+          ￥<text class="current">{{productInfo.currentPrice ? productInfo.currentPrice / 100 : ''}}</text>
+        </view>
+        <button class="share-btn" open-type="share"><text class="jn-icon icon-fenxiang"></text></button>
+      </view>
+    </view>
+  </view>
+
+  <!--适用门店  -->
+  <view class="store-box">
+    <view class="sub-title" bindtap="onStoreClick">
+      适用门店 <text class="jn-icon icon-more fr"></text>
+    </view>
+    <view class="store">
+      <view class="store-name">{{storeName}}</view>
+      <view class="address-and-tel">
+        <view>
+          <text class="jn-icon icon-address"></text>
+          <text class='address-text'>{{address}}</text>
+        </view>
+        <view class="tel-box" catchtap="onTelClick">
+          <view class="jn-icon icon-ShapeCopyx"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <view class='product-detail' wx:if="{{productInfo.descPicIds}}">
+      <view class='sub-title'>商品详情</view>
+      <view class='image-box'>
+        <image wx:for="{{productInfo.descPicUrls}}" src='{{item}}'></image>
+      </view>
+    </view>
+
+    <view class='notice' wx:if="{{productInfo.notice}}">
+      <view class='sub-title'>*活动须知</view>
+      <view class='notice-item' wx:for="{{productInfo.noticeArr}}" wx:for-item="item1">
+        <view class='notice-item-title'>{{item1.title}}</view>
+        <view wx:for="{{item1.details}}" wx:for-item="item2">{{item2}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='go-pay-bg'>
+    <view class="go-pay" bindtap="alertCountSelect">立即购买</view>
+  </view>
+</view> 

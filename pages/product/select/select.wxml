@@ -1,53 +1,20 @@
 <view class="page">
-  <view class="page__bd">
-    <view class="weui-panel">
-    
-      <view wx:if="{{from === 'order'}}" class="weui-cell weui-cell_access title">
-        <view class="weui-cell__bd weui-cell_primary">
-            <view>所有商品</view>
-        </view>
+  <scroll-view scroll-y style='height: 100vh' wx:if="{{productList.length > 0}}" bindscrolltolower="scrolltolower">
+    <view class='prodoct-box'>
+    <view class='prodoct-item' wx:for="{{productList}}" bindtap="onItemClick" data-product-id="{{item.productId}}" data-product-name="{{item.productName}}" data-price="{{item.currentPrice}}">
+      <image src="{{item.picUrl ? item.picUrl : juniuImg}}" class="head-img" />
+      <view>{{item.productName}}</view>
+      <view>
+        <text class='current-price'>￥{{item.currentPrice/100}}</text>
+        <text class='original-price'>￥{{item.originalPrice/100}}</text>
       </view>
-
-      <picker wx:else range-key="categoryName" range="{{categoryList}}" bindchange="rangeValueChange">
-        <view class="weui-cell weui-cell_access title">
-          <view class="weui-cell__bd weui-cell_primary">
-            <view>{{selectName}}</view>
-          </view>
-          <!-- <view class="weui-cell__ft weui-cell__ft_in-access drown"></view> -->
-          <view class="jn-icon icon-xia"></view>
-        </view>
-      </picker>
-
-      <view class="weui-panel__bd" wx:if="{{productList.length > 0}}">
-        <view class="weui-media-box weui-media-box_small-appmsg">
-          <view class="weui-cells weui-cells_in-small-appmsg">
-            <scroll-view scroll-y style='height: 1000rpx' bindscrolltolower="scrolltolower">
-              <view wx:for="{{productList}}" bindtap="onItemClick" data-product-id="{{item.productId}}" data-product-name="{{item.productName}}" data-price="{{item.currentPrice}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__hd">
-                  <image src="{{item.picUrl ? item.picUrl : juniuImg}}" class="head-img" />
-                </view>
-                <view class="weui-cell__bd weui-cell_primary">
-                  <view>{{item.productName}}</view>
-                  <view class="weui-media-box__info__meta current-price">
-                    <text>{{item.currentPrice/100}}元</text> 
-                    <text class='sold-box'>已售{{item.soldNum ? item.soldNum : 0}}件</text>
-                  </view>
-                </view>
-                <view class="jn-icon icon-rightblue"></view>
-                <!-- <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
-              </view>
-            </scroll-view>
-          </view>
-        </view>
-      </view>
-
-      <view class="space-box" wx:else>
-        <view class="space-bg">
-         <image src="/asset/images/nofind.png"></image>
-        </view>
-        <view class="space-text">未找到商品</view>
-      </view>
-
     </view>
+    </view>
+  </scroll-view>
+  <view class="space-box" wx:else>
+     <view class="space-bg">
+        <image src="/asset/images/nofind.png"></image>
+     </view>
+     <view class="space-text">未找到商品</view>
   </view>
 </view>
