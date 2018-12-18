@@ -288,3 +288,6 @@ page {
   color:#fff;
   text-align:center;
 }
+.address-and-tel{
+  padding:  0 30rpx;
+}

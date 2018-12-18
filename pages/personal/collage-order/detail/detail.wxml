@@ -36,8 +36,8 @@
     </view>
   </view>
   <view class="real-payment clearfix">
-    <text class="fl">实付款</text>
-    <view class="fr detail-pay-for">{{ orderDetailArr.activityPrice? orderDetailArr.activityPrice / 100 : 0 }}<text class="unit">元</text></view>
+    
+    <view class="fr detail-pay-for"><text >实付款：</text>{{ orderDetailArr.activityPrice? orderDetailArr.activityPrice / 100 : 0 }}元</view>
   </view>
   <view class='tt' wx:if="{{collageStatus === 'JOINING'||collageStatus === 'CLOSE'}}"></view>
   <!-- 中间部分 -->
@@ -128,12 +128,18 @@
   <!--中间部分拼团成功-->
   <view wx:if="{{collageStatus === 'FINISH'}}">
     <view class="collage-success-box">
+      <view class="quanma">
+          券码
+      </view>
       <view class="collage-success">
-        <view class='title-name'>{{ activityName }}</view>
-        <view class="detail-infor">
-          <view>{{ voucherStatus }}</view>
-          <view wx:if="{{orderDetailArr.voucher.settleStatus !== 'SETTLE'}}">剩余有效期：{{ orderDetailArr.voucher.leftDays }}天</view>
+        <view class="tittlebox">
+          <view class='fl'>{{ activityName }}</view>
+          <view class=" fr">
+            <view>{{ voucherStatus }}</view>
+            <!-- <view wx:if="{{orderDetailArr.voucher.settleStatus !== 'SETTLE'}}">剩余有效期：{{ orderDetailArr.voucher.leftDays }}天</view> -->
+          </view>
         </view>
+        
         <view class="qrcode-box">
           <view class="qrcode">
             <canvas class="jn-qrcode"  canvas-id="barcode" />
@@ -147,7 +153,7 @@
     </view>
     <!--拼团成功的申请退款按钮-->
     <view class="application-refund-text">
-      <text class="jn-icon icon-error"></text>如需退款,请自主联系商家申请
+      <text class="jn-icon icon-jinggao"></text>如需退款,请自主联系商家申请
     </view>
   </view>
   <view class="jn-payment-bottom"  wx:if="{{collageStatus === 'FINISH'}}"><image src="/asset/images/logo.png"></image></view> 
@@ -166,8 +172,7 @@
       </view>
       <view class="store-name-box">
         <view class="store-name">
-          <text>{{ orderDetailArr.applyStores[0].storeName}}</text>
-          <view class="popularity">人气好店</view>
+          <text class="jn-icon icon-fire"><text></text>{{ orderDetailArr.applyStores[0].storeName}}(人气好店)</text>
         </view>
       </view>
       <view class="address-and-tel">

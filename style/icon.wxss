@@ -64,6 +64,9 @@
 .icon-more::before{
  content: '\e6a7'
 }
+.icon-morer::after{
+  content: '\e6a7'
+ }
 .icon-wodeyuyuex::before{
  content: '\e721'
 }
@@ -110,6 +113,9 @@
   content: '\e625'
 }
 
+.icon-jinggao::before {
+  content: '\e810'
+}
 
 /* 未找到start */
 .space-box {
