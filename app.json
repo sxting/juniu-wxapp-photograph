@@ -10,6 +10,7 @@
     "pages/pay/pay",
     "pages/personal/product-order/order-form/order-form",
     "pages/personal/product-order/order-form-detail/order-form-detail",
+    "pages/personal/refund/refund",
     "pages/sample/workDetail/workDetail",
     "pages/personal/member-card/band/band",
     "pages/personal/ticket/ticket",

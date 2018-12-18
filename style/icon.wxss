@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 925219 */
-  src: url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.eot');
-  src: url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.woff') format('woff'),
-  url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_925219_0j9w3admk0md.eot');
+  src: url('//at.alicdn.com/t/font_925219_0j9w3admk0md.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_925219_0j9w3admk0md.woff') format('woff'),
+  url('//at.alicdn.com/t/font_925219_0j9w3admk0md.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_925219_0j9w3admk0md.svg#iconfont') format('svg');
 }
 .jn-icon {
   display: inline-block;
@@ -104,6 +104,10 @@
 
 .icon-ShapeCopyx::before {
   content: '\e731'
+}
+
+.icon-warn::before {
+  content: '\e625'
 }
 
 

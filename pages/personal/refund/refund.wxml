@@ -1,0 +1,21 @@
+<view class="refund-title">1笔订单可退款</view>
+<view class="order-form-msg">
+  <image src="{{orderDetail.orderItem[0].picId ? orderDetail.orderItem[0].picId : jnImg}}"></image>
+  <view class="order-msg-right">
+    <view class="product-name">{{orderDetail.productInfo}}</view>
+    <view class="order-price">￥<text>{{orderDetail.money ? orderDetail.money/100 : ''}}</text></view>
+  </view>
+</view>
+<view class="refund-note"> <text class='jn-icon icon-warn'> </text> <text> 退款以实际支付金额为准，申请退款后金额将原路返回</text></view>
+<view class="jn-btn2" bindtap="onRefundClick">确认退款</view> 
+
+<view class="alert-bg" wx:if="{{success}}">
+  <view class="alert-box">
+    <view class="alert-title">退款成功</view>
+    <view class="alert-tip">
+      <text wx:if="{{orderDetail.payType === 'MEMBERCARD'}}">可在我的会员卡-消费记录核对查看</text>
+      <text wx:else>支付款项将原路返回</text>
+    </view>
+    <view class="alert-btn" bindtap="successYBtnClick">确定</view>
+  </view>
+</view>
