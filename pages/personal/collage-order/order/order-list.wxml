@@ -37,10 +37,7 @@
       <view class='btn-box' wx:if="{{ item.orderStatus === 'PAID'&& item.groupStatus === 'JOINING' }}" >
         <view class="invent-btn">邀请好友参团</view>
       </view>
-      <view class='btn-box' wx:if="{{ item.tabStatus === 'FINISHED' && item.settleStatus === 'SETTLE' }}"> 
-        <text class='pay-btn' wx:if="{{item.commentCount === 0}}" catchtap='evaluationImmediate' data-orderno="{{ item.orderNo }}" data-activityid="{{item.activityId}}">立即评价</text>
-        <text class='pay-btn' wx:else>已评价</text>
-      </view>
+  
     </view>
   </view>
   <view class="space-box" wx:else>

@@ -1,5 +1,5 @@
-page{
-  background-color: #FFF;
+page {
+  background-color: #fff;
 }
 .page {
   position: relative;
@@ -8,85 +8,124 @@ page{
   box-sizing: border-box;
   font-family: PingFangSC-Regular;
 }
-.jn-content{
+.jn-content {
   width: 100%;
   overflow: hidden;
   margin: 0 auto;
-  position: relative
+  position: relative;
 }
-.head-tips{
+.head-tips {
   background-color: #629089;
   padding: 26rpx 30rpx;
 }
-.out-time{
-  background-color: #C5C5C5;
+.out-time {
+  background-color: #c5c5c5;
 }
-.head-tips .text-tips{
-   font-family: PingFangSC-Regular;
-   font-size: 26rpx;
-   color: #F5F5F9;
-   margin-left: 16rpx;
+.head-tips {
+  margin: 0 20rpx;
 }
-.head-tips .icon-clock{
+.head-tips .text-tips {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #f5f5f9;
+  margin-left: 16rpx;
+}
+.head-tips .icon-clock {
   color: #fff;
   font-size: 40rpx;
-  line-height: 50rpx
+  line-height: 50rpx;
 }
-.head-tips .text-tips text{
-  display: block
+.head-tips .text-tips text {
+  display: block;
 }
-.head-tips .text-tips text:first-of-type{
-  font-size: 30rpx
+.head-tips .text-tips text:first-of-type {
+  font-size: 30rpx;
 }
-.head-collage{
+.head-collage {
   padding: 0 30rpx;
-  background-color: #FFF;
+  background-color: #fff;
   position: relative;
 }
 .head-collage .title-collage-detail-box {
   padding: 30rpx 0;
-  border-bottom:2rpx solid #f5f5f5;
+  border-bottom: 2rpx solid #f5f5f5;
 }
 .jn-content .head-collage .title-collage-detail-box .title-collage-detail {
   width: 100%;
   height: 100%;
   position: relative;
 }
-.jn-content .head-collage .title-collage-detail-box .title-collage-detail .left-box {
+.jn-content
+  .head-collage
+  .title-collage-detail-box
+  .title-collage-detail
+  .left-box {
   width: 188rpx;
   height: 140rpx;
   position: relative;
   margin-right: 30rpx;
 }
-.jn-content .head-collage .title-collage-detail-box .title-collage-detail .left-box image {
+.jn-content
+  .head-collage
+  .title-collage-detail-box
+  .title-collage-detail
+  .left-box
+  image {
   width: 100%;
   height: 100%;
   border-radius: 10rpx;
 }
-.jn-content .head-collage .title-collage-detail-box .title-collage-detail .right-box{
+.jn-content
+  .head-collage
+  .title-collage-detail-box
+  .title-collage-detail
+  .right-box {
   font-family: PingFangSC-Regular;
   font-size: 26rpx;
   color: #000000;
   letter-spacing: 0;
 }
-.jn-content .head-collage .title-collage-detail-box .title-collage-detail .right-box .collage-number {
+.jn-content
+  .head-collage
+  .title-collage-detail-box
+  .title-collage-detail
+  .right-box
+  .collage-number {
   font-family: PingFangSC-Regular;
   color: #000000;
 }
-.jn-content .head-collage .title-collage-detail-box .title-collage-detail .right-box .top-items-name text {
+.jn-content
+  .head-collage
+  .title-collage-detail-box
+  .title-collage-detail
+  .right-box
+  .top-items-name
+  text {
   line-height: 72rpx;
 }
-.jn-content .head-collage .title-collage-detail-box .title-collage-detail .right-box .top-items-name .items-name {
+.jn-content
+  .head-collage
+  .title-collage-detail-box
+  .title-collage-detail
+  .right-box
+  .top-items-name
+  .items-name {
   font-size: 32rpx;
   color: #333333;
   font-weight: 600;
 }
-.jn-content .head-collage .title-collage-detail-box .title-collage-detail .right-box .top-items-name .price {
+.jn-content
+  .head-collage
+  .title-collage-detail-box
+  .title-collage-detail
+  .right-box
+  .top-items-name
+  .price {
   color: #333333;
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 28rpx
+  font-size: 28rpx;
 }
 .jn-content .real-payment {
   font-family: PingFangSC-Regular;
@@ -95,98 +134,98 @@ page{
   height: 88rpx;
   line-height: 88rpx;
   padding: 0 30rpx;
-  background-color: #FFF;
-  margin-bottom: 20rpx
+  background-color: #fff;
+  margin-bottom: 20rpx;
 }
 .jn-content .real-payment .detail-pay-for {
   font-family: PingFangSC-Medium;
-  font-size: 52rpx;
-  color: #FB6165;
+  font-size: 28rpx;
+  color: #333;
   letter-spacing: 0;
   font-weight: 400;
 }
 .jn-content .real-payment .detail-pay-for .unit {
   font-family: PingFangSC-Regular;
   font-size: 30rpx;
-  color: #FB6165;
+  color: #fb6165;
 }
 
 /* success */
-.collage-success-box{
+.collage-success-box {
   padding: 30rpx 30rpx 2rpx;
   font-family: PingFangSC-Regular;
   font-size: 30rpx;
   color: #919191;
   letter-spacing: 0;
-  background-color: #FFF;
+  background-color: #fff;
 }
-.collage-success{
-  border-radius: 8rpx 8rpx 0 0;
-  box-shadow: 0 2rpx 6rpx 0 #D8D8D8;
+.collage-success {
+  border-radius: 5px;
+  box-shadow: 0 2rpx 6rpx 0 #d8d8d8;
+  border: 1px solid #eee;
 }
-.collage-success .title-name{
+.collage-success .title-name {
   height: 88rpx;
   line-height: 88rpx;
   color: #111111;
   padding-left: 20rpx;
   border-bottom: 2rpx solid #f5f5f5;
 }
-.detail-infor{
+.detail-infor {
   padding: 30rpx 0 30rpx 20rpx;
   border-bottom: 2rpx solid #f5f5f5;
-  font-size: 0
+  font-size: 0;
 }
-.detail-infor view{
+.detail-infor view {
   font-size: 30rpx;
 }
-.detail-infor view:first-of-type{
+.detail-infor view:first-of-type {
   color: #333333;
-  margin-bottom: 16rpx
+  margin-bottom: 16rpx;
 }
-.qrcode-box{
+.qrcode-box {
   padding: 30rpx 86rpx 0;
 }
-.qrcode-box .qrcode{
+.qrcode-box .qrcode {
   width: 100%;
-  text-align: center
+  text-align: center;
 }
-.qrcode-box .qrcode .jn-qrcode{
+.qrcode-box .qrcode .jn-qrcode {
   width: 100%;
-  height: 186rpx
+  height: 186rpx;
 }
-.qrcode-box .qrcode .coupon-code{
+.qrcode-box .qrcode .coupon-code {
   line-height: 90rpx;
 }
-.qrcode-box .qrcode .coupon-code .code-number{
+.qrcode-box .qrcode .coupon-code .code-number {
   font-family: PingFangSC-Medium;
   font-size: 32rpx;
   color: #333333;
-  margin-left: 30rpx
+  margin-left: 30rpx;
 }
-.application-refund-text{
+.application-refund-text {
   font-family: PingFangSC-Regular;
   font-size: 26rpx;
-  color: #666666;
+  color: #999;
   letter-spacing: 0;
   text-align: center;
   line-height: 76rpx;
-  background-color: #FFF;
+  background-color: #fff;
 }
-.application-refund-text .icon-error{
+.application-refund-text .icon-error {
   font-size: 36rpx;
   color: #336964;
-  margin-right: 10rpx
+  margin-right: 10rpx;
 }
 
-
 /* 底部 */
-.jn-content .footer{
+.jn-content .footer {
   margin-top: 20rpx;
   margin-bottom: 98rpx;
 }
 .jn-content .footer .store-detail {
   padding: 0 30rpx;
-  background-color: #FFF;
+  background-color: #fff;
   font-family: PingFangSC-Regular;
   font-size: 30rpx;
   color: #000000;
@@ -210,8 +249,14 @@ page{
   color: #336964;
   letter-spacing: 0;
 }
-.jn-content .footer .store-detail .store-name-box .store-name .popularity .icon-fire {
-  color: #FF4D27;
+.jn-content
+  .footer
+  .store-detail
+  .store-name-box
+  .store-name
+  .popularity
+  .icon-fire {
+  color: #ff4d27;
   font-size: 0.37333333rem;
 }
 .jn-content .footer .store-detail .store-name-box .icon-rightblue {
@@ -223,6 +268,15 @@ page{
 .jn-content .footer .store-detail .icon-rightblue {
   font-size: 32rpx;
   color: #999999;
+}
+.icon-fire::before {
+  color: #ff4d27;
+}
+.icon-fire {
+  font-size: 25rpx;
+}
+.icon-fire text {
+  margin: 0 6rpx;
 }
 /* .footer .address-and-tel {
   height: 88rpx;
@@ -238,7 +292,7 @@ page{
 .footer .icon-dingwei {
   font-size: 34rpx;
   padding-right: 6rpx;
-  color: #3B3B3B;
+  color: #3b3b3b;
 }
 .footer .icon-tel {
   font-size: 36rpx;
@@ -250,16 +304,16 @@ page{
   margin-top: 26rpx;
   line-height: 36rpx;
   text-align: right;
-  color: #999
+  color: #999;
 }
 .footer .order-detail-box {
   padding: 26rpx 24rpx;
-  background-color: #FFF;
+  background-color: #fff;
   font-size: 26rpx;
 }
 .footer .order-detail-box .order-detail {
   padding: 28rpx 0 28rpx 36rpx;
-  box-shadow: 0 2rpx 6rpx 0 #D8D8D8;
+  box-shadow: 0 2rpx 6rpx 0 #d8d8d8;
   border-radius: 8rpx;
 }
 .footer .order-detail-box .order-detail view {
@@ -272,7 +326,7 @@ page{
 .footer .order-detail view:last-of-type {
   margin-bottom: 0;
 }
-.footer .order-detail view text{
+.footer .order-detail view text {
   display: inline-block;
   width: 135rpx;
 }
@@ -281,24 +335,24 @@ page{
   text-align: center;
   height: 50rpx;
   width: 100vw;
-  padding-bottom: 20rpx
+  padding-bottom: 20rpx;
 }
 .jn-bottom image {
   width: 80rpx;
   height: 40rpx;
 }
 
-.jn-payment-bottom{
+.jn-payment-bottom {
   position: fixed;
   bottom: 6rpx;
   text-align: center;
   width: 100vw;
 }
-.jn-payment-bottom image{
+.jn-payment-bottom image {
   width: 80rpx;
   height: 40rpx;
 }
-.application-refund-btn{
+.application-refund-btn {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -307,68 +361,83 @@ page{
   text-align: center;
   font-family: PingFangSC-Regular;
   font-size: 36rpx;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: 0;
   line-height: 98rpx;
   background-color: #336964;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: .2px;
-  z-index: 100
+  -webkit-text-stroke-width: 0.2px;
+  z-index: 100;
 }
-.footer .order-detail view .copy-btn{
+.footer .order-detail view .copy-btn {
   display: inline-block;
-  width: 76rpx!important;
+  width: 76rpx !important;
   height: 40rpx;
   font-family: PingFangSC-Regular;
   font-size: 26rpx;
   color: #666666;
   letter-spacing: 0;
   line-height: 40rpx;
-  border: 2rpx solid #C4C4C4;
+  border: 2rpx solid #c4c4c4;
   border-radius: 2px;
   text-align: center;
   float: right;
-  margin-right: 36rpx
+  margin-right: 36rpx;
 }
-.tt{
+.tt {
   width: 100%;
   height: 20rpx;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
 
-
-
 .container2 {
-    background-color: #fff;
+  background-color: #fff;
 }
 .container2 .icon-weizhix {
   display: inline;
 }
 
 .address-list {
-    padding: 0 30rpx;
+  padding: 0 30rpx;
 }
 .address-box {
   font-size: 30rpx;
   color: #333333;
-    padding: 12rpx 0;
-    border-bottom: 1px solid #f3f3f3;
-    line-height: 40rpx;
+  padding: 12rpx 0;
+  border-bottom: 1px solid #f3f3f3;
+  line-height: 40rpx;
 }
 .address-box-active {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 .address-detail {
-   font-size: 26rpx;
-   color: #999999;
+  font-size: 26rpx;
+  color: #999999;
 }
-.buttons{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  height:100rpx;
-  line-height:100rpx;
-  background:#336964;
-  color:#fff;
-  text-align:center;
+.buttons {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #336964;
+  color: #fff;
+  text-align: center;
+}
+.tittlebox {
+  overflow: hidden;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 20rpx;
+  background: #f9f9f9;
+  color: #333;
+}
+.tittlebox .fr ,.icon-jinggao{
+  color: #d43737;
+}
+.quanma{
+  margin: 20rpx 0 ;
+  color: #333;
+  font-weight: bold;
+  font-size: 34rpx;
 }

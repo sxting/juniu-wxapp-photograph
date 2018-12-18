@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 925219 */
-  src: url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.eot');
-  src: url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.woff') format('woff'),
-  url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_925219_0c4lo1nmzsij.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_925219_ics82rpsa0j.eot');
+  src: url('//at.alicdn.com/t/font_925219_ics82rpsa0j.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_925219_ics82rpsa0j.woff') format('woff'),
+  url('//at.alicdn.com/t/font_925219_ics82rpsa0j.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_925219_ics82rpsa0j.svg#iconfont') format('svg');
 }
 .jn-icon {
   display: inline-block;
@@ -64,6 +64,9 @@
 .icon-more::before{
  content: '\e6a7'
 }
+.icon-morer::after{
+  content: '\e6a7'
+ }
 .icon-wodeyuyuex::before{
  content: '\e721'
 }
@@ -105,7 +108,9 @@
 .icon-ShapeCopyx::before {
   content: '\e731'
 }
-
+.icon-jinggao::before {
+  content: '\e810'
+}
 
 /* 未找到start */
 .space-box {

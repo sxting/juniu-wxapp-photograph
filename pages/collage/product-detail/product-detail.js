@@ -5,6 +5,7 @@ import { constant } from '../../../utils/constant';
 import { homeService } from '../../home/shared/service.js';
 import { service } from '../../../service';
 import { productService } from '../../product/shared/service.js'
+const app = getApp()
 
 Page({
   data: {
@@ -63,36 +64,41 @@ Page({
       })
       wx.setStorageSync(constant.STORE_INFO, options.storeId)
       let self = this;
-      wx.login({
-        success: function (result) {
-          wx.getUserInfo({
-            withCredentials: true,
-            success: function (res) {
-              self.setData({
-                getUserInfo: true
-              })
-              let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-              let appId = 'wx3bb038494cd68262';
-              if (result.code) {
-                logIn.call(self, result.code, extConfig.theAppid ? extConfig.theAppid : appId, res.rawData);
-              } else {
-                console.log('获取用户登录态失败！' + result.errMsg)
-              }
-            },
-            fail: function () {
-              self.setData({
-                getUserInfo: false
-              })
-            }
-          });
-        },
-        fail: function (res) {
-          self.setData({
-            getUserInfo: false
-          })
-        },
-        complete: function (res) { },
-      });
+
+      app.userInfoReadyCallback = (res) => {
+        getProductDetail.call(self);
+        getStoreInfo.call(self)
+      };
+      // wx.login({
+      //   success: function (result) {
+      //     wx.getUserInfo({
+      //       withCredentials: true,
+      //       success: function (res) {
+      //         self.setData({
+      //           getUserInfo: true
+      //         })
+      //         let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
+      //         let appId = 'wx3bb038494cd68262';
+      //         if (result.code) {
+      //           logIn.call(self, result.code, extConfig.theAppid ? extConfig.theAppid : appId, res.rawData);
+      //         } else {
+      //           console.log('获取用户登录态失败！' + result.errMsg)
+      //         }
+      //       },
+      //       fail: function () {
+      //         self.setData({
+      //           getUserInfo: false
+      //         })
+      //       }
+      //     });
+      //   },
+      //   fail: function (res) {
+      //     self.setData({
+      //       getUserInfo: false
+      //     })
+      //   },
+      //   complete: function (res) { },
+      // });
     } else {
       getProductDetail.call(this);
     }
@@ -120,6 +126,9 @@ Page({
     wx.reLaunch({
       url: '/pages/home/home'
     })
+    if (app.userInfoReadyCallback) {
+      app.userInfoReadyCallback(res)
+    }
   },
 
   // 拨打电话

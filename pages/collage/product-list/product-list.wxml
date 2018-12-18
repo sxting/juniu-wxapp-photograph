@@ -11,13 +11,15 @@
             <view class='right-infor fl'>
               <view class='name-collage'>{{item.activityName}}</view>
               <view class='price-box'>
-                <text>¥</text>
-                <text class='price-precent'>{{ item.activityPrice / 100 }}</text>
+                <text class='price-precent'>¥{{ item.activityPrice / 100 }}</text>
                 <text class='price-origin'>{{ item.originalPrice / 100 }}元</text>
               </view>
               <view class='detail-num'><text>{{ item.peopleCount }}人团·</text>已团{{ item.openedGroupCount }}件</view>
+              <view class='go-btn '>去开团
+                <icon class="jn-icon icon-more fr" ></icon>
+              </view>
             </view>
-            <view class='go-btn'>去开团</view>
+            
           </view>
         </view>
     </view>
