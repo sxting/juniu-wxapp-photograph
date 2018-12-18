@@ -15,7 +15,6 @@
   </view>
 
   <view class="order-form-item">
-      <view class="order-form-subtitle">服务项目</view>
       <view class="order-form-msg">
         <image src="{{orderDetail.orderItem[0].picId ? orderDetail.orderItem[0].picId : jnImg}}"></image>
         <view class="order-msg-right">

@@ -94,7 +94,7 @@ function getOrderDetail() {
           break;
       }
       if (res.orderItem[0] && res.orderItem[0].picId) {
-        res.orderItem[0].picId = constant.OSS_IMAGE_URL + `${res.orderItem[0].picId}/resize_80_60/mode_fill`;
+        res.orderItem[0].picId = constant.OSS_IMAGE_URL + `${res.orderItem[0].picId}/resize_140_100/mode_fill`;
       }
       // let date = new Date(res.payDate)
       // res.payDate = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();

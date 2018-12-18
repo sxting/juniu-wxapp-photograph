@@ -57,7 +57,7 @@ Page({
   // 跳转到我的订单
   goMyOrderForm() {
     wx.navigateTo({
-      url: '/pages/personal/order-form/order-form',
+      url: '/pages/personal/product-order/order-form/order-form',
     })
   },
 

@@ -8,14 +8,16 @@
   height: 88rpx;
   line-height: 88rpx;
   display: flex;
-  border-top: 2rpx solid #f3f3f3;
-  border-bottom: 2rpx solid #f3f3f3;
-  font-size: 32rpx;
-  color: #111111;
+  font-size: 30rpx;
+  color: #333;
 }
 .tab-item {
   width: 25%;
   text-align: center;
+}
+.tab-item text {
+  line-height: 88rpx;
+  display: inline-block;
 }
 
 .order-form-list {
@@ -33,9 +35,8 @@
 .order-form-subtitle {
   line-height: 50rpx;
   height: 50rpx;
-}
-.order-form-subtitle .fr {
-  font-size: 26rpx;
+  font-size: 28rpx;
+  color: #666;
 }
 
 .order-form-msg {
@@ -46,7 +47,6 @@
 .order-form-msg image {
   width: 200rpx;
   height: 150rpx;
-  border-radius: 8rpx;
   margin-right: 30rpx;
 }
 .order-msg-right {
@@ -54,10 +54,10 @@
   width: 400rpx;
 }
 .product-name {
-  font-size: 32rpx;
-  color: #111111;
-  height: 56rpx;
-  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #333;
+  height: 46rpx;
+  line-height: 42rpx;
   overflow:hidden; 
   text-overflow:ellipsis;
   display:-webkit-box; 
@@ -66,47 +66,25 @@
 }
 .order-time {
   font-size: 26rpx;
-  color: #333333;
+  color: #999;
 }
 .order-price {
-  color: #ff6600;
+  color: #333;
   font-size: 30rpx;
 }
-.order-price text {
-  font-size: 40rpx;
-}
 
-.comment {
-  border-top: 2rpx solid #f3f3f3;
-  height: 100rpx;
-}
-.comment-btn {
-  width: 160rpx;
-  height: 56rpx;
-  line-height: 56rpx;
-  color: #ff6600;
-  border: 2rpx solid #ff6600;
-  border-radius: 30rpx;
-  font-size: 26rpx;
-  float: right;
-  text-align: center;
-  margin-top: 20rpx;
-}
-
-
-.active {
-  border-bottom: 4rpx solid #FF6700;
-  color: #FF6700;
+.active>text {
+  border-bottom: 4rpx solid #336964;
 }
 .color1 {
-  color: #F0BF28;
+  color: #D43737;
 }
 .color2 {
-  color: #03BC01;
+  color: #336964;
 }
 .color3 {
-  color: #FB5050;
+  color: #333;
 }
 .color4 {
-  color: #939393;
+  color: #999;
 }
