@@ -48,7 +48,6 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
-    console.log(e.currentTarget.id)
     switch (e.currentTarget.id) {
       case "0":
         getMyTicket.call(this, this.data.storeId, 'UNUSED');
@@ -64,14 +63,14 @@ Page({
 
   //选择优惠券 
   onTicketItemClick(e) {
-    let item = e.currentTarget.dataset.item ? e.currentTarget.dataset.item : { useLimitMoney : -1 };
+    let item = e.currentTarget.dataset.item ? e.currentTarget.dataset.item : { useLimitMoney: -1 };
     if (this.data.productId && e.currentTarget.dataset.canuse && this.data.activeIndex === 0 && item.useLimitMoney <= this.data.price) {
       wx.setStorageSync(constant.couponId, e.currentTarget.dataset.couponid)
       if (item.couponDefType === 'MONEY') {
         wx.setStorageSync(constant.couponPrice, item.couponDefAmount / 100)
       } else if (item.couponDefType === 'DISCOUNT') {
-        let price = NP.times(NP.minus(1, NP.divide(item.couponDefDiscount, 10)), this.data.price) 
-        wx.setStorageSync(constant.couponPrice, parseInt(price)/100)
+        let price = NP.times(NP.minus(1, NP.divide(item.couponDefDiscount, 10)), this.data.price)
+        wx.setStorageSync(constant.couponPrice, parseInt(price) / 100)
       }
       wx.navigateBack({
         delta: 1

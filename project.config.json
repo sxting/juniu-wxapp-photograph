@@ -41,8 +41,9 @@
 				{
 					"id": 0,
 					"name": "band",
-					"pathName": "pages/pay/pay",
-					"query": "productId=2c9172e467343e6a0167354a83c10020&count=undefined"
+					"pathName": "pages/personal/ticket/ticket",
+					"query": ""
+
 				}
 			]
 		}
