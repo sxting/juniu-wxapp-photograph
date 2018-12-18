@@ -170,11 +170,13 @@
           <view class="popularity">人气好店</view>
         </view>
       </view>
-      <view class="address-and-tel" bindtap="onAddressClick">
-        <view class="jn-icon icon-address"></view>
-        <text class='address-text'>{{ orderDetailArr.applyStores[0].storeAddress }}</text>
-        <view class="fr tel-box" catchtap="onTelClick">
-          <view class="jn-icon icon-tel"></view>
+      <view class="address-and-tel">
+        <view>
+          <text class="jn-icon icon-address"></text>
+          <text class='address-text'>{{orderDetailArr.applyStores[0].storeAddress }}</text>
+        </view>
+        <view class="tel-box" catchtap="onTelClick">
+          <view class="jn-icon icon-ShapeCopyx"></view>
         </view>
       </view>
     </view>

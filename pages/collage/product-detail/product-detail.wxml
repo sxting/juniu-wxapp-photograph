@@ -126,11 +126,21 @@
     </view>
     <view class="store">
       <view class="store-name">{{storeName}}</view>
-      <view class="address-and-tel">
+      <!-- <view class="address-and-tel">
         <icon class="jn-icon icon-address"></icon>
         <text class='address-text'>{{address}}</text>
         <view class="fr tel-box" catchtap="onTelClick">
           <view class="jn-icon icon-tel"></view>
+        </view>
+      </view> -->
+
+      <view class="address-and-tel">
+        <view>
+          <text class="jn-icon icon-address"></text>
+          <text class='address-text'>{{address}}</text>
+        </view>
+        <view class="tel-box" catchtap="onTelClick">
+          <view class="jn-icon icon-ShapeCopyx"></view>
         </view>
       </view>
     </view>
