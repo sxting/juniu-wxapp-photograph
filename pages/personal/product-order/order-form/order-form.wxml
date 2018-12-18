@@ -1,0 +1,39 @@
+<view class="page">
+  <view class="tab">
+    <view wx:for="{{tabList}}" wx:key="index" bindtap="onTabClick" data-index="{{index}}"
+    class="tab-item {{index == tabIndex ? 'active' : ''}}">{{item}}</view>
+  </view>
+  
+  <view class="order-form-list" wx:if="{{orderList.length > 0}}">
+    <view class="order-form-item" wx:for="{{orderList}}" wx:for-item="item">
+      <view class="order-form-subtitle">
+        <text class="fl">服务项目</text>
+        <view class="fr">
+          <text class="color3" wx:if="{{item.status == 'INIT'}}">{{item.statusName}}</text>
+          <text class="color3" wx:if="{{item.status == 'WAITTING'}}">{{item.statusName}}</text>
+          <text class="color3" wx:elif="{{item.status == 'PAID'}}">{{item.statusName}}</text>
+          <text class="color3" wx:elif="{{item.status == 'PARTFINISH'}}">{{item.statusName}}</text>
+          <text class="color3" wx:elif="{{item.status == 'FINISH'}}">{{item.statusName}}</text>
+          <text class="color3" wx:elif="{{item.status == 'CLOSE'}}">{{item.statusName}}</text>
+          <text class="color3" wx:elif="{{item.status == 'REFUND'}}">{{item.statusName}}</text>
+        </view>
+      </view>
+      <view class="order-form-msg" data-orderid="{{item.orderId}}" catchtap="onItemClick">
+        <image src="{{item.orderItem[0].picId ? item.orderItem[0].picId : jnImg}}"></image>
+        <view class="order-msg-right">
+          <view class="product-name">{{item.productInfo}}</view>
+          <!-- <view class="order-time">下单时间：2017.09.21  18:36:09</view> -->
+          <view class="order-time">下单时间：{{item.juniuoModel.dateCreated}}</view>
+          <view class="order-price">￥<text>{{item.money ? item.money/100 : ''}}</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="space-box" wx:else>
+    <view class="space-bg"><image src="/asset/images/nofind.png"></image></view>
+    <view class="space-text">暂无订单</view>
+  </view>
+
+  <view class="juniu-bottom"><image src="/asset/images/logo.png"></image></view>
+</view>
