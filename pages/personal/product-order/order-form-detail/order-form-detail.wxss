@@ -1,0 +1,207 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.status {
+  height: 128rpx;
+  width: 100vw;
+  padding: 20rpx 30rpx;
+  background: #FF893B;
+  color: #fff;
+  box-sizing: border-box;
+}
+.status1 {
+  background: #FF893B;
+  color: #fff;
+}
+.status4 {
+  background: #F2F2F2;
+  color: #999999;
+}
+.status4 .status-text {
+  color: #333333;
+}
+.status4 .status-note {
+  color: #999;
+}
+
+.icon-shijian {
+  float: left;
+  font-size: 40rpx;
+}
+.status-right {
+  float: left;
+  margin-left: 16rpx;
+}
+.status-text {
+  font-size: 32rpx;
+}
+.status-note {
+  font-size: 26rpx;
+  color: #FAFAFA;
+}
+
+.order-form-item {
+  margin: 0 auto;
+  padding: 0 30rpx 30rpx;
+}
+.order-form-subtitle {
+  line-height: 50rpx;
+  height: 50rpx;
+}
+.order-form-msg {
+  display: flex;
+  margin-top: 20rpx;
+}
+.order-form-msg image {
+  width: 280rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+  margin-right: 30rpx;
+}
+.order-msg-right {
+  display: inline-block;
+  width: 400rpx;
+}
+.product-name {
+  font-size: 28rpx;
+  color: #333;
+  height: 80rpx;
+  line-height: 80rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+}
+.order-price {
+  color: #D43737;
+  font-size: 34rpx;
+  margin-top: 30rpx;
+}
+
+.price-box {
+  box-shadow: 0 2rpx 6rpx 0 #D8D8D8;
+  border-radius: 8rpx;
+  font-size: 13px;
+  color: #666666;
+  width: 690rpx;
+  margin: 20rpx auto 0;
+}
+.price-item {
+  height: 72rpx;
+  line-height: 72rpx;
+  padding: 0 20rpx;
+}
+.price-total {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 20rpx;
+  border-top: 2rpx solid #f3f3f3;
+}
+.price-total text {
+  font-size: 30rpx;
+  color: #333333;
+}
+.price-total .fr {
+  color: #ff6600;
+}
+
+.address-box {
+  width: 690rpx;
+  margin: 20rpx auto 0;
+}
+.store-btn-box {
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #fff;
+  color: #111;
+  font-size: 32rpx;
+  padding: 0 30rpx;
+}
+
+.address-and-tel {
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  color: #999;
+  padding: 0 30rpx;
+  border-top: 2rpx solid #f3f3f3;
+}
+.icon-address {
+  font-size: 30rpx;
+  padding-right: 6rpx;
+}
+.icon-tel {
+  font-size: 30rpx;
+}
+.tel-box {
+  height: 36rpx;
+  border-left: 2rpx solid #e1e1e1;
+  padding-left: 30rpx;
+  margin-top: 26rpx;
+  line-height: 36rpx;
+  text-align: right;
+}
+
+.code-box {
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+.code-box .product-name {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 20rpx;
+  border-bottom: 2rpx solid #f3f3f3;
+  font-size: 30rpx;
+}
+.code-status {
+  padding: 10rpx 20rpx;
+  border-bottom: 2rpx solid #f3f3f3;
+}
+.code-order-time {
+  color: #919191;
+}
+.code-box canvas {
+  width: 520rpx;
+  height: 186rpx;
+  display: block;
+  margin: 30rpx auto;
+}
+.code-num {
+  padding-bottom: 30rpx;
+  text-align: center;
+}
+
+.order-box {
+  font-size: 26rpx;
+  color: #999999;
+  line-height: 72rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.pay-btn {
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 690rpx;
+  text-align: center;
+  font-size: 37rpx;
+  color: #FFFFFF;
+  background: #336964;
+  margin: 20rpx auto;
+}
+
+.juniu-bottom2 {
+  bottom: 100rpx;
+}
+
+.disabled {
+  background:#f0f0f0;
+  color:#999;
+}

@@ -174,7 +174,7 @@ function onlineBuyFun(data) {
         paySign: res.payInfo.paySign,
         success: function (res) {
           wx.navigateTo({
-            url: '/pages/personal/order-form-detail/order-form-detail?orderId=' + self.data.orderId,
+            url: '/pages/personal/product-order/order-form-detail/order-form-detail?orderId=' + self.data.orderId,
           })
         },
         fail: function (result) {
