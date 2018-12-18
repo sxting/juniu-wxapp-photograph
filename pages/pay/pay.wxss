@@ -28,106 +28,54 @@
 
 .sub-title {
   font-size: 30rpx;
+  color: #333;
 }
 
-.item {
+.price-box {
   font-size: 28rpx;
   color: #333333;
 }
-.item>view {
+.price-box>view {
   height: 88rpx;
   line-height: 88rpx;
   padding: 0 30rpx;
 }
 
-.count-btn {
-  height: 44rpx;
-  line-height: 44rpx;
-  text-align: center;
-  width: 128rpx;
-  border: 2rpx solid #999;
-  border-radius: 36rpx;
-  margin-top: 20rpx;
+.rights {
+  padding: 30rpx;
 }
-.count-btn>text {
-  width: 44rpx;
-  height: 44rpx;
-  display: inline-block;
+.coupon-text {
+  font-size: 28rpx;
+  color: #999999;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #f6f6f6;
+  padding: 0 30rpx;
+  margin: 30rpx 0;
 }
-.count-btn .count {
-  padding: 0 6rpx;
-  width: 40rpx;
+
+.note textarea {
+  background-color: #f6f6f6;
+  font-size: 28rpx;
+  color: #333;
+  height: 220rpx;
+  padding: 30rpx;
+  margin-top: 30rpx;
+  width: 690rpx;
   box-sizing: border-box;
 }
-
-.member-right {
-  border-top: 2rpx solid #F3F3F3;
-  border-bottom: 2rpx solid #F3F3F3;
-}
-.rights .fr {
-  font-size: 24rpx;
-  color: #FF6600;
-}
-.pay-price>.fr {
-  font-size: 34rpx;
-}
-
-.tel>text, .note>text {
-  width: 80rpx;
-  display: inline-block;
-}
-.usermgs {
-  position: relative;
-}
-.usermgs input {
-  display: inline-block;
-  position: absolute;
-  height: 60rpx;
-  line-height: 60rpx;
-  vertical-align: middle;
-  top: 16rpx;
-  left: 100rpx;
-}
 .placeholder {
-  font-size: 13px;
+  font-size: 28rpx;
   color: #999999;
 }
 
 .pay-btn {
   width: 690rpx;
-  height: 100rpx;
+  height: 88rpx;
   text-align: center;
-  line-height: 100rpx;
-  background-color: #FF6600;
+  line-height: 88rpx;
+  background-color: #336964;
   color: #fff;
-  font-size: 36rpx;
-  margin: 0 auto;
-  border-radius: 60rpx;
-}
-
-.bottom-btn {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  text-align: center;
-  color: #fff;
-  font-size: 36rpx;
-  background-color: #ff6600;
-}
-.bottom-btn>view {
-  width: 50%;
-  display: inline-block;
-  height: 100rpx;
-  line-height: 100rpx;
-}
-.moreyh {
-  background: #23252B;
-}
-
-.bottom-btn .disabled {
-  background-color: #D8D8D8;
-}
-
-.pay-ju-bottom {
-  bottom: 140rpx;
+  font-size: 34rpx;
+  margin: 10rpx auto 40rpx;
 }

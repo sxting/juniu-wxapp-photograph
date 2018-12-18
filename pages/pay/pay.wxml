@@ -24,19 +24,16 @@
 
 <view class="item rights">
   <view class="coupon" bindtap="goMyCoupon">
-    <text>优惠信息</text>
-    <view class="fr" wx:if="{{productCouponLength > 0}}">
+    <view class='sub-title'>优惠信息</view>
+    <view class="coupon-text" wx:if="{{productCouponLength > 0}}">
       <text wx:if="{{couponId}}">已选一张优惠券 {{couponPrice}} ></text>
-      <text wx:else>{{productCouponLength}}张优惠券可用</text>
+      <view wx:else>{{productCouponLength}}张优惠券可用 <text class='jn-icon icon-more fr'></text></view>
     </view>
-    <view class="fr" wx:else>暂无可用优惠券</view>
+    <view class="coupon-text" wx:else>暂无可用优惠券</view>
   </view>
-</view>
-
-<view class="item usermgs">
   <view class="note">
-    <text class="">备注</text> 
-    <input class="" value="{{memo}}" bindinput='getMemo' placeholder="请填写备注信息（选填）" placeholder-class="placeholder" />
+    <view class="sub-title">备注</view> 
+    <textarea value="{{memo}}" bindinput='getMemo' placeholder="请填写备注内容" placeholder-class="placeholder"></textarea>
   </view>
 </view>
 
