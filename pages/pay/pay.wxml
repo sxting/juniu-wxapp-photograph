@@ -2,91 +2,39 @@
   <image src="{{productInfo.url ? productInfo.url : juniuImg}}"></image>
   <view class="product-right">
     <view class="product-name">{{productInfo.productName}}</view>
-    <view class="product-price">￥<text>{{productInfo.currentPrice ? productInfo.currentPrice / 100 : ''}}</text></view>
+    <view class="product-price">￥{{productInfo.currentPrice ? productInfo.currentPrice / 100 : ''}}</view>
   </view>
 </view>
 
 <view class="jn-bg"></view>
 
 <view class="item price-box">
-  <view class="price"><text>售价</text><text class="fr">{{productInfo.currentPrice ? productInfo.currentPrice / 100 : ''}}元</text></view>
+  <view class='sub-title'>订单信息</view>
   <view class="count-box">
     <text>数量</text>
     <text class='fr'>{{count}}</text>
-    <!-- <view class="fr count-btn">
-      <text bindtap="onCountLeftClick">-</text> 
-      <text class="count">{{count}}</text> 
-      <text bindtap="onCountRightClick">+</text>
-    </view> -->
   </view>
-  <view class="total-price"><text>小计</text><text class="fr">{{productInfo.currentPrice ? productInfo.currentPrice * count / 100 : ''}}元</text></view>
+  <view class="total-price">
+    <text>小计</text>
+    <text class="fr">￥{{productInfo.currentPrice ? productInfo.currentPrice * count / 100 : ''}}</text>
+  </view>
 </view>
+
+<view class='jn-bg'></view>
 
 <view class="item rights">
-  <!-- 如果选择了计次卡和期限卡  那隐藏优惠券选项 -->
-  <view class="coupon" bindtap="goMyCoupon" hidden="{{ cardId && (cardType === 'METERING' || cardType === 'TIMES')}}">
-    <text>优惠券</text>
-    <view class="fr" wx:if="{{productCouponLength > 0}}">
+  <view class="coupon" bindtap="goMyCoupon">
+    <view class='sub-title'>优惠信息</view>
+    <view class="coupon-text" wx:if="{{productCouponLength > 0}}">
       <text wx:if="{{couponId}}">已选一张优惠券 {{couponPrice}} ></text>
-      <text wx:else>{{productCouponLength}}张优惠券 ></text>
+      <view wx:else>{{productCouponLength}}张优惠券可用 <text class='jn-icon icon-more fr'></text></view>
     </view>
-    <view class="fr" wx:else>暂无可用优惠券</view>
+    <view class="coupon-text" wx:else>暂无可用优惠券</view>
   </view>
-  <view class="member-right" wx:if="{{productCardLength > 0}}" bindtap="goMyCard">
-    <text>会员权益</text>
-    <view class="fr"> <text wx:if="{{cardName}}">{{cardName}} <text wx:if="{{cardPrice}}">-{{cardPrice}}</text></text> > </view>
-  </view>
-  <view class="pay-price">
-    <text>实付款</text>
-    <view class="fr">{{payPrice}}</view>
-  </view>
-</view>
-
-<view class="item usermgs">
   <view class="note">
-    <text class="">备注</text> 
-    <input class="" value="{{memo}}" bindinput='getMemo' placeholder="请填写备注信息（选填）" placeholder-class="placeholder" />
+    <view class="sub-title">备注</view> 
+    <textarea value="{{memo}}" bindinput='getMemo' placeholder="请填写备注内容" placeholder-class="placeholder"></textarea>
   </view>
 </view>
 
-<view class="pay-btn" wx:if="{{productCardLength > 0}}" bindtap="onOrderPayClick">立即支付</view>
-
-<view class="bottom-btn" wx:else>
-  <view class="moreyh {{noCardConfig ?  'disabled' : ''}}" bindtap="onMoreRightsClick">更多优惠</view>
-  <view class="pay" bindtap="onZhijieOrderPay">直接付款</view>
-</view>
-
-<!-- <view class="juniu-bottom pay-ju-bottom"><image src="/asset/images/logo.png"></image></view>   -->
-
-<!-- 办卡弹框 -->
-<view class="member-rights-alert-bg" wx:if="{{showCardBuy}}">
-  <view class="member-rights-alert" wx:if="{{!showPaySuccess}}">
-    <view class="rights-title">会员权益</view>
-    <view class="jn-icon icon-close" bindtap="onCloseCardClick"></view>        
-    <view class="card-list">
-      <view class="card" wx:for="{{productCardConfigList}}" wx:key="item" 
-      wx:if="{{!((item.type === 'STORED' && item.rules[0].balance/100 < payPrice) || (item.type === 'REBATE' && item.rules[0].balance/100 < payPrice))}}"
-      bindtap="onCardConfigItemClick" data-ruleid="{{item.rules[0].ruleId}}" data-cardid="{{item.cardConfigId}}">
-        <image src="/asset/images/card-bg.png"></image>
-        <view class="cardprice">
-          <view>售价{{item.rules[0].price?item.rules[0].price/100: ''}}元</view>
-          <view class="chuzhi" wx:if="{{item.type == 'STORED'}}">储值<text>{{item.rules[0].balance ? item.rules[0].balance/100 : ''}}</text>元</view>
-          <view class="chuzhi" wx:elif="{{item.type == 'REBATE'}}">打<text>{{item.rules[0].rebate}}</text>折</view>          
-          <view class="chuzhi" wx:elif="{{item.type == 'METERING'}}">使用<text>{{item.rules[0].balance}}</text>次</view>
-          <view class="chuzhi" wx:elif="{{item.type == 'TIMES'}}"> 
-            <view wx:if="{{item.rules[0].validateType == 'FOREVER'}}">永久有效</view>
-            <view wx:else>可用<text>{{item.rules[0].validate}}</text>天</view>
-          </view>
-        </view>
-        <view class="card-selected jn-icon icon-select" wx:if="{{ruleId == item.rules[0].ruleId}}"></view>
-      </view>
-    </view>
-    <view class="opencrad" bindtap="onPayBtnClick">开通并付款</view>
-  </view>
-
-  <view class="card-success alert-box" wx:else>
-    <view class="alert-title">会员卡开通成功</view>
-    <view class="alert-tip">可在个人中心-我的会员卡中查看</view>
-    <view class="alert-btn" bindtap="onSuccessSureClick">确定</view>    
-  </view>
-</view>
+<view class="pay-btn" bindtap="onOrderPayClick">立即支付</view>
