@@ -3,11 +3,10 @@ import { errDialog, loading } from 'utils/util'
 import { constant } from 'utils/constant'
 
 App({
-  onLaunch: function () {
+  onShow: function (options) {
     let self = this;
     let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
     let appId = 'wx3bb038494cd68262';
-
     self.globalData.appId = extConfig.theAppid ? extConfig.theAppid : appId;
 
     // 登录
@@ -18,6 +17,21 @@ App({
         wx.getSetting({
           success: res => {
             if (res.authSetting['scope.userInfo']) {
+              let str = ''
+              if (options.query) {
+                for (let key in options.query) {
+                  str += `&${key}=${options.query[key]}`
+                }
+                str = str.substring(1);
+                wx.reLaunch({
+                  url: `/${options.path}?${str}`,
+                })
+              } else {
+                wx.reLaunch({
+                  url: `/${options.path}`,
+                })
+              }
+              
               wx.getUserInfo({
                 success: res => {
                   self.globalData.hasUserInfo = true;
@@ -46,11 +60,9 @@ App({
                         wx.setStorage({
                           key: constant.TOKEN,
                           data: res.juniuToken,
-                          success: function (res1) {
-                            console.log(res1);
+                          success: function (res) {
                             if (self.userInfoReadyCallback) {
-                              console.log(res1);
-                              self.userInfoReadyCallback(res1)
+                              self.userInfoReadyCallback(res)
                             }
                           }
                         })
@@ -68,12 +80,20 @@ App({
                 }
               })
             } else {
-
               this.globalData.hasUserInfo = false;
-              console.log(options);
-              wx.reLaunch({
-                url: '/pages/index/index',
-              })
+              if (options.query) {
+                for (let key in options.query) {
+                  str += `&${key}=${options.query[key]}`
+                }
+                str = str.substring(1);
+                wx.reLaunch({
+                  url: `/pages/index/index?url=${options.path}&optionStr=${str}`,
+                })
+              } else {
+                wx.reLaunch({
+                  url: `/pages/index/index?url=${options.path}`,
+                })
+              }
             }
           }
         })

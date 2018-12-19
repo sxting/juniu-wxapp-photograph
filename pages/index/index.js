@@ -10,12 +10,14 @@ Page({
     userIsBind: false,
     TPLID: constant.TPLID,
     phone: '',
-    options: ''
+    optionStr: '',
+    url: ''
   },
 
   onLoad: function (options) {
     this.setData({
-      options: options ? options : ''
+      optionStr: options.optionStr ? options.optionStr : '',
+      url: options.url ? options.url : 'pages/home/home'
     })
     wx.setNavigationBarTitle({
       title: '登录授权',
@@ -70,31 +72,17 @@ function logIn(code, appId, rawData) {
         key: constant.TOKEN,
         data: res.juniuToken,
         success: function (res) {
-          // console.log(self.data.options);
-          wx.reLaunch({
-            url: '/pages/home/home',
-          })
-
-          setTimeout(function () {
-            if (app.userInfoReadyCallback) {
-              app.userInfoReadyCallback(res)
-            }
-          }, 200)
-
-          if (!self.data.options) {
+          if (self.data.optionStr) {
             wx.reLaunch({
-              url: '/pages/home/home',
+              url: `/${self.data.url}?${self.data.optionStr}`,
             })
           } else {
-            // let optionsJson = JSON.parse(self.data.options).options;
-            // let url = optionsJson.url;
-            // let options = '';
-            // optionsJson.forEach(function(item) {
-            //   options
-            // })
-            // wx.reLaunch({
-            //   url: url + '?options=' + JSON.stringify(self.data.options),
-            // })
+            wx.reLaunch({
+              url: `/${self.data.url}`,
+            })
+          }
+          if (app.userInfoReadyCallback) {
+            app.userInfoReadyCallback(res)
           }
         }
       })

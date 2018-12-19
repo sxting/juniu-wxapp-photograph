@@ -28,7 +28,11 @@ Page({
 
     let self = this;
     if (options.type === 'shared') {
-     
+      wx.setStorageSync(constant.STORE_INFO, options.storeId);
+      app.userInfoReadyCallback = (res) => {
+        getProductDetail.call(self);
+        getStoreInfo.call(self, wx.getStorageSync(constant.STORE_INFO))
+      }
     } else {
       getProductDetail.call(this);
       getStoreInfo.call(this, wx.getStorageSync(constant.STORE_INFO))

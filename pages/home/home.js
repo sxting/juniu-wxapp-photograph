@@ -13,7 +13,6 @@ Page({
     // ],
     // storeId: '',
     // storeName: '',
-    // scene: 0,
     // storeInfo: {},
     // ticketList: [],
     juniuImg: '/asset/images/product.png',
@@ -25,41 +24,45 @@ Page({
     home: true,
     isOnLoad: false,
     getUserInfo: false,
-    collageProductList: [],//拼团列表
-    productTagName: '精选套餐',
-    productionList: [], //展示作品
-
+    // collageProductList: [],//拼团列表
+    // productTagName: '精选套餐',
+    // productionList: [], //展示作品
   },
 
-  onShow() {
-    if (this.data.isOnLoad) {
+  onShow() { 
+    if (wx.getStorageSync(constant.STORE_INFO)) {
+      this.setData({
+        storeId: wx.getStorageSync(constant.STORE_INFO)
+      })
       getCollageListInfor.call(this)
-      getAllTicket.call(this, this.data.storeId);
+      getAllTicket.call(this, wx.getStorageSync(constant.STORE_INFO));
+      getStoreIndexInfo.call(this, wx.getStorageSync(constant.STORE_INFO));
+      getProduction.call(this);
+      getStoreInfo.call(this, wx.getStorageSync(constant.STORE_INFO));
+    } else {
+      let self = this;
+      app.userInfoReadyCallback = (res) => {
+        getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
+        wx.getLocation({
+          success: function (result) {
+            self.setData({
+              latitude: result.latitude,
+              longitude: result.longitude
+            })
+            closestStore.call(self)
+          },
+          fail: function (result) {
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          }
+        })
+      };
     }
   },
 
   onLoad: function () {
-    let self = this;
-    app.userInfoReadyCallback = (res) => {
-      // this.setData({
-      //   getUserInfo: app.globalData.hasUserInfo
-      // })
-      getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
-      wx.getLocation({
-        success: function (result) {
-          self.setData({
-            latitude: result.latitude,
-            longitude: result.longitude
-          })
-          closestStore.call(self)
-        },
-        fail: function (result) {
-          wx.navigateTo({
-            url: '/pages/index/index',
-          })
-        }
-      })
-    };
+    
   },
 
   // 跳转到查看更多拼团列表页
@@ -98,7 +101,7 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: wx.getStorageSync('storeName'),
-      path: '/pages/home/home?storeid=' + this.data.storeId + '&merchantId=' + wx.getStorageSync(constant.MERCHANTID),
+      path: '/pages/home/home?merchantId=' + wx.getStorageSync(constant.MERCHANTID),
       success: function (res) {
         // 转发成功
         console.log(res);
