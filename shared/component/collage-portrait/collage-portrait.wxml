@@ -19,7 +19,7 @@
 
 <view class="check-all" wx:if="{{fleg=='more'}}" bindtap='moreBtnClick'>
   <text class='jn-bg'>查看全部</text>
-  <view class="jn-icon icon-rightblue"></view>
+  <view class="jn-icon icon-more"></view>
 </view>
 
 <view class="special-symbol diandian" wx:else bindtap='moreBtnClick'>

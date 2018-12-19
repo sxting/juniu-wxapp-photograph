@@ -200,7 +200,7 @@ function getCollageOrderDetail() {
           activityId: res.activityId,
           groupId: res.groupNo,
           collageNumber: res.peopleCount,
-          phone: res.applyStores[0].storePhones[0],
+          phone: res.applyStores&&res.applyStores.length>0?res.applyStores[0].storePhones[0]:'',
           hadCollageNumber: res.currentGroup ? res.currentGroup.picUrls.length : 0,
           remainingNumber: remainingNumber,
           arrCollageImageShow: this.data.arrCollageImageShow,

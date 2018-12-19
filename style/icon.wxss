@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 925219 */
-  src: url('//at.alicdn.com/t/font_925219_0j9w3admk0md.eot');
-  src: url('//at.alicdn.com/t/font_925219_0j9w3admk0md.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_925219_0j9w3admk0md.woff') format('woff'),
-  url('//at.alicdn.com/t/font_925219_0j9w3admk0md.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_925219_0j9w3admk0md.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_925219_17uakdxekxah.eot');
+  src: url('//at.alicdn.com/t/font_925219_17uakdxekxah.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_925219_17uakdxekxah.woff') format('woff'),
+  url('//at.alicdn.com/t/font_925219_17uakdxekxah.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_925219_17uakdxekxah.svg#iconfont') format('svg');
 }
 .jn-icon {
   display: inline-block;
@@ -116,7 +116,9 @@
 .icon-jinggao::before {
   content: '\e810'
 }
-
+.icon-sc::before {
+  content: '\e69f'
+}
 /* 未找到start */
 .space-box {
     /* border-top: 1px solid #E5E5E5; */
