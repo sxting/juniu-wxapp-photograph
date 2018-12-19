@@ -1,0 +1,11 @@
+<block wx:if="{{storeList.length > 0}}">
+  <scroll-view scroll-y style="height: {{windowHeight}}px;">
+    <view class="address-list" wx:for="{{storeList}}"
+      data-storeid="{{item.storeId}}" data-storename="{{item.storeName}}" bindtap="routerToStoreIndex">
+      <view class="address-box" hover-class="address-box-active">
+        <view>{{item.storeName}}</view>
+        <view class="address-detail"> <icon class='jn-icon icon-weizhix'></icon> {{item.address}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</block>
