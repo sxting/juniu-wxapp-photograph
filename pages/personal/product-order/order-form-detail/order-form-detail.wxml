@@ -1,15 +1,13 @@
 <view class="page">
-  <view class="status {{status == 4 ? 'status4' : ''}}"
-  wx:if="{{status == 1 || status == 4}}">
-    <text class="jn-icon icon-shijian"></text>
-    <view class="status-right">
+  <view class='status-bg' wx:if="{{status == 1 || status == 4}}">
+    <view class="status {{status == 4 ? 'status4' : ''}}">
       <view class="status-text">
         <text wx:if="{{status == 1}}">待支付</text>
         <text wx:elif="{{status == 4}}">已关闭</text>
       </view>
       <view class="status-note">
         <text wx:if="{{status == 1}}">请在下单后5分钟内付款，超时订单将自动关闭</text>
-        <text wx:elif="{{status == 4}}">超时未支付</text>
+        <text wx:elif="{{status == 4}}">超时未支付，订单关闭</text>
       </view>
     </view>
   </view>
@@ -24,56 +22,48 @@
       </view>
   </view>
 
-  <view class="price-box" wx:if="">
-    <view class="price-item">
-      <text>{{orderDetail.productInfo}}</text>
-      <text class="fr">+{{orderDetail.money ? orderDetail.money*orderDetail.orderItem[0].num/100 : ''}}</text>
-    </view>
-    <view class="price-item">
-      <text>优惠券</text>
-      <text class="fr">-10</text>
-    </view>
-    <view class="price-item">
-      <text>会员卡开卡</text>
-      <text class="fr">+199</text>
-    </view>
-    <view class="price-total">
-      <text>实付款</text>
-      <text class="fr">899元</text>
-    </view>
-  </view>
-
-  <view class="address-box bd" wx:if="{{status == 1 || status == 4}}">
+  <view class="address-box" wx:if="{{status == 1 || status == 4}}">
+    <view class='sub-title'>门店信息</view>
     <view class="store-btn-box">{{storeName}}</view>
     <view class="address-and-tel">
-      <icon class="jn-icon icon-address"></icon>{{storeAddress}}
-      <view class="fr tel-box" catchtap="onTelClick">
-        <view class="jn-icon icon-tel"></view>
-      </view>
-    </view>
-  </view>
-
-  <view class="bd w-inner code-box" wx:else>
-    <view class="product-name">{{orderDetail.productInfo}}</view>
-    <view class="code-status">
       <view>
-        <text wx:if="{{status == 3}}">已使用</text>
-        <text wx:elif="{{status == 2}}">未使用</text>
-        <text wx:elif="{{status == 5}}">已退款</text>
+        <text class="jn-icon icon-address"></text>
+        <text class='address-text'>{{storeAddress}}</text>
       </view>
-      <view class="code-order-time" wx:if="{{orderDetail.status !== 'FINISH'}}">剩余有效期：{{leftDays}}天</view>
-    </view>
-    <view class="code" wx:for="{{orderDetail.vouchers}}" wx:for-index="index">
-      <canvas canvas-id="{{'barcode'+index}}" />
-      <view class="code-num">券码 {{item.voucherCode}}</view>
+      <view class="tel-box" catchtap="onTelClick">
+        <view class="jn-icon icon-ShapeCopyx"></view>
+      </view>
     </view>
   </view>
 
-  <view class="order-box w-inner bd">
-    <view class="">订单编号：{{orderId}}</view>
-    <view class="">下单时间：{{orderDetail.juniuoModel.dateCreated}}</view>
+  <view class='code-box mt-10' wx:elif="{{status == 2 || status == 3}}">
+    <view class='sub-title'>券码</view>
+    <view class='code-bd'>
+      <view class='code-top'>
+        <view class='code-top-l fl'>{{orderDetail.productInfo}}</view>
+        <view class='code-top-r fr'>
+          <text wx:if="{{status == 3}}">已使用</text>
+          <text wx:elif="{{status == 2}}">未使用</text>
+          <text wx:elif="{{status == 5}}">已退款</text>
+        </view>
+      </view>
+      <view class="code" wx:for="{{orderDetail.vouchers}}" wx:for-index="index">
+        <view class="code-num">{{item.voucherCode}}</view>
+        <canvas canvas-id="{{'barcode'+index}}" />
+        <view class="code-time" wx:if="{{orderDetail.status !== 'FINISH'}}">剩余有效期：{{leftDays}}天</view>
+      </view>
+    </view>
   </view>
 
-  <view class="pay-btn" wx:if="{{status == 1}}" bindtap="onPayClick">立即付款</view>
-  <view class="pay-btn {{data.biztype == 'OPENCARD' && data.source == 'WXAPP' ? 'disabled' : ''}}" wx:elif="{{status == 2}}" bindtap="goRefund">申请退款</view>  
+  <view class="order-box mt-10">
+    <view class='sub-title'>订单信息</view>
+    <view class="lh-30">订单编号：{{orderId}}</view>
+    <view class="lh-30">下单时间：{{orderDetail.juniuoModel.dateCreated}}</view>
+  </view>
+
+  <view class='pay-btn-bg' wx:if="{{status === 1 || status === 2}}">
+    <view class="pay-btn" wx:if="{{status == 1}}" bindtap="onPayClick">立即付款</view>
+    <view class="pay-btn {{data.biztype == 'OPENCARD' && data.source == 'WXAPP' ? 'disabled' : ''}}" 
+    wx:elif="{{status == 2}}" bindtap="goRefund">申请退款</view> 
+  </view> 
 </view>

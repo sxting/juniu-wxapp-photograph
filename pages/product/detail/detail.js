@@ -60,7 +60,7 @@ Page({
   // 点击适用门店
   onStoreClick: function () {
     wx.navigateTo({
-      url: '/pages/index/index?productId=' + this.data.productId,
+      url: '/pages/shop/list/list?productId=' + this.data.productId,
     })
   },
 
