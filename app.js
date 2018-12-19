@@ -4,6 +4,8 @@ import { constant } from 'utils/constant'
 
 App({
   onShow: function (options) {
+    console.log(options);
+    
     let self = this;
     let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
     let appId = 'wx3bb038494cd68262';
@@ -16,6 +18,8 @@ App({
         // 获取用户信息
         wx.getSetting({
           success: res => {
+            console.log(res.authSetting['scope.userInfo']);
+            console.log(options);
             if (res.authSetting['scope.userInfo']) {
               let str = ''
               if (options.query) {

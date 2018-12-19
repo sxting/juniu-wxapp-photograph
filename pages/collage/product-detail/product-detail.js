@@ -69,46 +69,14 @@ Page({
         getProductDetail.call(self);
         getStoreInfo.call(self)
       };
-      // wx.login({
-      //   success: function (result) {
-      //     wx.getUserInfo({
-      //       withCredentials: true,
-      //       success: function (res) {
-      //         self.setData({
-      //           getUserInfo: true
-      //         })
-      //         let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-      //         let appId = 'wx3bb038494cd68262';
-      //         if (result.code) {
-      //           logIn.call(self, result.code, extConfig.theAppid ? extConfig.theAppid : appId, res.rawData);
-      //         } else {
-      //           console.log('获取用户登录态失败！' + result.errMsg)
-      //         }
-      //       },
-      //       fail: function () {
-      //         self.setData({
-      //           getUserInfo: false
-      //         })
-      //       }
-      //     });
-      //   },
-      //   fail: function (res) {
-      //     self.setData({
-      //       getUserInfo: false
-      //     })
-      //   },
-      //   complete: function (res) { },
-      // });
+ 
     } else {
       getProductDetail.call(this);
+      if (wx.getStorageSync(constant.STORE_INFO)) {
+        getStoreInfo.call(this)
+      }
     }
    
-  },
-
-  onShow: function () {
-    if (wx.getStorageSync(constant.STORE_INFO)) {
-      getStoreInfo.call(this)
-    }
   },
 
   onStoreClick() {

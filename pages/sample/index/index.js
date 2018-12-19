@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    storeId: wx.getStorageSync(constant.STORE_INFO) ||'1531800050458194516965',
+    storeId: '',
     worksList: [],
     imageWidth: 414,
   },
@@ -18,7 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -32,6 +32,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      storeId: wx.getStorageSync(constant.STORE_INFO) 
+    });
     getWorkList.call(this);
   },
 
