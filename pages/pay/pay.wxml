@@ -37,4 +37,7 @@
   </view>
 </view>
 
-<view class="pay-btn" bindtap="onOrderPayClick">立即支付</view>
+<form bindsubmit="formSubmit" bindtap='onOrderPayClick' report-submit="true">
+  <button formType="submit" class='pay-btn'>立即支付</button>
+</form>
+<!-- <view class="pay-btn" bindtap="onOrderPayClick">立即支付</view> -->

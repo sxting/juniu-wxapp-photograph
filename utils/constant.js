@@ -55,6 +55,8 @@ var constant = {
   },
   MERCHANTID : 'merchantId',
   USER_ID: 'userId',
+  OPEN_ID: 'openid',
+  CUSTOMER_ID: 'customerId',
   CHEAP_CODE: 10170326,
   CONTACT: 18813074982,
   VERSION_NAME: 'version',

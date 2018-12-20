@@ -199,7 +199,12 @@
   </view>
 
   <view wx:if="{{!groupId}}">
-    <view class="jn-btn" wx:if="{{data.product.inventory > 0}}" bindtap="onOpenGroupBtnClick">一键开团{{presentPrice}}元</view>
+    <view wx:if="{{data.product.inventory > 0}}">
+      <form bindsubmit="formSubmit" bindtap='onOpenGroupBtnClick' report-submit="true">
+        <button formType="submit" class='jn-btn'>一键开团{{presentPrice}}元</button>
+      </form>
+    </view>
+    <!-- <view class="jn-btn" wx:if="{{data.product.inventory > 0}}" bindtap="onOpenGroupBtnClick">一键开团{{presentPrice}}元</view> -->
     <view class="jn-btn disabled" wx:else>库存不足，可选择参团</view>
   </view>
 

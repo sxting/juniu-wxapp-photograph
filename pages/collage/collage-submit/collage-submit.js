@@ -5,6 +5,7 @@ import { constant } from '../../../utils/constant';
 import { homeService } from '../../home/shared/service.js';
 import { service } from '../../../service';
 import { memberCardService } from '../../personal/member-card/shared/service';
+import { formidService } from '../../../shared/service/formid.service.js';
 
 Page({
   data: {
@@ -49,6 +50,13 @@ Page({
       },
       error: err => errDialog(err),
       complete: () => wx.hideToast()
+    })
+  },
+
+  formSubmit: function (e) {
+    let formId = e.detail.formId; //获取formId
+    formidService.collectFormIds(formId).subscribe({
+      next: res => { }
     })
   },
 

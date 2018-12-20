@@ -50,6 +50,9 @@
   </view>
 
   <view class='go-pay-bg'>
-    <view class="go-pay" bindtap="alertCountSelect">立即购买</view>
+    <form bindsubmit="formSubmit" bindtap='alertCountSelect' report-submit="true">
+      <button formType="submit" class='go-pay'>立即购买</button>
+    </form>
+    <!-- <view class="go-pay" bindtap="alertCountSelect">立即购买</view> -->
   </view>
 </view> 

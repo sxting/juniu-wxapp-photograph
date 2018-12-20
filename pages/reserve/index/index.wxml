@@ -53,7 +53,10 @@
         </view>
     </view>
     <!--确认预约-->
-    <view class="sure-btn" bindtap="onCommitBtnClick">确认预约</view>
+    <form bindsubmit="formSubmit" bindtap='onCommitBtnClick' report-submit="true">
+      <button formType="submit" class='sure-btn'>立即支付</button>
+    </form>
+    <!-- <view class="sure-btn" bindtap="onCommitBtnClick">确认预约</view> -->
 </view>
 
 <view class="alert-bg" wx:if="{{success}}">

@@ -3,6 +3,7 @@ import { errDialog, changeDate } from '../../../utils/util';
 import { constant } from '../../../utils/constant';
 import { service } from '../../../service';
 import { homeService } from '../../home/shared/service';
+import { formidService } from '../../../shared/service/formid.service.js';
 
 //获取应用实例
 var app = getApp()
@@ -58,6 +59,13 @@ Page({
     let self = this;
     wx.makePhoneCall({
       phoneNumber: self.data.tel
+    })
+  },
+
+  formSubmit: function (e) {
+    let formId = e.detail.formId; //获取formId
+    formidService.collectFormIds(formId).subscribe({
+      next: res => { }
     })
   },
 

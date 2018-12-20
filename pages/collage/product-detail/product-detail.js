@@ -4,7 +4,8 @@ import { errDialog, loading } from '../../../utils/util';
 import { constant } from '../../../utils/constant';
 import { homeService } from '../../home/shared/service.js';
 import { service } from '../../../service';
-import { productService } from '../../product/shared/service.js'
+import { productService } from '../../product/shared/service.js';
+import { formidService } from '../../../shared/service/formid.service.js';
 const app = getApp()
 
 Page({
@@ -84,6 +85,14 @@ Page({
       showStore: false
     })
   },
+
+  formSubmit: function (e) {
+    let formId = e.detail.formId; //获取formId
+    formidService.collectFormIds(formId).subscribe({
+      next: res => { }
+    })
+  },
+
   routerToStoreIndex() {
     this.setData({
       showStore: true,

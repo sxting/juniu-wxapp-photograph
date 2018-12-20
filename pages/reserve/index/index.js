@@ -2,6 +2,7 @@ import { orderService } from '../shared/service.js'
 import { errDialog } from '../../../utils/util';
 import { constant } from '../../../utils/constant';
 import { service } from '../../../service';
+import { formidService } from '../../../shared/service/formid.service.js';
 
 Page({
   data: {
@@ -27,6 +28,13 @@ Page({
     success: false,
     month: new Date().getMonth() + 1,
     year: new Date().getFullYear()
+  },
+
+  formSubmit: function (e) {
+    let formId = e.detail.formId; //获取formId
+    formidService.collectFormIds(formId).subscribe({
+      next: res => { }
+    })
   },
 
   onShow: function () {
