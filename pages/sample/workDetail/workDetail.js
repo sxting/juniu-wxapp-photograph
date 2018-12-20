@@ -80,7 +80,7 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: wx.getStorageSync('storeName'),
-      path: '/pages/sample/workDetail/workDetail?type=share&src='+this.data.imgsrc,
+      path: 'pages/sample/workDetail/workDetail?type=share&imgUrl='+this.data.imgsrc,
       success: function (res) {
         console.log(res);
       },
@@ -115,25 +115,6 @@ Page({
    */
   onReachBottom: function () {
 
-  },
-
-  
-
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function (res) {
-    return {
-      title: wx.getStorageSync('storeName'),
-      path: '/pages/shop/video/detail/detail?type=share&productionId=' + this.data.productionId + '&storeId=' + this.data.storeId,
-      success: function (res) {
-        console.log(res);
-      },
-      fail: function (res) {
-        console.log(res);
-      }
-    }
   }
 })
 function workDataFun(data) {

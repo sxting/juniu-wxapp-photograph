@@ -24,6 +24,7 @@
   padding: 0;
   margin: 0;
   line-height: 1;
+  z-index: 9999;
 }
 .sharedimg{
   width: 100%;
@@ -34,4 +35,10 @@
 }
 .works-item-box{
   font-size: 0;
+}
+.sharedButton{
+  width:100%;
+  height: 100%;
+  background:rgba(256,256,256,0);
+
 }

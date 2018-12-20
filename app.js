@@ -104,6 +104,9 @@ App({
       }
     })
   },
+  onError:function(res){
+    console.log(res)
+  },
   globalData: {
     userInfo: null,
     hasUserInfo: false,
