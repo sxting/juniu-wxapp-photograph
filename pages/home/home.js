@@ -42,21 +42,23 @@ Page({
       getStoreInfo.call(self, wx.getStorageSync(constant.STORE_INFO));
     } else {
       app.userInfoReadyCallback = (res) => {
-        getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
-        wx.getLocation({
-          success: function (result) {
-            self.setData({
-              latitude: result.latitude,
-              longitude: result.longitude
-            })
-            closestStore.call(self)
-          },
-          fail: function (result) {
-            wx.navigateTo({
-              url: '/pages/index/index',
-            })
-          }
-        })
+        setTimeout(function() {
+          getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
+          wx.getLocation({
+            success: function (result) {
+              self.setData({
+                latitude: result.latitude,
+                longitude: result.longitude
+              })
+              closestStore.call(self)
+            },
+            fail: function (result) {
+              wx.navigateTo({
+                url: '/pages/index/index',
+              })
+            }
+          })
+        }, 200)
       };
     }
   },
