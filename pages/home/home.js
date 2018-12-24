@@ -30,17 +30,17 @@ Page({
   },
 
   onShow() { 
-    if (this.data.isOnLoad) {
-      this.setData({
+    let self = this;
+    if (self.data.isOnLoad) {
+      self.setData({
         storeId: wx.getStorageSync(constant.STORE_INFO)
       })
-      getCollageListInfor.call(this)
-      getAllTicket.call(this, wx.getStorageSync(constant.STORE_INFO));
-      getStoreIndexInfo.call(this, wx.getStorageSync(constant.STORE_INFO));
-      getProduction.call(this);
-      getStoreInfo.call(this, wx.getStorageSync(constant.STORE_INFO));
+      getCollageListInfor.call(self)
+      getAllTicket.call(self, wx.getStorageSync(constant.STORE_INFO));
+      getStoreIndexInfo.call(self, wx.getStorageSync(constant.STORE_INFO));
+      getProduction.call(self);
+      getStoreInfo.call(self, wx.getStorageSync(constant.STORE_INFO));
     } else {
-      let self = this;
       app.userInfoReadyCallback = (res) => {
         getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
         wx.getLocation({
@@ -295,6 +295,7 @@ function closestStore() {
         storeName: res.storeName,
         isOnLoad: true
       })
+      console.log(self.data.storeId);      
       wx.setNavigationBarTitle({
         title: res.storeName
       })
