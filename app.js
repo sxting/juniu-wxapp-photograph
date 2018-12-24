@@ -4,6 +4,10 @@ import { constant } from 'utils/constant'
 
 App({
   onShow: function (options) {
+    const updateManager = wx.getUpdateManager();
+    updateManager.onUpdateReady(function () {
+        updateManager.applyUpdate()
+    });
     console.log(options);
     
     let self = this;
