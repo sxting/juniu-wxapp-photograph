@@ -1,5 +1,6 @@
 import { sampleService } from '../shared/service.js';
 import { constant } from '../../../utils/constant';
+const app = getApp()
 
 Page({
 
@@ -26,15 +27,40 @@ Page({
     wx.setNavigationBarTitle({
       title: '视频详情',
     })
-    this.setData({
-      src: options.src || '',
-      storeId: wx.getStorageSync(constant.STORE_INFO) || '1531800050458194516965'
-    })
-    if (options.imgUrl){
-      let list = options.imgUrl.split(',');
-      this.setData({
-        imgsrc: workDataFun.call(this, list)
+    
+    let self = this;
+    console.log(options)
+    if (options.type == 'share') {
+      app.userInfoReadyCallback = (res) => {
+        self.setData({
+          src: options.src || '',
+          storeId: wx.getStorageSync(constant.STORE_INFO)
+        })
+        if (options.imgUrl){
+          let list = options.imgUrl.split(',');
+          self.setData({
+            imgsrc: workDataFun.call(self, list)
+          })
+          wx.setNavigationBarTitle({
+            title: '图片详情',
+          })
+        }
+      };
+ 
+    } else {
+      self.setData({
+        src: options.src || '',
+        storeId: wx.getStorageSync(constant.STORE_INFO)
       })
+      if (options.imgUrl){
+        wx.setNavigationBarTitle({
+          title: '图片详情',
+        })
+        let list = options.imgUrl.split(',');
+        self.setData({
+          imgsrc: workDataFun.call(self, list)
+        })
+      }
     }
   },
 
@@ -51,7 +77,18 @@ Page({
   onShow: function () {
 
   },
-
+  onShareAppMessage: function (res) {
+    return {
+      title: wx.getStorageSync('storeName'),
+      path: 'pages/sample/workDetail/workDetail?type=share&imgUrl='+this.data.imgsrc,
+      success: function (res) {
+        console.log(res);
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    }
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -78,25 +115,6 @@ Page({
    */
   onReachBottom: function () {
 
-  },
-
-  
-
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function (res) {
-    return {
-      title: wx.getStorageSync('storeName'),
-      path: '/pages/shop/video/detail/detail?type=share&productionId=' + this.data.productionId + '&storeId=' + this.data.storeId,
-      success: function (res) {
-        console.log(res);
-      },
-      fail: function (res) {
-        console.log(res);
-      }
-    }
   }
 })
 function workDataFun(data) {

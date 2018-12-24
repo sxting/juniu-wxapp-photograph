@@ -4,6 +4,8 @@ import { constant } from 'utils/constant'
 
 App({
   onShow: function (options) {
+    console.log(options);
+    
     let self = this;
     let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
     let appId = 'wx3bb038494cd68262';
@@ -16,6 +18,8 @@ App({
         // 获取用户信息
         wx.getSetting({
           success: res => {
+            console.log(res.authSetting['scope.userInfo']);
+            console.log(options);
             if (res.authSetting['scope.userInfo']) {
               let str = ''
               if (options.query) {
@@ -49,7 +53,9 @@ App({
                         wx.setStorageSync(constant.MERCHANTID, res.merchantId ? res.merchantId : '153179997107784038184');
                         wx.setStorageSync(constant.CARD_LOGO, res.appHeadImg);
                         wx.setStorageSync(constant.sessionKey, res.sessionKey);
-                        wx.setStorageSync(constant.USER_ID, res.userId)
+                        wx.setStorageSync(constant.USER_ID, res.userId);
+                        wx.setStorageSync(constant.OPEN_ID, res.openid);
+                        wx.setStorageSync(constant.CUSTOMER_ID, res.customerId);
 
                         if (res.ver == '2') {
                           wx.setStorageSync(constant.VER, 2);
@@ -99,6 +105,9 @@ App({
         })
       }
     })
+  },
+  onError:function(res){
+    console.log(res)
   },
   globalData: {
     userInfo: null,

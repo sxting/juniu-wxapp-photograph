@@ -4,7 +4,8 @@ import { errDialog, loading } from '../../../utils/util';
 import { constant } from '../../../utils/constant';
 import { homeService } from '../../home/shared/service.js';
 import { service } from '../../../service';
-import { productService } from '../../product/shared/service.js'
+import { productService } from '../../product/shared/service.js';
+import { formidService } from '../../../shared/service/formid.service.js';
 const app = getApp()
 
 Page({
@@ -69,46 +70,14 @@ Page({
         getProductDetail.call(self);
         getStoreInfo.call(self)
       };
-      // wx.login({
-      //   success: function (result) {
-      //     wx.getUserInfo({
-      //       withCredentials: true,
-      //       success: function (res) {
-      //         self.setData({
-      //           getUserInfo: true
-      //         })
-      //         let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-      //         let appId = 'wx3bb038494cd68262';
-      //         if (result.code) {
-      //           logIn.call(self, result.code, extConfig.theAppid ? extConfig.theAppid : appId, res.rawData);
-      //         } else {
-      //           console.log('获取用户登录态失败！' + result.errMsg)
-      //         }
-      //       },
-      //       fail: function () {
-      //         self.setData({
-      //           getUserInfo: false
-      //         })
-      //       }
-      //     });
-      //   },
-      //   fail: function (res) {
-      //     self.setData({
-      //       getUserInfo: false
-      //     })
-      //   },
-      //   complete: function (res) { },
-      // });
+ 
     } else {
       getProductDetail.call(this);
+      if (wx.getStorageSync(constant.STORE_INFO)) {
+        getStoreInfo.call(this)
+      }
     }
    
-  },
-
-  onShow: function () {
-    if (wx.getStorageSync(constant.STORE_INFO)) {
-      getStoreInfo.call(this)
-    }
   },
 
   onStoreClick() {
@@ -116,6 +85,14 @@ Page({
       showStore: false
     })
   },
+
+  formSubmit: function (e) {
+    let formId = e.detail.formId; //获取formId
+    formidService.collectFormIds(formId).subscribe({
+      next: res => { }
+    })
+  },
+
   routerToStoreIndex() {
     this.setData({
       showStore: true,

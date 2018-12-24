@@ -139,7 +139,7 @@
   color: #336964;
 }
 .code-num {
-  padding-top: 40rpx;
+  padding-bottom: 10rpx;
   text-align: center;
   font-size: 34rpx;
 }
@@ -154,6 +154,9 @@
   color: #999999;
   text-align: center;
   padding-bottom: 30rpx;
+}
+.code-used {
+  text-decoration: line-through
 }
 
 .order-box {
