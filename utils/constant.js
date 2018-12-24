@@ -1,6 +1,6 @@
 var constant = {
   // TPLID: 'photograph2.19.5',
-  TPLID: 'test2.19.5',
+  TPLID: 'test1.0.0',
   address: 'address',
   phoneNumber: 'phoneNumber',
   couponId: 'couponId',
