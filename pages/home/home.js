@@ -30,7 +30,7 @@ Page({
   },
 
   onShow() { 
-    if (wx.getStorageSync(constant.STORE_INFO)) {
+    if (this.data.isOnLoad) {
       this.setData({
         storeId: wx.getStorageSync(constant.STORE_INFO)
       })
@@ -375,7 +375,7 @@ function getStoreIndexInfo(storeId, merchantId) {
         title: res.storeName
       })
       self.setData({
-        storeName: res.storeName
+        storeName: res.storeName,
       });
       wx.setStorageSync('storeName', res.storeName);
       // {picture_id}/resize_{width}_{height}/mode_fill
