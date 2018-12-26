@@ -174,6 +174,11 @@ function onlineBuyFun(data) {
       this.setData({
         orderId: res.orderId
       })
+      if (res.status === 'PAID') {
+        wx.navigateTo({
+          url: '/pages/personal/product-order/order-form-detail/order-form-detail?orderId=' + self.data.orderId,
+        })
+      };
       wx.requestPayment({
         timeStamp: res.payInfo.timeStamp,
         nonceStr: res.payInfo.nonceStr,

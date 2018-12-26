@@ -37,6 +37,11 @@ payService.onlineBuy = (data) => {
   return http.post(url, data)
 }
 
+// 接口金额为0，返回状态 为PAID，不需要调用微信支付相关接口拉起支付
+// https://biz.juniuo.com/wxapp/order/app/online/order.json
+
+
+
 module.exports = {
   payService: payService
 }

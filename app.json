@@ -21,6 +21,9 @@
     "pages/collage/product-list/product-list",
     "pages/shop/list/list"
   ],
+  "usingComponents": {
+    "login": "shared/component/login/login"
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

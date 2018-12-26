@@ -23,6 +23,43 @@ service.decodeUserPhone = (data) => {
   return http.get(apiUrl, data);
 }
 
+service.logInFun = (code, rawData, fun) => {
+  let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
+  let appId = 'wx3bb038494cd68262';
+  let reqData = {
+    code: code,
+    appid: extConfig.theAppid ? extConfig.theAppid : appId,
+    rawData: rawData,
+    tplid: constant.TPLID
+  }
+  service.logIn(reqData).subscribe({
+    next: res => {
+      wx.setStorageSync(constant.MERCHANTID, res.merchantId ? res.merchantId : '153179997107784038184');
+      wx.setStorageSync(constant.CARD_LOGO, res.appHeadImg);
+      wx.setStorageSync(constant.sessionKey, res.sessionKey);
+      wx.setStorageSync(constant.USER_ID, res.userId);
+      wx.setStorageSync(constant.OPEN_ID, res.openid);
+      wx.setStorageSync(constant.CUSTOMER_ID, res.customerId);
+
+      if (res.ver == '2') {
+        wx.setStorageSync(constant.VER, 2);
+      } else {
+        wx.setStorageSync(constant.VER, 1);
+      }
+
+      wx.setStorage({
+        key: constant.TOKEN,
+        data: res.juniuToken,
+        success: function (res) {
+          fun();
+        }
+      })
+    },
+    error: err => errDialog(err),
+    complete: () => wx.hideToast()
+  })
+}
+
 module.exports = {
   service: service
 }

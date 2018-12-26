@@ -15,12 +15,12 @@ Page({
     pageNo: 1,
     totalPages: 1,
     searchLoading: false,
-    from: ''
+    from: '',
   },
 
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '精选套餐',
+      title: options.productTagName ? options.productTagName : '精选套餐',
     })
     this.setData({
       storeId: wx.getStorageSync(constant.STORE_INFO),

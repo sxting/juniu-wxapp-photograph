@@ -9,28 +9,29 @@ const app = getApp()
 
 Page({
   data: {
-    // productImages: [
-    // ],
-    // storeId: '',
-    // storeName: '',
-    // storeInfo: {},
-    // ticketList: [],
+    productImages: [
+    ],
+    storeId: '',
+    storeName: '',
+    storeInfo: {},
+    ticketList: [],
     juniuImg: '/asset/images/product.png',
-    // showSearchMoreTicket: true,
-    // storeAddress: '',
-    // tel: '',
-    // latitude: '',
-    // longitude: '',
+    showSearchMoreTicket: true,
+    storeAddress: '',
+    tel: '',
+    latitude: '',
+    longitude: '',
     home: true,
     isOnLoad: false,
-    getUserInfo: false,
-    // collageProductList: [],//拼团列表
-    // productTagName: '精选套餐',
-    // productionList: [], //展示作品
+    userInfo: true,
+    collageProductList: [],//拼团列表
+    productTagName: '精选套餐',
+    productionList: [], //展示作品
   },
 
   onShow() { 
     let self = this;
+    console.log(self.data.isOnLoad);
     if (self.data.isOnLoad) {
       self.setData({
         storeId: wx.getStorageSync(constant.STORE_INFO)
@@ -41,30 +42,59 @@ Page({
       getProduction.call(self);
       getStoreInfo.call(self, wx.getStorageSync(constant.STORE_INFO));
     } else {
-      app.userInfoReadyCallback = (res) => {
-        setTimeout(function() {
-          getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
-          wx.getLocation({
-            success: function (result) {
-              self.setData({
-                latitude: result.latitude,
-                longitude: result.longitude
-              })
-              closestStore.call(self)
-            },
-            fail: function (result) {
-              wx.navigateTo({
-                url: '/pages/index/index',
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            self.setData({
+              userInfo: true
+            });
+            let callbackFun = function () {
+              getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
+              wx.getLocation({
+                success: function (result) {
+                  self.setData({
+                    latitude: result.latitude,
+                    longitude: result.longitude
+                  })
+                  closestStore.call(self)
+                },
+                fail: function (result) {
+                  self.setData({
+                    home: false
+                  })
+                }
               })
             }
-          })
-        }, 200)
-      };
+            wx.login({
+              success: function (result) {
+                wx.getUserInfo({
+                  success: res => {
+                    service.logInFun(result.code, res.rawData, callbackFun);
+                  },
+                  fail: () => {
+                    self.setData({
+                      userInfo: false
+                    })
+                  }
+                })
+              }
+            });
+          } else {
+            self.setData({
+              userInfo: false
+            });
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          }
+        }
+      })
     }
   },
 
   onLoad: function () {
-    
+    let self = this;
+    console.log('load')
   },
 
   // 跳转到查看更多拼团列表页
@@ -212,7 +242,7 @@ Page({
   // 跳转到服务项目列表
   goProductPage: function () {
     wx.navigateTo({
-      url: '/pages/product/select/select?storeId=' + this.data.storeId,
+      url: '/pages/product/select/select?storeId=' + this.data.storeId + '&productTagName=' + this.data.productTagName,
     })
   },
 

@@ -16,6 +16,38 @@ Page({
     juniuImg: '/asset/images/product.png',
     address: '',
     tel: '',
+    shared: false
+  },
+
+  onShow: function() {
+    let self = this;
+    if (this.data.shared) {
+      wx.getSetting({
+        success: res => {
+          // 如果授权  则直接登录  
+          if (res.authSetting['scope.userInfo']) {
+            let callbackFun = function () {
+              getProductDetail.call(self);
+              getStoreInfo.call(self, wx.getStorageSync(constant.STORE_INFO))
+            };
+            wx.login({
+              success: function (result) {
+                wx.getUserInfo({
+                  success: res => {
+                    service.logInFun(result.code, res.rawData, callbackFun);
+                  },
+                  fail: () => { }
+                })
+              }
+            });
+          } else {
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          }
+        }
+      })
+    }
   },
 
   onLoad: function (options) {
@@ -30,10 +62,34 @@ Page({
     let self = this;
     if (options.type === 'shared') {
       wx.setStorageSync(constant.STORE_INFO, options.storeId);
-      app.userInfoReadyCallback = (res) => {
-        getProductDetail.call(self);
-        getStoreInfo.call(self, wx.getStorageSync(constant.STORE_INFO))
-      }
+      this.setData({
+        shared: true,
+      })
+      wx.getSetting({
+        success: res => {
+          // 如果授权  则直接登录  
+          if (res.authSetting['scope.userInfo']) {
+            let callbackFun = function () {
+              getProductDetail.call(self);
+              getStoreInfo.call(self, wx.getStorageSync(constant.STORE_INFO))
+            };
+            wx.login({
+              success: function (result) {
+                wx.getUserInfo({
+                  success: res => {
+                    service.logInFun(result.code, res.rawData, callbackFun);
+                  },
+                  fail: () => {}
+                })
+              }
+            });
+          } else {
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          }
+        }
+      })
     } else {
       getProductDetail.call(this);
       getStoreInfo.call(this, wx.getStorageSync(constant.STORE_INFO))

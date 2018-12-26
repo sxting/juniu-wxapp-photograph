@@ -40,7 +40,38 @@ Page({
     countPage: 1,
     productId: '',
     showBtn: false,
-    showStore:true
+    showStore:true,
+    shared: false,
+  },
+
+  onShow: function () {
+    let self = this;
+    if (this.data.shared) {
+      wx.getSetting({
+        success: res => { 
+          if (res.authSetting['scope.userInfo']) {
+            let callbackFun = function () {
+              getProductDetail.call(self);
+              getStoreInfo.call(self)
+            };
+            wx.login({
+              success: function (result) {
+                wx.getUserInfo({
+                  success: res => {
+                    service.logInFun(result.code, res.rawData, callbackFun);
+                  },
+                  fail: () => { }
+                })
+              }
+            });
+          } else {
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          }
+        }
+      })
+    }
   },
 
   onLoad: function (options) {
@@ -59,18 +90,39 @@ Page({
     
     getProductCommentList.call(this);
 
+    let self = this;
     if (options.type == 'share') {
-      this.setData({
-        showBtn: true
-      })
       wx.setStorageSync(constant.STORE_INFO, options.storeId)
-      let self = this;
+      this.setData({
+        showBtn: true,
+        shared: true
+      })
 
-      app.userInfoReadyCallback = (res) => {
-        getProductDetail.call(self);
-        getStoreInfo.call(self)
-      };
- 
+      wx.getSetting({
+        success: res => {
+          // 如果授权  则直接登录  
+          if (res.authSetting['scope.userInfo']) {
+            let callbackFun = function () {
+              getProductDetail.call(self);
+              getStoreInfo.call(self)
+            };
+            wx.login({
+              success: function (result) {
+                wx.getUserInfo({
+                  success: res => {
+                    service.logInFun(result.code, res.rawData, callbackFun);
+                  },
+                  fail: () => { }
+                })
+              }
+            });
+          } else {
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          }
+        }
+      })
     } else {
       getProductDetail.call(this);
       if (wx.getStorageSync(constant.STORE_INFO)) {

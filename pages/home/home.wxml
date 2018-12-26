@@ -1,3 +1,4 @@
+<!-- <login wx:if="{{!userInfo}}"></login> -->
 <view class="container" wx:if="{{home}}">
   <!--轮播图部分-->
   <view class="banner-box">
@@ -31,7 +32,7 @@
         <image class='video-icon' wx:if="{{item.sourceType === 'VIDEO'}}" src='/asset/images/video.png'></image>
         <image class='img' src='{{item.url}}' style='height: {{item.height*2}}rpx'></image>
         <view class="{{item.sourceType === 'VIDEO' ? 'production-title1' : 'production-title2'}}">
-          #{{item.name}}<text wx:if="{{item.sourceType === 'IMAGE'}}"> / {{item.length}}张</text>
+          {{item.name}}<text wx:if="{{item.sourceType === 'IMAGE'}}"> / {{item.length}}张</text>
         </view>
       </view>
     </view>
@@ -82,7 +83,7 @@
               <text class='price-origin'>￥{{ item.originalPrice / 100 }}</text>
             </view>
             <view><text>{{ item.peopleCount }}人团 | </text>已团{{ item.openedGroupCount }}件</view>
-            <view class='go-btn'>去开团</view>
+            <view class='go-btn'>去开团 <icon class="jn-icon icon-more fr" ></icon></view>
           </view>
         </view>
       </view>

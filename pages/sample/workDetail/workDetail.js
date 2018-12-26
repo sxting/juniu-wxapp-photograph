@@ -1,5 +1,7 @@
 import { sampleService } from '../shared/service.js';
 import { constant } from '../../../utils/constant';
+import { service } from '../../../service';
+
 const app = getApp()
 
 Page({
@@ -17,36 +19,96 @@ Page({
     src: '',
     productionId: '',
     title: ''  ,
-    imgsrc:[]
+    imgsrc:[],
+    shared: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  onShow: function () {
+    let self = this;
+    if (this.data.shared) {
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            let callbackFun = function () {
+              self.setData({
+                src: options.src || '',
+                storeId: wx.getStorageSync(constant.STORE_INFO)
+              })
+              if (options.imgUrl) {
+                let list = options.imgUrl.split(',');
+                self.setData({
+                  imgsrc: workDataFun.call(self, list)
+                })
+                wx.setNavigationBarTitle({
+                  title: '图片详情',
+                })
+              }
+            };
+            wx.login({
+              success: function (result) {
+                wx.getUserInfo({
+                  success: res => {
+                    service.logInFun(result.code, res.rawData, callbackFun);
+                  },
+                  fail: () => { }
+                })
+              }
+            });
+          } else {
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          }
+        }
+      })
+    }
+  },
+
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '视频详情',
     })
     
     let self = this;
-    console.log(options)
     if (options.type == 'share') {
-      app.userInfoReadyCallback = (res) => {
-        self.setData({
-          src: options.src || '',
-          storeId: wx.getStorageSync(constant.STORE_INFO)
-        })
-        if (options.imgUrl){
-          let list = options.imgUrl.split(',');
-          self.setData({
-            imgsrc: workDataFun.call(self, list)
-          })
-          wx.setNavigationBarTitle({
-            title: '图片详情',
-          })
+      this.setData({
+        shared: true,
+      })
+      wx.getSetting({
+        success: res => { 
+          if (res.authSetting['scope.userInfo']) {
+            let callbackFun = function () {
+              self.setData({
+                src: options.src || '',
+                storeId: wx.getStorageSync(constant.STORE_INFO)
+              })
+              if (options.imgUrl) {
+                let list = options.imgUrl.split(',');
+                self.setData({
+                  imgsrc: workDataFun.call(self, list)
+                })
+                wx.setNavigationBarTitle({
+                  title: '图片详情',
+                })
+              }
+            };
+            wx.login({
+              success: function (result) {
+                wx.getUserInfo({
+                  success: res => {
+                    service.logInFun(result.code, res.rawData, callbackFun);
+                  },
+                  fail: () => { }
+                })
+              }
+            });
+          } else {
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          }
         }
-      };
- 
+      })
     } else {
       self.setData({
         src: options.src || '',
