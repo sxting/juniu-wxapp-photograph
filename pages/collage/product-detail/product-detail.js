@@ -7,7 +7,7 @@ import { service } from '../../../service';
 import { productService } from '../../product/shared/service.js';
 import { formidService } from '../../../shared/service/formid.service.js';
 const app = getApp()
-
+var time;
 Page({
   data: {
     jnImg: '/asset/images/product.png',
@@ -362,7 +362,7 @@ function getProductDetail() {
           });
 
           if (self.data.collageList && self.data.collageList.length > 0) {
-            setInterval(function () {
+            time = setInterval(function () {
               self.data.collageList.forEach(function (item) {
                 if (new Date('2000/01/01 ' + item.time).getHours().toString() === '0' && new Date('2000/01/01 ' + item.time).getMinutes().toString() === '0' && new Date('2000/01/01 ' + item.time).getSeconds().toString() === '0') {
                   item.time = '00:00:00';
@@ -417,7 +417,7 @@ function getProductDetail() {
           }
 
           //倒计时
-          setInterval(function () {
+          time = setInterval(function () {
             if (new Date('2000/01/01 ' + self.data.sharedHours + ':' + self.data.sharedMinites + ':' + self.data.sharedSeconds).getHours().toString() === '0' && new Date('2000/01/01 ' + self.data.sharedHours + ':' + self.data.sharedMinites + ':' + self.data.sharedSeconds).getMinutes().toString() === '0' && new Date('2000/01/01 ' + self.data.sharedHours + ':' + self.data.sharedMinites + ':' + self.data.sharedSeconds).getSeconds().toString() === '0') {
               self.data.sharedHours = '00';
               self.data.sharedMinites = '00';

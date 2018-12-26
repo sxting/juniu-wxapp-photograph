@@ -17,10 +17,20 @@ Page({
       frontColor: '#ffffff',
       backgroundColor: '#2d5e59',
     })
+    var self = this;
+    wx.getUserInfo({
+        success: res => {
+          self.setData({
+            userInfo: res.userInfo
+          });
+        },
+        fail: () => {
+          alert('获取用户登录态失败！' + result.errMsg)
+        }
+      })
     wx.setNavigationBarTitle({
       title: wx.getStorageSync('storeName'),
     })
-    let self = this;
   
     self.setData({
       userInfo: app.globalData.userInfo
