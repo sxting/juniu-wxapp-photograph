@@ -1,7 +1,5 @@
 import { sampleService } from '../shared/service.js';
 import { constant } from '../../../utils/constant';
-import { service } from '../../../service';
-
 const app = getApp()
 
 Page({
@@ -20,99 +18,36 @@ Page({
     productionId: '',
     title: ''  ,
     imgsrc:[],
-    shared: false
+    imgList:''
   },
 
-  onShow: function () {
-    let self = this;
-    if (this.data.shared) {
-      wx.getSetting({
-        success: res => {
-          if (res.authSetting['scope.userInfo']) {
-            let callbackFun = function () {
-              self.setData({
-                src: options.src || '',
-                storeId: wx.getStorageSync(constant.STORE_INFO)
-              })
-              if (options.imgUrl) {
-                let list = options.imgUrl.split(',');
-                self.setData({
-                  imgsrc: workDataFun.call(self, list)
-                })
-                wx.setNavigationBarTitle({
-                  title: '图片详情',
-                })
-              }
-            };
-            wx.login({
-              success: function (result) {
-                wx.getUserInfo({
-                  success: res => {
-                    service.logInFun(result.code, res.rawData, callbackFun);
-                  },
-                  fail: () => { }
-                })
-              }
-            });
-          } else {
-            wx.navigateTo({
-              url: '/pages/index/index',
-            })
-          }
-        }
-      })
-    }
-  },
-
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '视频详情',
     })
     
     let self = this;
+    console.log(options)
     if (options.type == 'share') {
-      this.setData({
-        shared: true,
-      })
-      wx.getSetting({
-        success: res => { 
-          if (res.authSetting['scope.userInfo']) {
-            let callbackFun = function () {
-              self.setData({
-                src: options.src || '',
-                storeId: wx.getStorageSync(constant.STORE_INFO)
-              })
-              if (options.imgUrl) {
-                let list = options.imgUrl.split(',');
-                self.setData({
-                  imgsrc: workDataFun.call(self, list)
-                })
-                wx.setNavigationBarTitle({
-                  title: '图片详情',
-                })
-              }
-            };
-            wx.login({
-              success: function (result) {
-                wx.getUserInfo({
-                  success: res => {
-                    service.logInFun(result.code, res.rawData, callbackFun);
-                  },
-                  fail: () => { }
-                })
-              }
-            });
-          } else {
-            wx.navigateTo({
-              url: '/pages/index/index',
-            })
-          }
+        self.setData({
+          src: options.src || ''
+        })
+        if (options.imgUrl){
+          let list = options.imgUrl.split(',');
+          self.setData({
+            imgsrc: workDataFun.call(self, list)
+          })
+          wx.setNavigationBarTitle({
+            title: '图片详情',
+          })
         }
-      })
+ 
     } else {
       self.setData({
-        src: options.src || '',
-        storeId: wx.getStorageSync(constant.STORE_INFO)
+        src: options.src || ''
       })
       if (options.imgUrl){
         wx.setNavigationBarTitle({
@@ -120,7 +55,8 @@ Page({
         })
         let list = options.imgUrl.split(',');
         self.setData({
-          imgsrc: workDataFun.call(self, list)
+          imgsrc: workDataFun.call(self, list),
+          imgList : list
         })
       }
     }
@@ -142,7 +78,7 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: wx.getStorageSync('storeName'),
-      path: 'pages/sample/workDetail/workDetail?type=share&imgUrl='+this.data.imgsrc,
+      path: 'pages/sample/workDetail/workDetail?type=share&imgUrl='+this.data.imgList+'&src='+this.data.src,
       success: function (res) {
         console.log(res);
       },
