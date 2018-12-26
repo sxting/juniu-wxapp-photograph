@@ -56,7 +56,7 @@ Page({
       wx.setStorageSync("productName", e.currentTarget.dataset.productName)
       wx.setStorageSync("reservePrice", e.currentTarget.dataset.price)
       wx.switchTab({
-        url: `/pages/order/order`,
+        url: `/pages/reserve/index/index`,
       })
     } else if (this.data.from === 'making') {
       wx.redirectTo({
