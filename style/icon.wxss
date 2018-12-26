@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 925219 */
-  src: url('//at.alicdn.com/t/font_925219_17uakdxekxah.eot');
-  src: url('//at.alicdn.com/t/font_925219_17uakdxekxah.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_925219_17uakdxekxah.woff') format('woff'),
-  url('//at.alicdn.com/t/font_925219_17uakdxekxah.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_925219_17uakdxekxah.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_925219_ris5wpiwri.eot');
+  src: url('//at.alicdn.com/t/font_925219_ris5wpiwri.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_925219_ris5wpiwri.woff') format('woff'),
+  url('//at.alicdn.com/t/font_925219_ris5wpiwri.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_925219_ris5wpiwri.svg#iconfont') format('svg');
 }
 .jn-icon {
   display: inline-block;
@@ -125,6 +125,9 @@
     text-align: center;
      padding-top: 320rpx; 
 
+}
+.icon-diandian::before {
+  content: '\e658'
 }
 .space-bg {
     width: 180rpx;

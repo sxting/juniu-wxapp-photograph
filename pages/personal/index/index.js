@@ -29,6 +29,8 @@ Page({
   },
 
   onShow() {
+    let self = this;
+    
     service.userIsBind().subscribe({
       next: res => {
         this.setData({
@@ -39,6 +41,9 @@ Page({
       error: err => errDialog(err),
       complete: () => wx.hideToast()
     })
+    self.setData({
+      userInfo: app.globalData.userInfo
+    });
   },
 
   // 点击绑定手机号
