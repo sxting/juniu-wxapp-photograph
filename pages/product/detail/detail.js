@@ -62,9 +62,11 @@ Page({
     let self = this;
     if (options.type === 'shared') {
       wx.setStorageSync(constant.STORE_INFO, options.storeId);
-      this.setData({
-        shared: true,
-      })
+      setTimeout(function() {
+        self.setData({
+          shared: true,
+        })
+      }, 500)
       wx.getSetting({
         success: res => {
           // 如果授权  则直接登录  

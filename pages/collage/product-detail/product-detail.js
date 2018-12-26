@@ -7,7 +7,9 @@ import { service } from '../../../service';
 import { productService } from '../../product/shared/service.js';
 import { formidService } from '../../../shared/service/formid.service.js';
 const app = getApp()
-var time;
+let timer1;
+let timer2;
+
 Page({
   data: {
     jnImg: '/asset/images/product.png',
@@ -47,6 +49,8 @@ Page({
   onShow: function () {
     let self = this;
     if (this.data.shared) {
+      clearInterval(timer1);
+      clearInterval(timer2);
       wx.getSetting({
         success: res => { 
           if (res.authSetting['scope.userInfo']) {
@@ -75,61 +79,62 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log(options);
     wx.setNavigationBarTitle({
       title: '项目详情',
     })
-    //1534471289389691289260, 1534492886056393843540, 1534735240436269620378
-    //1534486340978192233874, 1534492911020635915801, 1534839570793107958230
-
     this.setData({
       storeName: wx.getStorageSync('storeName'),
       pinTuanId: options.activityId ? options.activityId : '',
       groupId: options.groupId ? options.groupId : '',
     })
-    
     getProductCommentList.call(this);
 
     let self = this;
-    if (options.type == 'share') {
-      wx.setStorageSync(constant.STORE_INFO, options.storeId)
-      this.setData({
-        showBtn: true,
-        shared: true
-      })
+    if(!this.data.shared) {
+      if (options.type == 'share') {
+        wx.setStorageSync(constant.STORE_INFO, options.storeId)
+        this.setData({
+          showBtn: true
+        })
 
-      wx.getSetting({
-        success: res => {
-          // 如果授权  则直接登录  
-          if (res.authSetting['scope.userInfo']) {
-            let callbackFun = function () {
-              getProductDetail.call(self);
-              getStoreInfo.call(self)
-            };
-            wx.login({
-              success: function (result) {
-                wx.getUserInfo({
-                  success: res => {
-                    service.logInFun(result.code, res.rawData, callbackFun);
-                  },
-                  fail: () => { }
-                })
-              }
-            });
-          } else {
-            wx.navigateTo({
-              url: '/pages/index/index',
-            })
+        setTimeout(function() {
+          self.setData({
+            shared: true
+          })
+        }, 500)
+
+        wx.getSetting({
+          success: res => {
+            // 如果授权  则直接登录  
+            if (res.authSetting['scope.userInfo']) {
+              let callbackFun = function () {
+                getProductDetail.call(self);
+                getStoreInfo.call(self)
+              };
+              wx.login({
+                success: function (result) {
+                  wx.getUserInfo({
+                    success: res => {
+                      service.logInFun(result.code, res.rawData, callbackFun);
+                    },
+                    fail: () => { }
+                  })
+                }
+              });
+            } else {
+              wx.navigateTo({
+                url: '/pages/index/index',
+              })
+            }
           }
+        })
+      } else {
+        getProductDetail.call(this);
+        if (wx.getStorageSync(constant.STORE_INFO)) {
+          getStoreInfo.call(this)
         }
-      })
-    } else {
-      getProductDetail.call(this);
-      if (wx.getStorageSync(constant.STORE_INFO)) {
-        getStoreInfo.call(this)
       }
     }
-   
   },
 
   onStoreClick() {
@@ -263,17 +268,13 @@ function getProductDetail() {
     data.groupId = this.data.groupId
   }
 
-  console.log(data);
   let self = this;
   collageService.getProductDetail(data).subscribe({
     next: res => {
-      console.log(res);
-      console.log(JSON.stringify(res));
       if (res) {
         self.setData({
           data: res
         })
-       
 
         if (res.openedGroups && res.openedGroups.length) {
           self.setData({
@@ -362,7 +363,7 @@ function getProductDetail() {
           });
 
           if (self.data.collageList && self.data.collageList.length > 0) {
-            time = setInterval(function () {
+            timer1 = setInterval(function () {
               self.data.collageList.forEach(function (item) {
                 if (new Date('2000/01/01 ' + item.time).getHours().toString() === '0' && new Date('2000/01/01 ' + item.time).getMinutes().toString() === '0' && new Date('2000/01/01 ' + item.time).getSeconds().toString() === '0') {
                   item.time = '00:00:00';
@@ -417,7 +418,7 @@ function getProductDetail() {
           }
 
           //倒计时
-          time = setInterval(function () {
+          timer2 = setInterval(function () {
             if (new Date('2000/01/01 ' + self.data.sharedHours + ':' + self.data.sharedMinites + ':' + self.data.sharedSeconds).getHours().toString() === '0' && new Date('2000/01/01 ' + self.data.sharedHours + ':' + self.data.sharedMinites + ':' + self.data.sharedSeconds).getMinutes().toString() === '0' && new Date('2000/01/01 ' + self.data.sharedHours + ':' + self.data.sharedMinites + ':' + self.data.sharedSeconds).getSeconds().toString() === '0') {
               self.data.sharedHours = '00';
               self.data.sharedMinites = '00';

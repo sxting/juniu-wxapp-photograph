@@ -101,7 +101,7 @@
 
   <view class="jn-bg" wx:if="{{length > 0}}"></view>
 
-  <!--从店铺页点进来显示正在开团项目-->
+  <!--显示正在开团项目-->
   <view class="collage-list" wx:if="{{length > 0}}">
     <view class="sub-title">小伙伴正在开团，可直接参与</view>
     <view class='detail-imgs-box'>
