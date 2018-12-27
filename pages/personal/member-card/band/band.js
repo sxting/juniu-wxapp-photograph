@@ -57,7 +57,7 @@ Page({
     if(this.data.loading) {
       return;
     }
-    if (checkMobile(phone)) {
+    if (checkMobile(phone)&&phone.length===11) {
       this.setData({
         loading: true
       })

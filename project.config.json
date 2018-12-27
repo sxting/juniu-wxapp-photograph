@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": 0,
@@ -47,8 +47,8 @@
 				{
 					"id": 1,
 					"name": "cw",
-					"pathName": "pages/personal/collage-order/detail/detail",
-					"query": "orderNo=154512630223110331426040"
+					"pathName": "pages/personal/member-card/band/band",
+					"query": ""
 				}
 			]
 		}

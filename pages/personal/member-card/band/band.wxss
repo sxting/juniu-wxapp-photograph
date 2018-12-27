@@ -34,9 +34,8 @@
   text-align: center;
   font-size: 26rpx;
   color: #fff;
-  padding: 0;
+  padding: 6px;
   position: absolute;
-  top: 14rpx;
 }
 
 .code-btn {
