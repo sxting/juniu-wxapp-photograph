@@ -51,6 +51,9 @@ Page({
     if (this.data.shared) {
       clearInterval(timer1);
       clearInterval(timer2);
+      this.setData({
+        qmArr : []
+      })
       wx.getSetting({
         success: res => { 
           if (res.authSetting['scope.userInfo']) {
@@ -81,6 +84,9 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '项目详情',
+    })
+    this.setData({
+      qmArr : []
     })
     this.setData({
       storeName: wx.getStorageSync('storeName'),
