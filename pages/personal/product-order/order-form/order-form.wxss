@@ -3,6 +3,7 @@
   padding-bottom: 100rpx;
   min-height: 100vh;
   box-sizing: border-box;
+  background-color: #f6f6f6;
 }
 .tab {
   height: 88rpx;
@@ -10,6 +11,7 @@
   display: flex;
   font-size: 30rpx;
   color: #333;
+  background-color: #fff;
 }
 .tab-item {
   width: 25%;
@@ -27,7 +29,7 @@
 .order-form-item {
   margin-top: 30rpx;
   width: 100%;
-  box-shadow: 0 2rpx 6rpx 0 #D8D8D8;
+  background-color: #fff;
   border-radius: 8rpx;
   box-sizing: border-box;
   padding: 20rpx 20rpx 0;
@@ -71,6 +73,7 @@
 .order-price {
   color: #333;
   font-size: 30rpx;
+  padding-top:20rpx;
 }
 
 .active>text {

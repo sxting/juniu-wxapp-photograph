@@ -7,7 +7,7 @@
         <view class='sub-title'>商品</view>
         <view class="product-select" bindtap="onProductClick" wx:if="{{reserveType ==='PRODUCT'}}">
             <text class="product-name" wx:if="{{!productId}}">请先选择商品</text>
-            <text class="product-name" wx:else>{{productName}}</text>
+            <text class="product-name product-name2" wx:else>{{productName}}</text>
             <icon class="jn-icon icon-more fr"></icon>
         </view>
     </view>

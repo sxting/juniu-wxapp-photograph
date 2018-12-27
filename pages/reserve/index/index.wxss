@@ -36,6 +36,9 @@
 .product-name {
   padding-left: 30rpx;
 }
+.product-name2 {
+  color: #333333;
+}
 .icon-more {
   color: #999;
   font-size: 34rpx;
@@ -54,6 +57,7 @@
   margin: 0 auto;
   font-size: 30rpx;
   border: 1rpx solid #eee;
+  border-bottom: 0;
 }
 .week-box, .date-box {
     height: 110rpx;
@@ -79,9 +83,9 @@
 }
 .date-box .per-day {
   border-radius: 50%;
-  height: 64rpx;
+  height: 67rpx;
   margin: 15rpx 16rpx;
-  line-height: 64rpx;
+  line-height: 67rpx;
 }
 
 .day-active {
@@ -115,6 +119,8 @@
   line-height: 90rpx;
   text-align: center;
   margin:0 auto;
+  border-bottom:1rpx solid #eee;
+  width:100%;
 }
 
 /*当前选中时间样式*/
@@ -201,4 +207,5 @@
     width: 690rpx;
     font-size: 36rpx;
     margin: 40rpx auto;
+    border-radius: 0;
 }
