@@ -67,7 +67,7 @@
     <view class="images-box">
       <view class="details-img">
         <view wx:if="{{collageStatus === 'JOINING'}}">
-          <view class="title-images">距结束时间仅剩</view>
+          <view class="title-images"> <image class='jiantou' src='/asset/images/jiantou.png'></image> 距结束时间仅剩<image style='transform:rotate(180deg)' class='jiantou' src='/asset/images/jiantou.png'></image></view>
           <view class="times">
             <text>{{restHour}}</text>:<text>{{restMinute}}</text>:<text>{{restSecond}}</text>
           </view>

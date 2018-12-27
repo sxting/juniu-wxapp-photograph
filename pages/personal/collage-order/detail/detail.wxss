@@ -463,3 +463,11 @@ page {
 .borGreen{
   border: 2rpx solid #336964;
 }
+.images-detail{
+  overflow: hidden;
+}
+.jiantou{
+  width:80rpx;
+  height:8rpx;
+  margin:0 20rpx 5rpx;
+}
