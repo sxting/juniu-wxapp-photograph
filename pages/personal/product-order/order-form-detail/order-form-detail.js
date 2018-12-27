@@ -63,6 +63,20 @@ Page({
     })
   },
 
+  copyTextBtn(e) {
+    let copyData = e.currentTarget.dataset.copydata;
+    wx.setClipboardData({
+      data: copyData,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+  }
+
 })
 
 // 订单详情  
