@@ -18,16 +18,20 @@ Page({
       backgroundColor: '#2d5e59',
     })
     var self = this;
-    wx.getUserInfo({
-        success: res => {
-          self.setData({
-            userInfo: res.userInfo
-          });
-        },
-        fail: () => {
-          alert('获取用户登录态失败！' + result.errMsg)
-        }
-      })
+    wx.getSetting({
+    success: res => {
+      wx.getUserInfo({
+          success: res => {
+            self.setData({
+              userInfo: res.userInfo
+            });
+          },
+          fail: () => {
+            alert('获取用户登录态失败！' + result.errMsg)
+          }
+        })
+      }
+    })
     wx.setNavigationBarTitle({
       title: wx.getStorageSync('storeName'),
     })
@@ -40,7 +44,23 @@ Page({
 
   onShow() {
     let self = this;
-    
+    wx.getSetting({
+      success: res => {
+        wx.getUserInfo({
+            success: res => {
+              self.setData({
+                userInfo: res.userInfo
+              });
+            },
+            fail: () => {
+              alert('获取用户登录态失败！' + result.errMsg)
+            }
+          })
+        }
+      })
+      wx.setNavigationBarTitle({
+        title: wx.getStorageSync('storeName'),
+      })
     service.userIsBind().subscribe({
       next: res => {
         this.setData({
