@@ -47,15 +47,10 @@
           <text wx:elif="{{status == 5}}">已退款</text>
         </view>
       </view>
-      <!-- <view class="code" wx:for="{{orderDetail.vouchers}}" wx:for-index="index">
-        <view class="code-num">{{item.voucherCode}}</view>
-        <canvas canvas-id="{{'barcode'+index}}" />
-        <view class="code-time" wx:if="{{orderDetail.status !== 'FINISH'}}">剩余有效期：{{leftDays}}天</view>
-      </view> -->
-      <canvas canvas-id="barcode_orderid" />
-      <view class="code" wx:for="{{orderDetail.vouchers}}" wx:for-index="index">
-        <view class="code-num {{item.voucherStatus=='FINISH'? 'code-used' : ''}}">券码 {{item.voucherCode}}</view>
+       <view class="code" wx:for="{{orderDetail.vouchers}}" wx:for-index="index">
+        <view class="code-num {{item.voucherStatus=='FINISH'? 'code-used' : ''}}">{{item.voucherCode}}</view>
       </view>
+      <canvas canvas-id="barcode_orderid" />
       <view class="code-time" wx:if="{{orderDetail.status !== 'FINISH'}}">剩余有效期：{{leftDays}}天</view>
     </view>
   </view>

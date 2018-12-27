@@ -8,7 +8,7 @@
   width: 280rpx;
   min-width: 280rpx;
   height: 200rpx;
-  border-radius: 8rpx;
+  /* border-radius: 8rpx; */
 }
 .product-right {
   display: inline-block;
@@ -78,4 +78,5 @@
   color: #fff;
   font-size: 34rpx;
   margin: 10rpx auto 40rpx;
+  border-radius: 0;
 }

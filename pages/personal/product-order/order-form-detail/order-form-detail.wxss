@@ -42,7 +42,6 @@
 .order-form-msg image {
   width: 280rpx;
   height: 200rpx;
-  border-radius: 8rpx;
   margin-right: 30rpx;
 }
 .order-msg-right {
@@ -139,7 +138,7 @@
   color: #336964;
 }
 .code-num {
-  padding-bottom: 10rpx;
+  padding-top: 10rpx;
   text-align: center;
   font-size: 34rpx;
 }
@@ -147,7 +146,7 @@
   width: 520rpx;
   height: 186rpx;
   display: block;
-  margin: 20rpx auto;
+  margin: 10rpx auto 20rpx;
 }
 .code-time {
   font-size: 24rpx;
@@ -163,6 +162,7 @@
   font-size: 28rpx;
   color: #999999;
   padding: 30rpx;
+  padding-bottom:0;
   background-color: #fff;
 }
 

@@ -26,7 +26,7 @@
           <view class="product-name">{{item.productInfo}}</view>
           <!-- <view class="order-time">下单时间：2017.09.21  18:36:09</view> -->
           <view class="order-time">下单时间：{{item.juniuoModel.dateCreated}}</view>
-          <view class="order-price">￥<text>{{item.money ? item.money/100 : ''}}</text></view>
+          <view class="order-price">￥<text>{{item.money ? item.money/100 : 0}}</text></view>
         </view>
       </view>
     </view>
@@ -36,6 +36,4 @@
     <view class="space-bg"><image src="/asset/images/nofind.png"></image></view>
     <view class="space-text">暂无订单</view>
   </view>
-
-  <view class="juniu-bottom"><image src="/asset/images/logo.png"></image></view>
 </view>

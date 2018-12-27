@@ -126,6 +126,7 @@
   font-size: 34rpx;
   width: 690rpx;
   margin: 0 auto;
+  border-radius: 0;
 }
 
 

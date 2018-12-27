@@ -147,7 +147,7 @@ page {
   height: 50rpx;
   line-height: 50rpx;
   text-align: center;
-  color:#333;
+  color:#336964;
   border: 1rpx solid #333;
   margin-top: 29rpx;
   position: relative;
@@ -179,9 +179,9 @@ page {
   margin-right: 20rpx;
 }
 
-.product-bottom {
+/* .product-bottom {
   padding: 0 20rpx;
-}
+} */
 
 .product-name {
   font-size: 24rpx;
