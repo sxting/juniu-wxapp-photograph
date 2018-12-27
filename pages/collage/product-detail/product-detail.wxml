@@ -1,23 +1,28 @@
 <view  wx:if='{{showStore}}'>
 <view class="page">
   <!--轮播图部分-->
-  <swiper class="product-img" autoplay="true" interval="3000" duration="500">
-    <swiper-item wx:for="{{imgs}}">
-      <image src="{{item.url}}"></image> 
-    </swiper-item>
-  </swiper>
-  <view class="product-box">
-    <view class="product-name">
-      {{data.activityName}}
-      <button class="share-btn" open-type="share"><text class="jn-icon icon-fenxiang"></text></button>
-    </view>
-    <view class="price-box">
-      <text>￥<text class="current">{{presentPrice ? presentPrice : 0}}</text> </text> 
-      <text class="yuanjia">{{originalPrice ? originalPrice : 0}}元</text> 
-    </view>
-    <view class="collage-num">{{data.peopleCount}}人团·已团{{data.openedGroupCount}}件</view>
+  
+  <view class='product'>
+    <swiper class="product-img" autoplay="true" interval="3000" duration="500">
+      <swiper-item wx:for="{{imgs}}">
+        <image src="{{item.url}}"></image> 
+      </swiper-item>
+    </swiper>
+    <view class="product-box">
+      <image class='fl' src='{{imgs[0].url ? imgs[0].url : jnImg}}'></image>
+      <view class='fl product-right'>
+        <view class="product-name">
+          {{data.activityName}}
+          <button class="share-btn" open-type="share"><text class="jn-icon icon-fenxiang"></text></button>
+        </view>
+        <view class="price-box">
+          <text><text class="current">￥{{presentPrice ? presentPrice : 0}}</text> </text> 
+          <text class="yuanjia">{{originalPrice ? originalPrice : 0}}元</text> 
+        </view>
+        <view class="collage-num">{{data.peopleCount}}人团·已团{{data.openedGroupCount}}件</view>
+      </view>
   </view>
-
+  </view>
   <view class="jn-bg" wx:if="{{groupId}}"></view>
 
   <!--通过别人的分享点进来 可以参团-->
