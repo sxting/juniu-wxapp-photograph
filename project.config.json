@@ -47,8 +47,8 @@
 				{
 					"id": 1,
 					"name": "cw",
-					"pathName": "pages/personal/member-card/band/band",
-					"query": ""
+					"pathName": "pages/collage/product-detail/product-detail",
+					"query": "activityId=1544586030998191410709"
 				}
 			]
 		}

@@ -13,54 +13,87 @@ page {
 .product-img image {
   width: 100%;
   height: 520rpx;
+  position: relative;
+}
+.product-image{
+    width: 100vw;
+    height: 540rpx;
+    display: block;
+}
+.product {
+  position: relative;
+  width: 100vw;
+  height: 521rpx;
+  background-color: #fff;
 }
 .product-box {
-  background-color: #fff;
-  padding: 20rpx 30rpx;
-  box-sizing: border-box;
-  height: 220rpx;
+    background-color: #336964;
+    padding: 20rpx;
+    width: 690rpx;
+    height: 240rpx;
+    box-sizing: border-box;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -345rpx;
+}
+.product-box image {
+  height: 200rpx;
+  width: 280rpx;
+}
+.colorF{
+  color:#fff;
 }
 .product-name {
   font-size: 32rpx;
 }
 .share-btn {
-  width: 50rpx;
-  height: 50rpx;
-  background-color: #fff;
-  border: none;
-  outline: none;
-  float: right;
-  text-align: center;
-  line-height: 40rpx;
-  padding: 0;
-  margin: 0;
-  margin-top: 70rpx;
+  width:50rpx;
+  height:50rpx;
+  background-color:#336964;
+  border:none;
+  outline:none;
+  float:right;
+  text-align:center;
+  line-height:40rpx;
+  padding:0;
+  margin:0;
+  margin-top:70rpx;
+  position:absolute;
+  right:20rpx;
+  bottom:20rpx;
 }
 .share-btn::after {
   border: none;
 }
 .icon-fenxiang {
   font-size: 44rpx;
-  color: #999999;
+  color: #fff;
 }
 .price-box {
   font-size: 36rpx;
-  color: #ff6600;
+  color: #fff;
   line-height: 80rpx;
   height: 90rpx;
 }
 .price-box .current {
-  font-size: 76rpx;
+  font-size: 30rpx;
+}
+.product-right {
+  padding-left: 30rpx;
+  width: 340rpx;
 }
 .price-box .yuanjia {
   font-size: 28rpx;
-  color: #888888;
+  color: #fff;
   padding-left: 8rpx;
   text-decoration: line-through;
 }
 .collage-num {
   font-size: 26rpx;
-  color: #888888;
+  color: #fff;
+  margin-top:28rpx;
 }
 
 .collage-list {
