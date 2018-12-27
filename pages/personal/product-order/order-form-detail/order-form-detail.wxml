@@ -57,7 +57,10 @@
 
   <view class="order-box mt-10">
     <view class='sub-title'>订单信息</view>
-    <view class="lh-30">订单编号：{{orderId}}</view>
+    <view class="lh-30">
+      订单编号：{{orderId}}
+      <text class='copy-btn fr' data-copydata="{{orderId}}" bindtap='copyTextBtn'>复制</text>
+    </view>
     <view class="lh-30">下单时间：{{orderDetail.juniuoModel.dateCreated}}</view>
   </view>
 

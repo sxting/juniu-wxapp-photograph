@@ -166,6 +166,19 @@
   background-color: #fff;
 }
 
+.copy-btn {
+  font-size: 22rpx;
+  color: #336964;
+  border: 2rpx solid #336964;
+  border-radius: 4rpx;
+  width: 64rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10rpx;
+}
+
 .lh-30 {
   line-height: 60rpx;
 }
