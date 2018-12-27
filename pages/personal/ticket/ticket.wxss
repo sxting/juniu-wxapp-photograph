@@ -66,8 +66,8 @@ color:#336964;
   padding: 30rpx 20rpx 0;
 }
 .disabled-img image {
-  width: 120rpx;
-  height: 120rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 .disabled {
   background: #EFEFEF;
@@ -97,6 +97,6 @@ color:#336964;
   width:130rpx;
   height:130rpx;
   position:absolute;
-  right:-30rpx;
-  top:-19rpx;
+  right:-48rpx;
+  top:-26rpx;
 }
