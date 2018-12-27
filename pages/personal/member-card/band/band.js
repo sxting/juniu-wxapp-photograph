@@ -149,8 +149,8 @@ function bindMemberCard(storeId, phone, validCode) {
             delta: 1
           })
         } else {
-          wx.redirectTo({
-            url: '/pages/personal/index/index',
+          wx.navigateTo({
+            url: 'pages/personal/index/index',
           })
         }
       } else {
@@ -166,7 +166,11 @@ function bindMemberCard(storeId, phone, validCode) {
       //   })
       // }
     },
-    error: err => errDialog(err),
+    error: err => {
+      errDialog(err);
+      self.setData({
+        loading: false
+      })},
     complete: () => {
       wx.hideToast();
       self.setData({
