@@ -17,9 +17,6 @@
   left:25rpx;
   z-index:100;
   background:#FFFFFF;
-  box-shadow:0 1px 3px 0 #D8D8D8;
-  border-radius:5px;
-
 }
 .personal-image {
     width:240rpx;
@@ -73,18 +70,17 @@
 }
 
 .list-box {
-  width: 690rpx;
+  width: 700rpx;
   margin: 0 auto;
   margin-top:100rpx;
   border-radius: 5rpx;
-  box-shadow:0 1px 3px 0 #D8D8D8;
 }
 .my-comment, .my-appoint {
     height: 96rpx;
     line-height: 96rpx;
     background-color: #fff;
     padding-right: 30rpx;
-    padding-left: 130rpx;
+    padding-left: 120rpx;
     box-sizing: border-box;
     font-size: 26rpx;
     color: #111111;
@@ -114,7 +110,7 @@
 }
 .icon-wodeyuyuex,.icon-youhuiquanx{
   position:absolute;
-  left:60rpx;
+  left:50rpx;
   font-size:40rpx;
 }
 .go-back-btn {
@@ -140,6 +136,15 @@
   bottom:90rpx;
 }
 .icon-pintuanx,.icon-shangpinx{
-  font-size:50rpx;
+  font-size:40rpx;
   color:#336964;
+}
+.bgBox{
+  position:absolute;
+top:0;
+bottom:0;
+right:0;
+left:0;
+background:#f6f6f6;
+
 }

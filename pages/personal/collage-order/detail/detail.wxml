@@ -23,13 +23,13 @@
           <image src="{{ activityCover? activityCover : pictureUrl }}"></image>
         </view>
         <view class="right-box fl">
-          <view class="top-items-name">
             <text class="items-name">{{ activityName }}</text>
-            <text class="price">{{ orderDetailArr.activityPrice? orderDetailArr.activityPrice / 100 : 0 }}元</text>
+          <view style='margin:10rpx 0;'>
+            <text class="price">¥ {{ orderDetailArr.activityPrice? orderDetailArr.activityPrice / 100 : 0 }}</text>
           </view>
-          <view>
+          <view style='margin-top:72rpx;color: #999999;'>
             <text class="collage-number">{{ collageNumber }}人团·</text>
-            <text style="color:#fff;">已成{{ orderDetailArr.finishedGroupCount }}件</text>
+            <text >已成{{ orderDetailArr.finishedGroupCount }}件</text>
           </view>
         </view>
       </view>
@@ -37,7 +37,7 @@
   </view>
   <view class="real-payment clearfix">
     
-    <view class="fr detail-pay-for"><text >实付款：</text>{{ orderDetailArr.activityPrice? orderDetailArr.activityPrice / 100 : 0 }}元</view>
+    <view class="fr detail-pay-for"><text >实付款：</text>¥ {{ orderDetailArr.activityPrice? orderDetailArr.activityPrice / 100 : 0 }}</view>
   </view>
   <view class='tt' wx:if="{{collageStatus === 'JOINING'||collageStatus === 'CLOSE'}}"></view>
   <!-- 中间部分 -->
@@ -75,7 +75,7 @@
         <!--大于四人拼团-->
         <view class="images-boxes-collages clearfix" wx:if="{{collageNumber > 4 && collageStatus !== 'FINISH'}}">
           <view class='images-detail fl' wx:for="{{arrCollageImageShow}}" wx:for-index="index">
-            <image src="{{item}}"></image>
+            <image class=" {{index === 0 ? 'borGreen' : ''}}" src="{{item}}"></image>
             <text class="head {{collageStatus === 'CLOSE'? 'bg' : ''}}" wx:if="{{index === 0}}">团长</text>
           </view>
           <view class="special-symbol fl" wx:for="{{remainingCollages}}">
@@ -86,7 +86,7 @@
         <!--四人拼团-->
         <view class="images-boxes-collages clearfix" wx:if="{{collageNumber === 4 && collageStatus !== 'FINISH'}}">
            <view class='images-detail fl' wx:for="{{arrCollageImageShow}}" wx:for-index="index">
-            <image src="{{ item }}"></image>
+            <image  class=" {{index === 0 ? 'borGreen' : ''}}" src="{{ item }}"></image>
             <text class="head {{collageStatus === 'CLOSE'? 'bg' : ''}}" wx:if="{{index === 0}}">团长</text>
           </view>
           <view class="special-symbol fl" wx:for="{{remainingCollages}}">
@@ -96,7 +96,7 @@
         <!--三人拼团-->
         <view class="images-boxes-collages three-people clearfix" wx:if="{{collageNumber === 3 && collageStatus !== 'FINISH'}}">
            <view class='images-detail three' wx:for="{{arrCollageImageShow}}" wx:for-index="index">
-            <image src="{{item}}"></image>
+            <image  class=" {{index === 0 ? 'borGreen' : ''}}" src="{{item}}"></image>
             <text class="head {{collageStatus === 'CLOSE'? 'bg' : ''}}" wx:if="{{index === 0}}">团长</text>
           </view>
           <view class="special-symbol three" wx:for="{{remainingCollages}}">
@@ -106,7 +106,7 @@
         <!--两人拼团-->
         <view class="images-boxes-collages two-people clearfix" wx:if="{{collageNumber === 2 && collageStatus != 'FINISH'}}">
           <view class='images-detail fl two mr50' wx:for="{{arrCollageImageShow}}" wx:for-index="index">
-            <image src="{{item}}"></image>
+            <image  class=" {{index === 0 ? 'borGreen' : ''}}" src="{{item}}"></image>
             <text class="head {{collageStatus === 'CLOSE'? 'bg' : ''}}" wx:if="{{index === 0}}">团长</text>
           </view>
           <view class="special-symbol two" wx:for="{{remainingCollages}}">
@@ -142,11 +142,11 @@
         
         <view class="qrcode-box">
           <view class="qrcode">
-            <canvas class="jn-qrcode"  canvas-id="barcode" />
             <view class="coupon-code">
-              <text class="coupon">券码</text>
               <text class="code-number">{{ settleCode }}</text>
             </view>
+            <canvas class="jn-qrcode"  canvas-id="barcode" />
+            
           </view>
         </view>
       </view>
@@ -187,6 +187,7 @@
     </view>
     <view class='tt' wx:if="{{collageStatus != 'FINISH'}}"></view>
     <view class='order-detail-box'>
+    <view style='color:#333;font-size:30rpx;'>订单信息</view>
       <view class="order-detail">
         <view wx:if="{{orderDetailArr.orderStatus != 'PRE_PAYMENT' && orderDetailArr.orderStatus != 'PAYMENT_TIMEOUT'}}">
           <text>团单编号：</text>{{orderDetailArr.groupNo}}
@@ -211,7 +212,7 @@
        data-storeid="{{item.storeId}}" data-storename="{{item.storeName}}">
         <view class="address-box" hover-class="address-box-active">
           <view>{{item.storeName}}</view>
-          <view class="address-detail"> <icon class='jn-icon icon-weizhix'></icon> {{item.storeAddress}}</view>
+          <view class="address-detail"> <text class="jn-icon icon-address"></text> {{item.storeAddress}}</view>
         </view>
       </view>
     </scroll-view>

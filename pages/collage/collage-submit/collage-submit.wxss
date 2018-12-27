@@ -24,14 +24,13 @@ page {
 
 .detail-content {
   float: left;
-  margin-left: 10rpx;
+  margin-left: 30rpx;
 }
 
 .collage-name {
   color: #333;
   font-size: 32rpx;
-  margin-top: 16rpx;
-}
+} 
 
 .collage-name text:last-child {
   font-size: 26rpx;
@@ -45,7 +44,7 @@ page {
 .collage-num {
   font-size: 24rpx;
   color: #999999;
-  margin-top: 40rpx;
+  margin-top: 60rpx;
 
 }
 
@@ -57,27 +56,27 @@ page {
 }
 
 .price-box .li {
-  height: 72rpx;
-  line-height: 72rpx;
-  padding: 0 20rpx;
+  height:72rpx;
+  line-height:72rpx;
+  font-size:28rpx;
 }
 
-.price-box .li:last-child {
+/* .price-box .li:last-child {
   height: 88rpx;
   line-height: 88rpx;
-}
+} */
 
 .price-box .li>text:first-child {
   color: #666;
 }
 
 .price-box .li:last-child>text:first-child {
-  font-size: 30rpx;
+  font-size: 28rpx;
 }
 
-.price-box .li:last-child>text:last-child {
+/* .price-box .li:last-child>text:last-child {
   color: #336964;
-}
+} */
 
 .price-box .li:last-child .price {
   font-size: 32rpx;
@@ -92,11 +91,12 @@ page {
   line-height: 84rpx;
   width: 690rpx;
   font-size: 36rpx;
+  border-radius:0;
 }
 
 .product-name {
   display: inline-block;
-  width: 400rpx;
+  /* width: 400rpx; */
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -117,12 +117,14 @@ page {
 }
 
 .tel-box input {
-  height: 88rpx;
-  line-height: 88rpx;
-  position: absolute;
-  left: 130rpx;
-  top: 0;
-  width: 220rpx;
+  height:80rpx;
+  line-height:88rpx;
+  position:absolute;
+  top:0;
+  width:420rpx;
+  background:#F6F6F6;
+  padding-left:30rpx;
+  left:0rpx;
 }
 
 .placeholder {

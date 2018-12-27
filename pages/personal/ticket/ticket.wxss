@@ -5,18 +5,16 @@
     padding-bottom: 0;
 }
 .not-select {
-  height: 92rpx;
-  line-height: 92rpx;
-  font-size: 28rpx;
-  color: #666666;
-  padding-left: 30rpx;
-  background-color: #fff;
-  width: 690rpx;
-  margin: 30rpx auto 0;
-  box-sizing: border-box;
-  border-radius: 8rpx;
-  box-shadow:0rpx 2rpx 6rpx 0rpx #D8D8D8;
-  margin-bottom: 30rpx;
+  height:92rpx;
+  line-height:92rpx;
+  font-size:28rpx;
+  color:#666666;
+  padding-left:30rpx;
+  background-color:#efefef;
+  width:690rpx;
+  margin:30rpx auto 0;
+  box-sizing:border-box;
+  margin-bottom:30rpx;
 }
 .icon-select-box, .icon-select-box-selected {
   float:right;
@@ -58,7 +56,7 @@
 }
 .weui-navbar {
   background-color: #fff;
-  border-bottom: 2rpx solid #f3f3f3;
+  border-bottom:none !important;
 }
 
 .weui-navbar__item.weui-bar__item_on {
@@ -89,6 +87,7 @@ color:#336964;
 }
 .ticket-title-box{
   width: 400rpx !important;
+  color: #0F2B27 !important;
 }
 .ticket-top{
   position: relative;

@@ -39,7 +39,7 @@
                 <view class="ticket-type-gift" wx:else="{{item.couponDefType === 'GIFT'}}">礼品券</view>
               </view>
               <view class='ticket-title-box'>
-                <view class="ticket-title">{{item.couponName}}</view>
+                <view class="ticket-title" style='color:#0F2B27 !important;'>{{item.couponName}}</view>
                 <view class="use-limit-box" wx:if="{{item.couponDefType === 'MONEY' || item.couponDefType === 'DISCOUNT'}}">
                   <view class="use-limit" wx:if="{{item.useLimitMoney > 0}}">消费满
                     <text>{{item.useLimitMoney/100}}</text>元可使用</view>

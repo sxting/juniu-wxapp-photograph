@@ -87,7 +87,7 @@
 
         <view class="collage-successed-tip">
           <!--正在拼团-->
-          <text wx:if="{{data.currentGroup.groupStatus === 'JOINING'}}">还差<text class="jn-color">{{data.peopleCount - joinNumber}}</text>人拼团成功</text>
+          <text wx:if="{{data.currentGroup.groupStatus === 'JOINING'}}">还差<text class="jn-color">{{data.peopleCount - joinNumber}}人</text>拼团成功</text>
           <!--拼团成功-->
           <text wx:if="{{data.currentGroup.groupStatus === 'FINISH'}}">该团已成功，可选择开团或参与其它团</text>
           <!--拼团失败-->
@@ -109,7 +109,7 @@
         <image src="{{item.picUrl ? item.picUrl : jnImg}}"></image>
         <view class="collage-product">
           <view class="collage-product-name">{{item.captain}}</view>
-          <view class="collage-product-num">还差{{(item.totalPeopleCount - item.groupPeopleCount) ? (item.totalPeopleCount - item.groupPeopleCount) : 0}}人拼团成功 剩余{{item.time}}</view>
+          <view class="collage-product-num">还差 <text style="color:#d43737;">{{(item.totalPeopleCount - item.groupPeopleCount) ? (item.totalPeopleCount - item.groupPeopleCount) : 0}}人</text> 拼团成功 剩余{{item.time}}</view>
         </view>
         <view class="collage-btn" wx:if="{{item.totalPeopleCount > item.groupPeopleCount}}" bindtap="onGoJoinCollageClick" data-groupid="{{item.groupId}}">去参团</view>
         <view class="collage-btn" wx:if="{{item.totalPeopleCount === item.groupPeopleCount}}">已成功</view>
@@ -125,7 +125,11 @@
       适用门店 <text class="jn-icon icon-more fr"></text>
     </view>
     <view class="store">
-      <view class="store-name">{{storeName}}</view>
+      <view class="store-name">
+        <view class="" hover-class="none" hover-stop-propagation="false">
+          {{storeName}}
+        </view>   
+      </view>
       <!-- <view class="address-and-tel">
         <icon class="jn-icon icon-address"></icon>
         <text class='address-text'>{{address}}</text>
@@ -134,7 +138,7 @@
         </view>
       </view> -->
 
-      <view class="address-and-tel">
+      <view class="address-and-tel" style="border:none !important;">
         <view>
           <text class="jn-icon icon-address"></text>
           <text class='address-text'>{{address}}</text>
@@ -201,7 +205,7 @@
   <view wx:if="{{!groupId}}">
     <view wx:if="{{data.product.inventory > 0}}">
       <form bindsubmit="formSubmit" bindtap='onOpenGroupBtnClick' report-submit="true">
-        <button formType="submit" class='jn-btn'>一键开团{{presentPrice}}元</button>
+        <button formType="submit" style="border-radius:0;" class='jn-btn'>一键开团{{presentPrice}}元</button>
       </form>
     </view>
     <!-- <view class="jn-btn" wx:if="{{data.product.inventory > 0}}" bindtap="onOpenGroupBtnClick">一键开团{{presentPrice}}元</view> -->

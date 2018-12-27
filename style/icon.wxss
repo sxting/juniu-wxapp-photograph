@@ -43,9 +43,11 @@
 }
 
 .icon-weizhix::before {
-  content: '\e71b'
+  content: '\e641'
 }
-
+.icon-weizhix{
+  font: 20rpx;
+}
 .icon-xialax::before {
   content: '\e71d'
 }
@@ -93,9 +95,9 @@
 .icon-qm::before{
  content: '\e646'
 }
-.icon-fire::before{
+/* .icon-fire::before{
  content: '\e629'
-}
+} */
 
 .icon-address::before{
  content: '\e641'

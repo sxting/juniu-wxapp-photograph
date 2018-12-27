@@ -1,4 +1,4 @@
-<view class="">
+<view class="bgBox">
   <!--背景图-->
   <view class="top-bg">
     <image class='banner' src="/asset/images/background.png"></image>
@@ -43,11 +43,11 @@
   
 
       
-      <view class="version">{{TPLID}}</view>
+      <!-- <view class="version">{{TPLID}}</view> -->
     </view>
 
-      <view class="juniu-bottom">
+      <!-- <view class="juniu-bottom">
         <image  src="/asset/images/logo.png"></image>
-      </view>
+      </view> -->
 
 </view>

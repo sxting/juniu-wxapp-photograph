@@ -15,7 +15,7 @@
 .work-name{
   position: absolute;
   margin: 0 auto;
-  bottom: 50rpx;
+  bottom: 30rpx;
   color: #fff;
   width: 100%;
   text-align: center;
@@ -24,5 +24,9 @@
   font-size: 0;
 }
 .work-name{
-  font-size: 38rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.IMGmid{
+  top: 50%;
 }

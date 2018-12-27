@@ -7,7 +7,7 @@
       <view class="collage-name">
         <text class="product-name">{{data.activityName}}</text>
         <view style='color:#D43737'>
-          ¥{{data.activityPrice ? data.activityPrice/100 : 0}}元
+          ¥ {{data.activityPrice ? data.activityPrice/100 : 0}}
         </view>
       </view>
 
@@ -19,10 +19,10 @@
 
   <view class='jn-bg'></view>
 
-  <view>
   </view>
 
   <view class="price-box bd">
+  <view style='font-size:30rpx;'>订单信息</view>
     <view class='li'>
       <text>数量</text>
       <text class="fr">1份</text>
@@ -33,13 +33,16 @@
     </view>
     <view class='li'>
       <text class="price-text">拼团价</text>
-      <text class="fr"><text class='price'>{{data.activityPrice ? data.activityPrice/100 : 0}}</text>元</text>
+      <text class="fr"><text>{{data.activityPrice ? data.activityPrice/100 : 0}}</text>元</text>
     </view>
 
   </view>
+    <view class='jn-bg'></view>
+
+  <view>
+    <view style='padding:40rpx 0 0 30rpx;font-size:30rpx;'>手机号</view>
 
   <view class="tel-box bd">
-    <text>手机号</text>
     <input type="number" value="{{tel}}" bindinput="onTelChange" placeholder-class="placeholder" placeholder="请输入手机号" />
     <form bindsubmit="formSubmit" report-submit="true">
       <button formType="submit" class="tel-btn" open-type="getPhoneNumber" catchgetphonenumber="getUserPhoneNumber">授权手机号</button>

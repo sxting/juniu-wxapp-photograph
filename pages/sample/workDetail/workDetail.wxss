@@ -16,8 +16,8 @@
   bottom:100rpx;
   z-index:999999;
   color:#fff;
-  width: 150rpx;
-  height: 150rpx;
+  width: 100rpx;
+  height: 100rpx;
   font-size: 28rpx;
   background-color:rgba(0,0,0,0);
   border: none;
