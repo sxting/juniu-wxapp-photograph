@@ -83,7 +83,8 @@
               <text class='price-origin'>￥{{ item.originalPrice / 100 }}</text>
             </view>
             <view><text>{{ item.peopleCount }}人团 | </text>已团{{ item.openedGroupCount }}件</view>
-            <view class='go-btn'>去开团 <icon class="jn-icon icon-more fr" ></icon></view>
+            <view class='go-btn'>去开团 </view>
+            <!-- <icon class="jn-icon icon-more fr" ></icon> -->
           </view>
         </view>
       </view>
