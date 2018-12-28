@@ -5,15 +5,17 @@
   min-height: 100vh;
   box-sizing: border-box;
   font-family: PingFangSC-Regular;
+  background: #f6f6f6;
 }
 .tab {
   height: 88rpx;
   line-height: 88rpx;
   display: flex;
-  border-top: 2rpx solid #f3f3f3;
   border-bottom: 2rpx solid #f3f3f3;
   font-size: 32rpx;
   color: #111111;
+  background:#fff;
+
 }
 .tab-item {
   width: 25%;

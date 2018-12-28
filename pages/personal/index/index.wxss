@@ -31,7 +31,7 @@
     color:#111111;
     position:absolute;
     left:300rpx;
-    top:80rpx;
+    top:40rpx;
 
 }
 .nickname {
@@ -40,6 +40,9 @@
 }
 .tel {
   font-size: 28rpx;
+  border:2rpx solid #000;
+  padding:8rpx 20rpx;
+  border-radius:50rpx;
 }
 
 .my-order {
@@ -136,7 +139,7 @@
   bottom:90rpx;
 }
 .icon-pintuanx,.icon-shangpinx{
-  font-size:40rpx;
+  font-size:37rpx;
   color:#336964;
 }
 .bgBox{

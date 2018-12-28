@@ -41,14 +41,14 @@
 				{
 					"id": 0,
 					"name": "band",
-					"pathName": "pages/personal/product-order/order-form-detail/order-form-detail",
-					"query": "orderId=2018122615493613870512330"
+					"pathName": "pages/personal/member-card/band/band",
+					"query": ""
 				},
 				{
 					"id": 1,
 					"name": "cw",
-					"pathName": "pages/personal/collage-order/detail/detail",
-					"query": "orderNo=154590387145299436450189"
+					"pathName": "pages/personal/collage-order/order/order-list",
+					"query": ""
 				}
 			]
 		}

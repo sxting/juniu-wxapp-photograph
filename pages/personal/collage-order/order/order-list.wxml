@@ -45,5 +45,4 @@
     <view class="space-text">暂无订单</view>
   </view>
   <!-- logo底部 -->
-  <view class="juniu-bottom"><image src="/asset/images/logo.png"></image></view>
 </view>
