@@ -12,7 +12,7 @@ Page({
     getUserInfo: true,
     bigImage: '/asset/images/pintuan_head1.jpg',
     worksList: [],
-    imageWidth: 375,
+    imageWidth: 414,
     showVideo: false,
     src: '',
     productionId: '',
@@ -125,8 +125,8 @@ function workDataFun(data) {
   resData.forEach(function (item) {
     let index = item.picId.lastIndexOf('_');
     let scale = item.picId.slice(index + 1, item.picId.length);
-    item.height = Math.floor(375 / scale);
-    item.url = constant.OSS_IMAGE_URL + `${item.picId}/resize_${375}_${item.height}/mode_fill`
+    item.height = Math.floor(414 / scale);
+    item.url = constant.OSS_IMAGE_URL + `${item.picId}/resize_${414}_${item.height}/mode_fill`
   })
   return resData;
 }
