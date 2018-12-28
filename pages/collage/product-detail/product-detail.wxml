@@ -141,7 +141,7 @@
       </view> -->
 
       <view class="address-and-tel" style="border:none !important;">
-        <view>
+        <view style='overflow:hidden;'>
           <text class="jn-icon icon-address"></text>
           <text class='address-text'>{{address}}</text>
         </view>
@@ -156,7 +156,7 @@
 
   <view class='margin-b130'>
     <view class="product-detail bd" wx:if="{{productImgs && productImgs.length > 0}}">
-      <view class="product-detail-text">商品详情</view>
+      <view class="product-detail-text" style='padding:0 30rpx;'>商品详情</view>
       <image wx:for="{{productImgs}}" src="{{item.url ? item.url : jnImg}}"></image>
     </view>
 
