@@ -23,7 +23,6 @@
       </view>
   </view>
   </view>
-  <view class="jn-bg" wx:if="{{groupId}}"></view>
 
   <!--通过别人的分享点进来 可以参团-->
   <view class='center-content' wx:if="{{groupId}}">
@@ -104,7 +103,6 @@
 
   </view>
 
-  <view class="jn-bg" wx:if="{{length > 0}}"></view>
 
   <!--显示正在开团项目-->
   <view class="collage-list" wx:if="{{length > 0}}">
@@ -122,10 +120,9 @@
     </view>
   </view>
 
-  <view class="jn-bg"></view>
 
   <!--适用门店  -->
-  <view class="store-box">
+  <view class="store-box" style='padding-top:80rpx;'>
     <view class="sub-title" bindtap="onStoreClick">
       适用门店 <text class="jn-icon icon-more fr"></text>
     </view>
