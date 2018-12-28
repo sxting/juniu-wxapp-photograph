@@ -8,7 +8,7 @@
   top: 50%;
   width: 100rpx;
   height: 100rpx;
-  margin-left: -50rpx;
+  margin-left: -40rpx;
   margin-top: -50rpx;
 }
 
@@ -29,4 +29,12 @@
 }
 .IMGmid{
   top: 50%;
+}
+.mengceng{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.15);
 }

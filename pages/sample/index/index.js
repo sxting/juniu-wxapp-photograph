@@ -167,7 +167,7 @@ function workDataFun(data, imgW) {
     let index = item.picId.lastIndexOf('_');
     // let picId = item.picId.slice(0, index);
     let scale = item.picId.slice(index + 1, item.picId.length);
-    item.height = item.sourceType === 'VIDEO' ? Math.floor(imgW / scale) : Math.floor(imgW / scale)*2;
+    item.height =  Math.floor(imgW / scale)*2;
     console.log(item.height)
     item.url = constant.OSS_IMAGE_URL + `${item.picId}/resize_${imgW}_${item.height}/mode_fill`
   })
