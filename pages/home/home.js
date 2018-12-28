@@ -4,6 +4,8 @@ import { constant } from '../../utils/constant';
 import { ticketService } from '../ticket/shared/service';
 import { service } from '../../service';
 import { indexService } from '../index/shared/service';
+import { sampleService } from '../../pages/sample/shared/service.js';
+
 //获取应用实例
 const app = getApp()
 
@@ -237,6 +239,34 @@ Page({
     wx.makePhoneCall({
       phoneNumber: self.data.tel
     })
+  },
+
+  goSample() {
+    wx.switchTab({
+      url: '/pages/sample/index/index',
+    })
+  },
+
+  goSampleDetail(e) {
+    let type = e.currentTarget.dataset.type
+    console.log(e);
+    if (type === 'VIDEO') {
+      getData.call(this, e.currentTarget.dataset.id);
+    } else {
+      let url = '';
+      let datalist = []
+      this.data.productionData.forEach(function(item) {
+        if (item.productionId === e.currentTarget.dataset.id) {
+          datalist = item.merchantMediaDTOS
+        }
+      })
+      datalist.forEach(function (i) {
+        url += (i.sourceId + ',')
+      })
+      wx.navigateTo({
+        url: '/pages/sample/workDetail/workDetail?imgUrl=' + url,
+      })
+    }
   },
 
   // 跳转到服务项目列表
@@ -576,6 +606,7 @@ function getProduction() {
   homeService.getProduction(data).subscribe({
     next: res => {
       this.setData({
+        productionData: res.list,
         productionList: workDataFun(res.list, 345)
       })
     },
@@ -699,4 +730,44 @@ function weekText(str) {
       break;
   }
   return name;
+}
+
+function getData(productionId) {
+  let data = {
+    productionId: productionId
+  }
+  let self = this;
+  sampleService.getStaffProductionDetail(data).subscribe({
+    next: res => {
+      let imageList = []
+      res.production.merchantMediaDTOS.forEach(function (item, i) {
+        imageList.push({
+          sourceId: item.sourceId
+        })
+      })
+      let videoId = imageList[0].sourceId.split(',')[1];
+      showVideo.call(this, videoId);
+    },
+    error: err => errDialog(err),
+    complete: () => wx.hideToast()
+  })
+}
+
+function showVideo(videoId) {
+  let data = {
+    videoId: videoId
+  }
+  sampleService.getVideoUrlById(data).subscribe({
+    next: res => {
+      this.setData({
+        showVideo: true,
+        src: res
+      })
+      wx.navigateTo({
+        url: '/pages/sample/workDetail/workDetail?src=' + res,
+      })
+    },
+    error: err => errDialog(err),
+    complete: () => wx.hideToast()
+  })
 }

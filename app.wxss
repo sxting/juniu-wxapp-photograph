@@ -101,11 +101,11 @@ page {
 
 .tickte-item2 {
   color: #999;
-  border: 1rpx solid #999;
+  border: 2rpx solid #999;
 }
 
 .tickte-item2 .ticket-price-box {
-  border-right: 1rpx dashed #999;
+  border-right: 2rpx dashed #999;
 }
 
 /* .yuan1 {
@@ -162,7 +162,7 @@ page {
   height: 100%;
   padding-top: 40rpx;
   box-sizing: border-box;
-  border-left: 1rpx dotted #fff;
+  border-left: 2rpx dotted #fff;
 }
 
 .ticket-btn2 {
