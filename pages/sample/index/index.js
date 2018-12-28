@@ -11,7 +11,7 @@ Page({
   data: {
     storeId: '',
     worksList: [],
-    imageWidth: 414,
+    imageWidth: 392,
   },
 
   /**
