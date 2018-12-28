@@ -148,7 +148,7 @@ page {
   line-height: 50rpx;
   text-align: center;
   color:#336964;
-  border: 1rpx solid #333;
+  border: 1rpx solid #336964;
   margin-top: 29rpx;
   position: relative;
 }
@@ -374,6 +374,8 @@ scroll-view {
   top: 50%;
   margin: -40rpx auto 0;
   z-index: 20;
+  left:50%;
+  margin-left:-40rpx;
 }
 .production-title1 {
   position: absolute;
