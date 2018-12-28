@@ -20,7 +20,7 @@
 }
 .personal-image {
     width:240rpx;
-    height:280rpx;
+    height:240rpx;
     margin-left:30rpx;
     margin-top:26rpx;
     position:absolute;
@@ -48,7 +48,7 @@
 .my-order {
   height: 160rpx;
   width: 700rpx;
-  margin: 100rpx auto 30rpx;
+  margin: 80rpx auto 30rpx;
   padding-top: 100rpx;
 }
 .my-order image {
@@ -64,6 +64,7 @@
 }
 .order-list {
   display: flex;
+  margin-top:20rpx;
 }
 .order-item {
   width: 20%;
