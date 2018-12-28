@@ -127,6 +127,9 @@
   width: 690rpx;
   margin: 0 auto;
   border-radius: 0;
+  position: fixed;
+  left: 30rpx;
+  bottom: 40rpx;
 }
 
 

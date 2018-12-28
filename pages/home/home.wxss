@@ -49,6 +49,7 @@ page {
 .icon-weizhix {
   font-size: 26rpx;
   color: #336964;
+  margin-top:-6rpx;
 }
 
 .tel-box {
@@ -203,6 +204,14 @@ page {
   text-decoration: line-through;
   padding-left: 10rpx;
 }
+.product-bottom {
+  padding-right:20rpx;
+}
+.sold-num {
+  font-size:24rpx;
+  color: #999;
+}
+
 /*商品end  */
 
 /* 优惠券 start */
@@ -360,6 +369,7 @@ scroll-view {
   color: #fff;
   font-size: 34rpx;
   text-align: center;
+  background: rgba(0,0,0,0.15);
 }
 .production-item .img {
   position: absolute;
@@ -381,8 +391,10 @@ scroll-view {
   position: absolute;
   bottom: 50rpx;
   width: 690rpx;
+  font-weight: bold;
 }
 .production-title2 {
+  font-weight: bold;
   position: absolute;
   top: 50%;
   margin: -20rpx auto 0;

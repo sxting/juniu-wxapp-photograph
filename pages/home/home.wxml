@@ -23,12 +23,12 @@
       <view class="sub-title-left">
         <view class="sub-title-text">样片展示</view>
       </view>
-      <view class="sub-title-right">
+      <view class="sub-title-right" bindtap='goSample'>
         <view>more</view>
       </view>
     </view>
     <view class='production-box'>
-      <view class='production-item' wx:for="{{productionList}}" style='height: {{item.height*2}}rpx'>
+      <view class='production-item' wx:for="{{productionList}}" bindtap='goSampleDetail' data-type='{{item.sourceType}}' data-id='{{item.productionId}}' style='height: {{item.height*2}}rpx'>
         <image class='video-icon' wx:if="{{item.sourceType === 'VIDEO'}}" src='/asset/images/video.png'></image>
         <image class='img' src='{{item.url}}' style='height: {{item.height*2}}rpx'></image>
         <view class="{{item.sourceType === 'VIDEO' ? 'production-title1' : 'production-title2'}}">
@@ -58,6 +58,7 @@
           <view>
             <text class="current-price">￥{{item.currentPrice / 100}}</text>
             <text class="original-price" wx:if="{{item.originalPrice}}">￥{{item.originalPrice / 100}}</text>
+            <text class='sold-num fr'>已售{{item.soldNum ? item.soldNum : 0}}</text>
           </view>
         </view>
       </view>
