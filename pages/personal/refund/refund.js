@@ -18,6 +18,7 @@ Page({
       title: '申请退款',
     })
     getOrderDetail.call(this);
+    queryRefundAmount.call(this);
   },
 
   onRefundClick() {
@@ -34,6 +35,18 @@ Page({
   }
   
 })
+//查询款款金额
+function queryRefundAmount(){
+  let data={orderId:this.data.orderId}
+  personalService.getRefundAmount(data).subscribe({
+    next: res => {
+      this.setData({ canRefundAmount: res.INIT/100 });
+    },
+    err:error=>errDialog(error),
+    complete:()=>wx.hideToast()
+  }
+  );
+}
 
 // 申请退款 
 function refund() {

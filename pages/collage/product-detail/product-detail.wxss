@@ -210,9 +210,9 @@ page {
 
 .product-detail,
 .activity-notice {
-  padding: 0 10rpx 20rpx;
+  /* padding: 0 10rpx 20rpx; */
   box-sizing: border-box;
-  width: 700rpx;
+  width: 100%;
   margin: 30rpx auto 0;
 }
 .product-detail-text,
@@ -231,15 +231,15 @@ page {
   /* font-size: 30rpx; */
 }
 .product-detail image {
-  width: 650rpx;
-  height: 300rpx;
+  width: 100%;
+  height: 560rpx;
   display: block;
-  margin-bottom: 20rpx;
   border-radius: 8rpx;
 }
 
 .activity-notice {
   margin: 30rpx auto;
+  padding: 0 30rpx 20rpx;
 }
 .notice-item {
   font-size: 26rpx;
