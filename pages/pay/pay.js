@@ -103,7 +103,7 @@ Page({
   onOrderPayClick() {
     let self = this;
     let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-    let appId = extConfig.theAppid ? extConfig.theAppid : 'wx3bb038494cd68262';
+    let appId = extConfig.theAppid ? extConfig.theAppid : 'wx0c66057a9b376be1';
     // type不能为空 在线购卡付款:OPENCARD, 在线付款:PAY, 扣减会员卡:DEDUCTION
     let data = {
       appid: appId,

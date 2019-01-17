@@ -25,7 +25,7 @@ service.decodeUserPhone = (data) => {
 
 service.logInFun = (code, rawData, fun) => {
   let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-  let appId = 'wx3bb038494cd68262';
+  let appId = 'wx0c66057a9b376be1';
   let reqData = {
     code: code,
     appid: extConfig.theAppid ? extConfig.theAppid : appId,

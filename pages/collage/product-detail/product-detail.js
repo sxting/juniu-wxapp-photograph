@@ -188,7 +188,7 @@ Page({
             getUserInfo: true
           })
           let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-          let appId = 'wx3bb038494cd68262';
+          let appId = 'wx0c66057a9b376be1';
           if (result.code) {
             logIn.call(self, result.code, extConfig.theAppid ? extConfig.theAppid : appId, e.detail.rawData);
           } else {

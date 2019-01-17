@@ -12,7 +12,7 @@ App({
     
     let self = this;
     let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-    let appId = 'wx3bb038494cd68262';
+    let appId = 'wx0c66057a9b376be1';
     self.globalData.appId = extConfig.theAppid ? extConfig.theAppid : appId;
 
     // console.log(service);
