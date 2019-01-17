@@ -63,7 +63,8 @@ Page({
                 fail: function (result) {
                   self.setData({
                     home: false
-                  })
+                  });
+                  getStoreListInfo.call(self);
                 }
               })
             }
