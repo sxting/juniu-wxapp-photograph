@@ -27,7 +27,7 @@ var constant = {
   OSS_IMAGE_URL: 'https://oss.juniuo.com/juniuo-pic/picture/juniuo/',
 
   CARD_LOGO: 'card-log',
-  APP_ID: 'wxedcf0f0c4cc429c8',
+  APP_ID: 'wx0c66057a9b376be1',
   TOKEN: 'app-token',
   EXPERIENCE_TOKEN: 'experience-token',
   STORE_INFO: 'store-info',
