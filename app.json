@@ -65,5 +65,6 @@
         "selectedIconPath": "asset/images/personal-icon-select.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
