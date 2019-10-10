@@ -26,5 +26,22 @@ Page({
         delta: 1
       });
     }
+      if (e.detail.errMsg == 'getUserInfo:ok') {
+          let callbackFun = function () {
+              wx.navigateBack({
+                  delta: 1
+              });
+          }
+
+          wx.login({
+              success: function (result) {
+                  wx.getUserInfo({
+                      success: res => {
+                          service.logInFun(result.code, e.detail.rawData, callbackFun);
+                      }
+                  })
+              }
+          });
+      }
   },
 })

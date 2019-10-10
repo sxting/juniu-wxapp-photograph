@@ -25,7 +25,6 @@ Page({
     longitude: '',
     home: true,
     isOnLoad: false,
-    userInfo: true,
     collageProductList: [],//拼团列表
     productTagName: '精选套餐',
     productionList: [], //展示作品
@@ -46,50 +45,42 @@ Page({
     } else {
       wx.getSetting({
         success: res => {
-          if (res.authSetting['scope.userInfo']) {
-            self.setData({
-              userInfo: true
-            });
             let callbackFun = function () {
-              getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
-              wx.getLocation({
-                success: function (result) {
-                  self.setData({
-                    latitude: result.latitude,
-                    longitude: result.longitude
-                  })
-                  closestStore.call(self)
-                },
-                fail: function (result) {
-                  self.setData({
-                    home: false
-                  });
-                  getStoreListInfo.call(self);
-                }
-              })
-            }
-            wx.login({
-              success: function (result) {
-                wx.getUserInfo({
-                  success: res => {
-                    service.logInFun(result.code, res.rawData, callbackFun);
-                  },
-                  fail: () => {
-                    self.setData({
-                      userInfo: false
-                    })
-                  }
+                getSysConfig.call(self, `${wx.getStorageSync(constant.MERCHANTID)}_wechat_product`)
+                wx.getLocation({
+                    success: function (result) {
+                        self.setData({
+                            latitude: result.latitude,
+                            longitude: result.longitude
+                        })
+                        closestStore.call(self)
+                    },
+                    fail: function (result) {
+                        self.setData({
+                            home: false
+                        });
+                        getStoreListInfo.call(self);
+                    }
                 })
-              }
-            });
-          } else {
-            self.setData({
-              userInfo: false
-            });
-            wx.navigateTo({
-              url: '/pages/index/index',
-            })
-          }
+            }
+            console.log(res);
+            if (res.authSetting['scope.userInfo']) {
+                wx.login({
+                success: function (result) {
+                    wx.getUserInfo({
+                    success: res => {
+                        service.logInFun(result.code, res.rawData, callbackFun);
+                    }
+                    })
+                }
+                });
+            } else {
+                wx.login({
+                    success: function (result) {
+                        service.logInFun(result.code, '', callbackFun);                      
+                    }
+                });
+            }
         }
       })
     }

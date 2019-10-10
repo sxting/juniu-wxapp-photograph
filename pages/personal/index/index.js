@@ -17,50 +17,33 @@ Page({
       frontColor: '#ffffff',
       backgroundColor: '#2d5e59',
     })
-    var self = this;
-    wx.getSetting({
-    success: res => {
-      wx.getUserInfo({
-          success: res => {
-            self.setData({
-              userInfo: res.userInfo
-            });
-          },
-          fail: () => {
-            alert('获取用户登录态失败！' + result.errMsg)
-          }
-        })
-      }
-    })
     wx.setNavigationBarTitle({
       title: wx.getStorageSync('storeName'),
     })
-  
-    self.setData({
-      userInfo: app.globalData.userInfo
-    });
-    console.log(app.globalData)
   },
 
   onShow() {
     let self = this;
     wx.getSetting({
-      success: res => {
-        wx.getUserInfo({
-            success: res => {
-              self.setData({
-                userInfo: res.userInfo
-              });
-            },
-            fail: () => {
-              alert('获取用户登录态失败！' + result.errMsg)
+        success: (res) => {
+            if (res.authSetting['scope.userInfo']) {
+                wx.getUserInfo({
+                    success: res => {
+                        self.setData({
+                            userInfo: res.userInfo
+                        });
+                    }
+                })
+            } else {
+                wx.navigateTo({
+                    url: '/pages/index/index',
+                })
             }
-          })
         }
-      })
-      wx.setNavigationBarTitle({
+    });
+    wx.setNavigationBarTitle({
         title: wx.getStorageSync('storeName'),
-      })
+    })
     service.userIsBind().subscribe({
       next: res => {
         this.setData({
@@ -71,9 +54,6 @@ Page({
       error: err => errDialog(err),
       complete: () => wx.hideToast()
     })
-    self.setData({
-      userInfo: app.globalData.userInfo
-    });
   },
 
   // 点击绑定手机号
