@@ -21,11 +21,6 @@ Page({
 
   bindgetuserinfo(e) {
     let self = this;
-    if (e.detail.errMsg == 'getUserInfo:ok') {
-      wx.navigateBack({
-        delta: 1
-      });
-    }
       if (e.detail.errMsg == 'getUserInfo:ok') {
           let callbackFun = function () {
               wx.navigateBack({
@@ -42,6 +37,10 @@ Page({
                   })
               }
           });
+      } else {
+        wx.reLaunch({
+          url: '/pages/home/home',
+        })
       }
   },
 })

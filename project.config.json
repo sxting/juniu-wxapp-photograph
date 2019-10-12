@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
 	"appid": "wx0c66057a9b376be1",
-	"projectname": "%E6%A1%94%E7%89%9B%E6%91%84%E5%BD%B1%E7%89%88",
+	"projectname": "%E6%A1%94%E7%89%9B%E6%91%84%E5%BD%B1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -38,7 +38,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -51,6 +51,12 @@
 					"name": "cw",
 					"pathName": "pages/personal/collage-order/order/order-list",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录授权页",
+					"pathName": "pages/index/index",
+					"scene": null
 				}
 			]
 		}
